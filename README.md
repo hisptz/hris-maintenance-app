@@ -1,6 +1,5 @@
 ## Welcome to GitHub Pages
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/hisptz/hris-maintenance-app.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/hisptz/hris-maintenance-app.svg?branch=master)](https://travis-ci.org/hisptz/hris-maintenance-app)
 <a href="https://codeclimate.com/github/hisptz/hris-maintenance-app/maintainability"><img src="https://api.codeclimate.com/v1/badges/cd6284eddaceed43922f/maintainability" /></a>
 <a href="https://codeclimate.com/github/hisptz/hris-maintenance-app/test_coverage"><img src="https://api.codeclimate.com/v1/badges/cd6284eddaceed43922f/test_coverage" /></a>
 
