@@ -1,4 +1,5 @@
 ## Welcome to GitHub Pages
+[![Build Status](https://travis-ci.org/hisptz/hris-maintenance-app.svg?branch=master)](https://travis-ci.org/hisptz/hris-maintenance-app)
 <a href="https://codeclimate.com/github/hisptz/hris-maintenance-app/maintainability"><img src="https://api.codeclimate.com/v1/badges/cd6284eddaceed43922f/maintainability" /></a>
 <a href="https://codeclimate.com/github/hisptz/hris-maintenance-app/test_coverage"><img src="https://api.codeclimate.com/v1/badges/cd6284eddaceed43922f/test_coverage" /></a>
 You can use the [editor on GitHub](https://github.com/hisptz/hris-maintenance-app/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
