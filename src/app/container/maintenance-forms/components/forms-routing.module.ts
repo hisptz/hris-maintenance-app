@@ -4,7 +4,7 @@ import { FormsComponent } from './forms/forms.component';
 
 const routes: Routes = [
   {
-    path: 'filters',
+    path: 'forms',
     component: FormsComponent,
     children: [
       {

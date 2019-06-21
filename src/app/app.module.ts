@@ -30,7 +30,8 @@ import { FriendlyReportsComponent } from './container/maintenance-filters/compon
 
 import { FiltersModule } from './container/maintenance-filters/filters.module';
 import { FieldsModule } from './container/maintenance-fields/fields.module';
-import { FormsComponent } from './container/maintenance-forms/components/forms/forms.component';
+import { OrgunitsModule } from './container/maintenance-orgunits/orgunits.module';
+import { FormsModule } from './container/maintenance-forms/components/forms.module';
 
 
 @NgModule({
@@ -47,12 +48,13 @@ import { FormsComponent } from './container/maintenance-forms/components/forms/f
     RelationalFiltersComponent,
     ArthmeticFiltersComponent,
     FriendlyReportsComponent,
-    FormsComponent,
   ],
   imports: [
     BrowserModule,
     FieldsModule,
     FiltersModule,
+    FormsModule,
+    OrgunitsModule,
     AppRoutingModule,
     MatToolbarModule,
     NgbPaginationModule,
