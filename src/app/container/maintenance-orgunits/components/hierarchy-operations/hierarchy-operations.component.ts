@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-maintenance-orgunits',
-  templateUrl: './maintenance-orgunits.component.html',
-  styleUrls: ['./maintenance-orgunits.component.scss']
+  selector: 'app-hierarchy-operations',
+  templateUrl: './hierarchy-operations.component.html',
+  styleUrls: ['./hierarchy-operations.component.scss']
 })
-export class MaintenanceOrgunitsComponent implements OnInit {
+export class HierarchyOperationsComponent implements OnInit {
 
   rippleEffectsColor: string;
   serviceList: Array<{ title: string, description: string }>;

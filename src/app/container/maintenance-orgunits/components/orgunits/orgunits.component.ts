@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-maintenance-orgunits',
-  templateUrl: './maintenance-orgunits.component.html',
-  styleUrls: ['./maintenance-orgunits.component.scss']
+  selector: 'app-orgunits',
+  templateUrl: './orgunits.component.html',
+  styleUrls: ['./orgunits.component.scss']
 })
-export class MaintenanceOrgunitsComponent implements OnInit {
+export class OrgunitsComponent implements OnInit {
 
   rippleEffectsColor: string;
   serviceList: Array<{ title: string, description: string }>;
