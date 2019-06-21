@@ -10,37 +10,26 @@ export class MaintenanceFiltersComponent implements OnInit {
   rippleEffectsColor: string;
   serviceList: Array<{ title: string, description: string }>;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     this.rippleEffectsColor = '#ccc';
     this.serviceList = [
       {
-        title: 'Fields',
+        title: 'Relational Filters',
         description:
           'Add, modify, view and delete validation rules. Anomalies can be discovered by running validation rules against the data.',
       },
       {
-        title: 'Fields Group',
+        title: 'Relational Arthmetic',
         description:
           'Add, modify, view and delete validation rules. Anomalies can be discovered by running validation rules against the data.',
       },
       {
-        title: 'Fields Options',
+        title: 'Friendly Reports',
         description:
           'Add, modify, view and delete validation rules. Anomalies can be discovered by running validation rules against the data.',
-      },
-      {
-        title: 'Fields Option Group',
-        description:
-          'Add, modify, view and delete validation rules. Anomalies can be discovered by running validation rules against the data.',
-      },
-      {
-        title: 'Field Options Group Set',
-        description:
-          'Add, modify, view and delete validation rules. Anomalies can be discovered by running validation rules against the data.',
-      },
+      }
     ];
   }
-
 }
