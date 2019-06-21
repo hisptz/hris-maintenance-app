@@ -6,7 +6,7 @@ import { ArthmeticFiltersComponent } from './components/arthmetic-filters/arthme
 
 const routes: Routes = [
   {
-    path: 'fields',
+    path: 'filters',
     component: RelationalFiltersComponent,
     children: [
       {
