@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { RelationalFiltersComponent } from './components/relational-filters/relational-filters.component';
 import { FriendlyReportsComponent } from './components/friendly-reports/friendly-reports.component';
+import { ArthmeticFiltersComponent } from './components/arthmetic-filters/arthmetic-filters.component';
 
 const routes: Routes = [
   {
@@ -14,7 +15,7 @@ const routes: Routes = [
       },
       {
         path: ':name',
-        component: RelationalFiltersComponent,
+        component: ArthmeticFiltersComponent,
       },
       {
         path: ':name',
