@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-maintenance-forms',
-  templateUrl: './maintenance-forms.component.html',
-  styleUrls: ['./maintenance-forms.component.scss']
+  selector: 'app-forms',
+  templateUrl: './forms.component.html',
+  styleUrls: ['./forms.component.scss']
 })
-export class MaintenanceFormsComponent implements OnInit {
+export class FormsComponent implements OnInit {
 
   rippleEffectsColor: string;
   serviceList: Array<{ title: string, description: string }>;
