@@ -271,12 +271,13 @@
   }
 }
 
+
 .active {
-  outline: 0;
-  background-color: #ccc;
   border-bottom: 3px solid orange;
+  outline: none;
+  background-color: #ccc;
 }
 
 .left-menu-item:focus {
-  outline: 0;
+    outline: none;
 }

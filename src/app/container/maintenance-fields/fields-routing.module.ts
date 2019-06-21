@@ -8,31 +8,36 @@ import { FieldsOptionsGroupSetsComponent } from './components/fields-options-gro
 import { FieldsComponent } from './components/fields/fields.component';
 
 const routes: Routes = [
-  { path: 'fields', component: FieldsComponent, children: [
-    {
-      path: ':name', component: FieldsComponent
-    },
-    {
-      path: ':name', component: FieldsGroupsComponent
-    },
-    {
-      path: ':name', component: FieldsOptionsComponent
-    },
-    {
-      path: ':name', component: FieldsOptionsGroupsComponent
-    },
-    {
-      path: ':name', component: FieldsOptionsGroupSetsComponent
-    },
-  ] },
-  { path: 'filters', component: FieldsGroupsComponent },
-  { path: 'forms', component: FieldsOptionsComponent },
-  { path: 'organizationUnits', component: FieldsOptionsGroupsComponent },
-  { path: 'others', component: FieldsOptionsGroupSetsComponent },
+  {
+    path: 'fields',
+    component: FieldsComponent,
+    children: [
+      {
+        path: ':name',
+        component: FieldsComponent,
+      },
+      {
+        path: ':name',
+        component: FieldsGroupsComponent,
+      },
+      {
+        path: ':name',
+        component: FieldsOptionsComponent,
+      },
+      {
+        path: ':name',
+        component: FieldsOptionsGroupsComponent,
+      },
+      {
+        path: ':name',
+        component: FieldsOptionsGroupSetsComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class FieldsRoutingModule { }
+export class FieldsRoutingModule {}

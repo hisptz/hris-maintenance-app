@@ -273,11 +273,11 @@
 
 
 .active {
-  outline: 0;
+  outline: none;
   background-color: #ccc;
   border-bottom: 3px solid orange;
 }
 
 .left-menu-item:focus {
-    outline: 0;
+    outline: none;
 }
