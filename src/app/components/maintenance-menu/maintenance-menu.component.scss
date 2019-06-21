@@ -42,10 +42,10 @@
 }
 
 .active {
-  outline: 0;
+  outline: none;
   border-bottom: 3px solid orange;
 }
 
 .tab-menu-item:focus {
-    outline: 0;
+    outline: none;
 }

@@ -17,7 +17,6 @@ import { MatTabsModule } from '@angular/material';
 
 import { MaintenanceMenuComponent } from './components/maintenance-menu/maintenance-menu.component';
 import { MaintenanceHeaderComponent } from './components/maintenance-header/maintenance-header.component';
-import { FieldsModule } from './container/maintenance-fields/fields.module';
 
 import { AllMaintenanceOptionsComponent } from './container/all-maintenance-options/all-maintenance-options.component';
 import { MaintenanceFieldsComponent } from './container/maintenance-fields/maintenance-fields.component';
@@ -25,6 +24,13 @@ import { MaintenanceFiltersComponent } from './container/maintenance-filters/mai
 import { MaintenanceFormsComponent } from './container/maintenance-forms/maintenance-forms.component';
 import { MaintenanceOrgunitsComponent } from './container/maintenance-orgunits/maintenance-orgunits.component';
 import { MaintenanceOthersComponent } from './container/maintenance-others/maintenance-others.component';
+import { RelationalFiltersComponent } from './container/maintenance-filters/components/relational-filters/relational-filters.component';
+import { ArthmeticFiltersComponent } from './container/maintenance-filters/components/arthmetic-filters/arthmetic-filters.component';
+import { FriendlyReportsComponent } from './container/maintenance-filters/components/friendly-reports/friendly-reports.component';
+
+import { FiltersModule } from './container/maintenance-filters/filters.module';
+import { FieldsModule } from './container/maintenance-fields/fields.module';
+
 
 @NgModule({
   declarations: [
@@ -37,10 +43,14 @@ import { MaintenanceOthersComponent } from './container/maintenance-others/maint
     MaintenanceOrgunitsComponent,
     MaintenanceOthersComponent,
     MaintenanceHeaderComponent,
+    RelationalFiltersComponent,
+    ArthmeticFiltersComponent,
+    FriendlyReportsComponent,
   ],
   imports: [
     BrowserModule,
     FieldsModule,
+    FiltersModule,
     AppRoutingModule,
     MatToolbarModule,
     NgbPaginationModule,
