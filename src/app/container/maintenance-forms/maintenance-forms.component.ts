@@ -16,30 +16,10 @@ export class MaintenanceFormsComponent implements OnInit {
     this.rippleEffectsColor = '#ccc';
     this.serviceList = [
       {
-        title: 'Fields',
+        title: 'Forms',
         description:
           'Add, modify, view and delete validation rules. Anomalies can be discovered by running validation rules against the data.',
-      },
-      {
-        title: 'Fields Group',
-        description:
-          'Add, modify, view and delete validation rules. Anomalies can be discovered by running validation rules against the data.',
-      },
-      {
-        title: 'Fields Options',
-        description:
-          'Add, modify, view and delete validation rules. Anomalies can be discovered by running validation rules against the data.',
-      },
-      {
-        title: 'Fields Option Group',
-        description:
-          'Add, modify, view and delete validation rules. Anomalies can be discovered by running validation rules against the data.',
-      },
-      {
-        title: 'Field Options Group Set',
-        description:
-          'Add, modify, view and delete validation rules. Anomalies can be discovered by running validation rules against the data.',
-      },
+      }
     ];
   }
 
