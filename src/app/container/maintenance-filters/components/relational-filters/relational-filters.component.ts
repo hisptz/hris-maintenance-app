@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-maintenance-filters',
-  templateUrl: './maintenance-filters.component.html',
-  styleUrls: ['./maintenance-filters.component.scss']
+  selector: 'app-relational-filters',
+  templateUrl: './relational-filters.component.html',
+  styleUrls: ['./relational-filters.component.scss']
 })
-export class MaintenanceFiltersComponent implements OnInit {
+export class RelationalFiltersComponent implements OnInit {
 
   rippleEffectsColor: string;
   serviceList: Array<{ title: string, description: string }>;
