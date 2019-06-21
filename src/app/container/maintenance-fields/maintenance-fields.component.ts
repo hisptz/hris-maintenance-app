@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MaintenanceFieldsComponent implements OnInit {
 
+  rippleEffectsColor: string;
+
   constructor() { }
 
   ngOnInit() {
+    this.rippleEffectsColor = '#ccc';
   }
 
 }
