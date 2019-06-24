@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FormsComponent } from './forms/forms.component';
+import { OthersComponent } from './components/others/others.component';
 
 const routes: Routes = [
   {
-    path: 'forms',
-    component: FormsComponent,
+    path: 'others',
+    component: OthersComponent,
     children: [
       {
         path: ':name',
-        component: FormsComponent,
+        component: OthersComponent,
       }
     ],
   },
@@ -18,4 +18,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class FormsRoutingModule { }
+export class OthersRoutingModule { }

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-maintenance-orgunits',
-  templateUrl: './maintenance-orgunits.component.html',
-  styleUrls: ['./maintenance-orgunits.component.scss']
+  selector: 'app-orgunit-levels',
+  templateUrl: './orgunit-levels.component.html',
+  styleUrls: ['./orgunit-levels.component.scss']
 })
-export class MaintenanceOrgunitsComponent implements OnInit {
+export class OrgunitLevelsComponent implements OnInit {
 
   rippleEffectsColor: string;
   serviceList: Array<{ title: string, description: string }>;
@@ -42,5 +42,4 @@ export class MaintenanceOrgunitsComponent implements OnInit {
       },
     ];
   }
-
 }

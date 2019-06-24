@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MaintenanceOthersComponent implements OnInit {
 
-  constructor() { }
+  rippleEffectsColor: string;
+  serviceList: Array<{ title: string, description: string }>;
+
+  constructor() {}
 
   ngOnInit() {
+    this.rippleEffectsColor = '#ccc';
+    this.serviceList = [
+      {
+        title: 'Others',
+        description:
+          'Add, modify, view and delete validation rules. Anomalies can be discovered by running validation rules against the data.',
+      }
+    ];
   }
 
 }

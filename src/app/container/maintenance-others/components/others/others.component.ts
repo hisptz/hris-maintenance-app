@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-maintenance-forms',
-  templateUrl: './maintenance-forms.component.html',
-  styleUrls: ['./maintenance-forms.component.scss']
+  selector: 'app-others',
+  templateUrl: './others.component.html',
+  styleUrls: ['./others.component.scss']
 })
-export class MaintenanceFormsComponent implements OnInit {
+export class OthersComponent implements OnInit {
 
   rippleEffectsColor: string;
   serviceList: Array<{ title: string, description: string }>;
@@ -16,7 +16,7 @@ export class MaintenanceFormsComponent implements OnInit {
     this.rippleEffectsColor = '#ccc';
     this.serviceList = [
       {
-        title: 'Forms',
+        title: 'Others',
         description:
           'Add, modify, view and delete validation rules. Anomalies can be discovered by running validation rules against the data.',
       }
