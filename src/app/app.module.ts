@@ -32,6 +32,7 @@ import { FiltersModule } from './container/maintenance-filters/filters.module';
 import { FieldsModule } from './container/maintenance-fields/fields.module';
 import { OrgunitsModule } from './container/maintenance-orgunits/orgunits.module';
 import { FormsModule } from './container/maintenance-forms/components/forms.module';
+import { OthersModule } from './container/maintenance-others/others.module';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { FormsModule } from './container/maintenance-forms/components/forms.modu
     BrowserModule,
     FieldsModule,
     FiltersModule,
+    OthersModule,
     FormsModule,
     OrgunitsModule,
     AppRoutingModule,
