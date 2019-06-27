@@ -3,16 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AllMaintenanceOptionsComponent } from './container/all-maintenance-options/all-maintenance-options.component';
 import { MaintenanceFieldsComponent } from './container/maintenance-fields/maintenance-fields.component';
-import { MaintenanceFiltersComponent } from './container/maintenance-filters/maintenance-filters.component';
 import { MaintenanceFormsComponent } from './container/maintenance-forms/maintenance-forms.component';
 import { MaintenanceOrgunitsComponent } from './container/maintenance-orgunits/maintenance-orgunits.component';
 import { MaintenanceOthersComponent } from './container/maintenance-others/maintenance-others.component';
-import { FieldsComponent } from './container/maintenance-fields/components/fields/fields.component';
+import { MaintenanceReportsComponent } from './container/maintenance-reports/maintenance-reports.component';
 
 const routes: Routes = [
   { path: 'all', component: AllMaintenanceOptionsComponent },
   { path: 'fields', component: MaintenanceFieldsComponent },
-  { path: 'filters', component: MaintenanceFiltersComponent },
+  { path: 'reports', component: MaintenanceReportsComponent },
   { path: 'forms', component: MaintenanceFormsComponent },
   { path: 'organizationUnits', component: MaintenanceOrgunitsComponent },
   { path: 'others', component: MaintenanceOthersComponent },

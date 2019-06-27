@@ -20,19 +20,14 @@ import { MaintenanceHeaderComponent } from './components/maintenance-header/main
 
 import { AllMaintenanceOptionsComponent } from './container/all-maintenance-options/all-maintenance-options.component';
 import { MaintenanceFieldsComponent } from './container/maintenance-fields/maintenance-fields.component';
-import { MaintenanceFiltersComponent } from './container/maintenance-filters/maintenance-filters.component';
 import { MaintenanceFormsComponent } from './container/maintenance-forms/maintenance-forms.component';
 import { MaintenanceOrgunitsComponent } from './container/maintenance-orgunits/maintenance-orgunits.component';
 import { MaintenanceOthersComponent } from './container/maintenance-others/maintenance-others.component';
-import { RelationalFiltersComponent } from './container/maintenance-filters/components/relational-filters/relational-filters.component';
-import { ArthmeticFiltersComponent } from './container/maintenance-filters/components/arthmetic-filters/arthmetic-filters.component';
-import { FriendlyReportsComponent } from './container/maintenance-filters/components/friendly-reports/friendly-reports.component';
-
-import { FiltersModule } from './container/maintenance-filters/filters.module';
 import { FieldsModule } from './container/maintenance-fields/fields.module';
 import { OrgunitsModule } from './container/maintenance-orgunits/orgunits.module';
 import { FormsModule } from './container/maintenance-forms/components/forms.module';
 import { OthersModule } from './container/maintenance-others/others.module';
+import { MaintenanceReportsComponent } from './container/maintenance-reports/maintenance-reports.component';
 
 
 @NgModule({
@@ -41,19 +36,15 @@ import { OthersModule } from './container/maintenance-others/others.module';
     MaintenanceMenuComponent,
     AllMaintenanceOptionsComponent,
     MaintenanceFieldsComponent,
-    MaintenanceFiltersComponent,
     MaintenanceFormsComponent,
     MaintenanceOrgunitsComponent,
     MaintenanceOthersComponent,
     MaintenanceHeaderComponent,
-    RelationalFiltersComponent,
-    ArthmeticFiltersComponent,
-    FriendlyReportsComponent,
+    MaintenanceReportsComponent,
   ],
   imports: [
     BrowserModule,
     FieldsModule,
-    FiltersModule,
     OthersModule,
     FormsModule,
     OrgunitsModule,
