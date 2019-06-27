@@ -29,7 +29,6 @@ import { FormsModule } from './container/maintenance-forms/components/forms.modu
 import { OthersModule } from './container/maintenance-others/others.module';
 import { MaintenanceReportsComponent } from './container/maintenance-reports/maintenance-reports.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
