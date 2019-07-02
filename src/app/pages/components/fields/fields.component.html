@@ -1,0 +1,26 @@
+<main class="maintenance-left-menu-container">
+  <div>
+    <div>
+      <div *ngFor="let menuSetting of menuSettings">
+        <div class="left-bar" class="maintenance-left-menu-container-item">
+          <div class="maintenance-left-menu-container-holder">
+            <div *ngFor="let menu of menuSettings[0].menuOptions">
+              <span tabindex="0" class="maintenance-left-menu-span">
+                <div>
+                  <div class="left-menu-item" matRipple [matRippleColor]="rippleEffectsColor"
+                    [routerLink]="['/' + menuSetting.route, menu.route ]" routerLinkActive="active"
+                    class="maintenance-left-menu-icon-text-representation">
+                    <i class="material-icons maintenance-left-menu-folder-icon">
+                      folder
+                    </i>
+                    <div>{{ menu.name }}</div>
+                  </div>
+                </div>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

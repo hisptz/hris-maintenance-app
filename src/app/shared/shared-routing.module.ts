@@ -6,10 +6,11 @@ import { MaintenanceReportsComponent } from '../container/maintenance-reports/ma
 import { MaintenanceFormsComponent } from '../container/maintenance-forms/maintenance-forms.component';
 import { MaintenanceOrgunitsComponent } from '../container/maintenance-orgunits/maintenance-orgunits.component';
 import { MaintenanceOthersComponent } from '../container/maintenance-others/maintenance-others.component';
+import { FieldsComponent } from '../pages/components/fields/fields.component';
 
 const routes: Routes = [
   { path: 'all', component: AllMaintenanceOptionsComponent },
-  { path: 'fields', component: MaintenanceFieldsComponent },
+  { path: 'fields', component: FieldsComponent },
   { path: 'reports', component: MaintenanceReportsComponent },
   { path: 'forms', component: MaintenanceFormsComponent },
   { path: 'organizationUnits', component: MaintenanceOrgunitsComponent },

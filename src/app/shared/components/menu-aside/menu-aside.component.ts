@@ -1,23 +1,21 @@
-import { Component } from '@angular/core';
-import { MenuConfiguration } from './shared/models/menu-configuration';
+import { Component, OnInit } from '@angular/core';
+import { MenuConfiguration } from '../../models/menu-configuration';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'app-menu-aside',
+  templateUrl: './menu-aside.component.html',
+  styleUrls: ['./menu-aside.component.scss'],
 })
-export class AppComponent {
-  title = 'hris-maintenance-app';
+export class MenuAsideComponent implements OnInit {
+  rippleEffectsColor: string;
 
   menuSettings: Array<MenuConfiguration>;
 
+  constructor() {}
+
   ngOnInit() {
+    this.rippleEffectsColor = '#ccc';
     this.menuSettings = [
-      {
-        name: 'All',
-        route: 'all',
-        menuOptions: [],
-      },
       {
         name: 'Fields',
         route: 'fields',

@@ -25,6 +25,7 @@ import { FormsModule } from './container/maintenance-forms/components/forms.modu
 import { OthersModule } from './container/maintenance-others/others.module';
 import { MaintenanceReportsComponent } from './container/maintenance-reports/maintenance-reports.component';
 import { SharedModule } from './shared/shared.module';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     SharedModule,
+    PagesModule,
     FieldsModule,
     OthersModule,
     FormsModule,
