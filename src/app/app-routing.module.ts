@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+
 @NgModule({
-  imports: [],
+  imports: [RouterModule.forRoot([])],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

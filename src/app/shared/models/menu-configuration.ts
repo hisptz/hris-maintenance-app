@@ -1,7 +1,8 @@
 export interface MenuConfiguration {
     name: string;
     route: string;
-    menuOptions: Array<MenuOptions>
+    instruction: string;
+    menuOptions: Array<MenuOptions>;
 }
 
 export interface MenuOptions {

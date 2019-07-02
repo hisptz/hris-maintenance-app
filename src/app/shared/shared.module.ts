@@ -8,6 +8,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { SharedRoutingModule } from './shared-routing.module';
 import { MenuAsideComponent } from './components/menu-aside/menu-aside.component';
 import { FieldsComponent } from '../pages/components/fields/fields.component';
+import { MenuContainersComponent } from './components/menu-containers/menu-containers.component';
 
 @NgModule({
   declarations: [
@@ -15,8 +16,9 @@ import { FieldsComponent } from '../pages/components/fields/fields.component';
     MenuServicesComponent,
     MenuAsideComponent,
     FieldsComponent,
+    MenuContainersComponent,
   ],
   imports: [CommonModule, MatRippleModule, SharedRoutingModule],
   exports: [MenuHeaderComponent, MenuServicesComponent, MenuAsideComponent],
 })
-export class SharedModule {}
+export class SharedModule { }

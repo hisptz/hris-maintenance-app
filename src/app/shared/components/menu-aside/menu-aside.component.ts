@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MenuConfiguration } from '../../models/menu-configuration';
 
 @Component({
@@ -7,61 +7,12 @@ import { MenuConfiguration } from '../../models/menu-configuration';
   styleUrls: ['./menu-aside.component.scss'],
 })
 export class MenuAsideComponent implements OnInit {
+  @Input() menuSettings;
   rippleEffectsColor: string;
-
-  menuSettings: Array<MenuConfiguration>;
 
   constructor() {}
 
   ngOnInit() {
     this.rippleEffectsColor = '#ccc';
-    this.menuSettings = [
-      {
-        name: 'Fields',
-        route: 'fields',
-        menuOptions: [
-          {
-            name: 'Fields',
-            route: 'fieldItems',
-          },
-          {
-            name: 'Fields Group',
-            route: 'fieldGroups',
-          },
-          {
-            name: 'Fields Options',
-            route: 'fieldOptions',
-          },
-          {
-            name: 'Fields Group Set',
-            route: 'fieldGroupset',
-          },
-          {
-            name: 'Fields Options Group Set',
-            route: 'fieldOptionsGroupset',
-          },
-        ],
-      },
-      {
-        name: 'Reports',
-        route: 'reports',
-        menuOptions: [],
-      },
-      {
-        name: 'Forms',
-        route: 'forms',
-        menuOptions: [],
-      },
-      {
-        name: 'Organization Unit',
-        route: 'organizationUnits',
-        menuOptions: [],
-      },
-      {
-        name: 'Others',
-        route: 'others',
-        menuOptions: [],
-      },
-    ];
   }
 }
