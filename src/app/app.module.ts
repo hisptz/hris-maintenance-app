@@ -14,9 +14,6 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatRippleModule } from '@angular/material/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material';
-
-import { MaintenanceMenuComponent } from './components/maintenance-menu/maintenance-menu.component';
-
 import { AllMaintenanceOptionsComponent } from './container/all-maintenance-options/all-maintenance-options.component';
 import { MaintenanceFieldsComponent } from './container/maintenance-fields/maintenance-fields.component';
 import { MaintenanceFormsComponent } from './container/maintenance-forms/maintenance-forms.component';
@@ -32,7 +29,6 @@ import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
-    MaintenanceMenuComponent,
     AllMaintenanceOptionsComponent,
     MaintenanceFieldsComponent,
     MaintenanceFormsComponent,

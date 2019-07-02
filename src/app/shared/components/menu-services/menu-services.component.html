@@ -1,0 +1,22 @@
+<div class="maintenance-menu-container">
+  <button
+    tabindex="0"
+    type="button"
+    class="tab-menu-button"
+    *ngFor="let menuConfiguration of menuConfigurations; let i = index"
+    (click)="openMenuOptions(menuConfiguration)"
+  >
+    <div>
+      <div
+        matRipple
+        [matRippleColor]="rippleEffectsColor"
+        routerLink="/{{ menuConfiguration.route }}"
+        [ngClass]="{ active: menuConfiguration === menuConfig }"
+        routerLinkActive="active"
+        class="tab-menu-item"
+      >
+        {{ menuConfiguration.name }}
+      </div>
+    </div>
+  </button>
+</div>
