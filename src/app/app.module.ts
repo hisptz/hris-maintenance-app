@@ -16,7 +16,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material';
 
 import { MaintenanceMenuComponent } from './components/maintenance-menu/maintenance-menu.component';
-import { MaintenanceHeaderComponent } from './components/maintenance-header/maintenance-header.component';
 
 import { AllMaintenanceOptionsComponent } from './container/all-maintenance-options/all-maintenance-options.component';
 import { MaintenanceFieldsComponent } from './container/maintenance-fields/maintenance-fields.component';
@@ -28,6 +27,7 @@ import { OrgunitsModule } from './container/maintenance-orgunits/orgunits.module
 import { FormsModule } from './container/maintenance-forms/components/forms.module';
 import { OthersModule } from './container/maintenance-others/others.module';
 import { MaintenanceReportsComponent } from './container/maintenance-reports/maintenance-reports.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -38,11 +38,11 @@ import { MaintenanceReportsComponent } from './container/maintenance-reports/mai
     MaintenanceFormsComponent,
     MaintenanceOrgunitsComponent,
     MaintenanceOthersComponent,
-    MaintenanceHeaderComponent,
     MaintenanceReportsComponent,
   ],
   imports: [
     BrowserModule,
+    SharedModule,
     FieldsModule,
     OthersModule,
     FormsModule,
