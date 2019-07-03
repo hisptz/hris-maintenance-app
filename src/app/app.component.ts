@@ -16,6 +16,13 @@ export class AppComponent {
     this.rippleEffectsColor = '#ccc';
     this.menuSettings = [
       {
+        name: 'All',
+        route: 'all',
+        instruction:
+          'Create, update, view and delete data sets and custom forms. A data set is a collection of data elements for which data is entered.',
+        menuOptions: [],
+      },
+      {
         name: 'Fields',
         route: 'fields',
         instruction:

@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MenuConfiguration } from '../../models/menu-configuration';
+import {
+  MenuConfiguration,
+  MenuOptions,
+} from '../../models/menu-configuration';
 
 @Component({
   selector: 'app-menu-aside',
@@ -10,9 +13,15 @@ export class MenuAsideComponent implements OnInit {
   @Input() menuSettings;
   rippleEffectsColor: string;
 
+  menuOptions: MenuOptions;
+
   constructor() {}
 
   ngOnInit() {
     this.rippleEffectsColor = '#ccc';
+  }
+
+  openMenuItemsList = (options: MenuOptions) => {
+    this.menuOptions = options;
   }
 }

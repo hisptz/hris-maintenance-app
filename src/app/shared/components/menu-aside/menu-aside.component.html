@@ -4,7 +4,7 @@
       <div>
         <div class="left-bar" class="maintenance-left-menu-container-item">
           <div class="maintenance-left-menu-container-holder">
-            <div *ngFor="let menu of menuSettings[0].menuOptions">
+            <div *ngFor="let menu of menuSettings[0].menuOptions" (click)="openMenuItemsList(menu)">
               <span tabindex="0" class="maintenance-left-menu-span">
                 <div>
                   <div class="left-menu-item" matRipple [matRippleColor]="rippleEffectsColor"
