@@ -1,27 +1,20 @@
-import { Component } from '@angular/core';
-import { MenuConfiguration } from './shared/models/menu-configuration';
+import { Component, OnInit } from '@angular/core';
+import { MenuConfiguration } from 'src/app/shared/models/menu-configuration';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'app-fields',
+  templateUrl: './fields.component.html',
+  styleUrls: ['./fields.component.scss'],
 })
-export class AppComponent {
-  title = 'hris-maintenance-app';
+export class FieldsComponent implements OnInit {
+  menuSettings: Array<MenuConfiguration>;
   rippleEffectsColor: string;
 
-  menuSettings: Array<MenuConfiguration>;
+  constructor() { }
 
   ngOnInit() {
     this.rippleEffectsColor = '#ccc';
     this.menuSettings = [
-      {
-        name: 'All',
-        route: 'all',
-        instruction:
-          'Create, update, view and delete data sets and custom forms. A data set is a collection of data elements for which data is entered.',
-        menuOptions: [],
-      },
       {
         name: 'Fields',
         route: 'fields',

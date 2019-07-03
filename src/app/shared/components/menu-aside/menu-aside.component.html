@@ -1,0 +1,68 @@
+<main class="maintenance-left-menu-container">
+  <div>
+    <div>
+      <div>
+        <div class="left-bar" class="maintenance-left-menu-container-item">
+          <div class="maintenance-left-menu-container-holder">
+            <div *ngFor="let menu of menuSettings[0].menuOptions" (click)="openMenuItemsList(menu)">
+              <span tabindex="0" class="maintenance-left-menu-span">
+                <div>
+                  <div class="left-menu-item" matRipple [matRippleColor]="rippleEffectsColor"
+                    [routerLink]="['/' + menuSettings[0].route, menu.route ]" routerLinkActive="active"
+                    class="maintenance-left-menu-icon-text-representation">
+                    <i class="material-icons maintenance-left-menu-folder-icon">
+                      folder
+                    </i>
+                    <div>{{ menu.name }}</div>
+                  </div>
+                </div>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="maintenance-right-menu-container">
+    <div class="maintenance-left-menu-container-div">
+      <div *ngIf="isServiceOpened" class="row ml-1 mt-2">
+        <div *ngFor="let menuItem of menuSettings[0].menuOptions" class="maintenance-left-menu-list-container">
+          <div>
+            <div class="maintenance-left-menu-list-item">
+              <div class="title-div">
+                <span class="title">{{ menuItem.name }}</span>
+                <span style="color: rgba(0, 0, 0, 0.54); display: block; font-size: 14px;"></span>
+              </div>
+            </div>
+            <div class="description">
+              {{ menuSettings[0].instruction }}
+            </div>
+            <div class="operation-div">
+              <button tabindex="0" type="button" class="operations-button">
+                <div>
+                  <div class="operations-container">
+                    <span class="add-button">Add</span>
+                  </div>
+                  <span class="material-icons plus-button"></span>
+                </div>
+              </button>
+              <button tabindex="0" type="button" class="list-button">
+                <div>
+                  <div class="list-div">
+                    <span class="list-item">List</span>
+                  </div>
+                  <span class="material-icons list-icon"></span>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="isListOpened" class="row ml-3">
+        <div class="maintenance-left-menu-container-list">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
