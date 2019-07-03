@@ -25,7 +25,7 @@
   </div>
   <div class="maintenance-right-menu-container">
     <div class="maintenance-left-menu-container-div">
-      <div class="row ml-1 mt-2">
+      <div *ngIf="isServiceOpened" class="row ml-1 mt-2">
         <div *ngFor="let menuItem of menuSettings[0].menuOptions" class="maintenance-left-menu-list-container">
           <div>
             <div class="maintenance-left-menu-list-item">
@@ -58,9 +58,8 @@
           </div>
         </div>
       </div>
-      <div class="row ml-3">
+      <div *ngIf="isListOpened" class="row ml-3">
         <div class="maintenance-left-menu-container-list">
-          <p>Render Service List Of Items</p>
           <router-outlet></router-outlet>
         </div>
       </div>
