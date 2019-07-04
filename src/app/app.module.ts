@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 
 import {
@@ -36,6 +38,7 @@ import { FieldsModule } from './pages/components/fields/fields.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     SharedModule,
     PagesModule,
     FieldsModule,
