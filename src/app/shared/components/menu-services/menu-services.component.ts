@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { MenuConfiguration } from '../../models/menu-configuration';
+import { MenuConfiguration } from '../../../models/menu-configuration';
 
 @Component({
   selector: 'app-menu-services',

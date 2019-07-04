@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MenuConfiguration } from './shared/models/menu-configuration';
+import { MenuConfiguration } from './models/menu-configuration';
 
 @Component({
   selector: 'app-root',

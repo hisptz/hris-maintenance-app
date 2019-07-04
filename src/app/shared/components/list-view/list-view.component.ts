@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { MenuOptions, ItemList } from '../../models/menu-configuration';
+import { MenuOptions, ItemList } from '../../../models/menu-configuration';
 
 @Component({
   selector: 'app-list-view',

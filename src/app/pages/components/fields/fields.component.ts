@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuConfiguration } from 'src/app/shared/models/menu-configuration';
+import { MenuConfiguration } from 'src/app/models/menu-configuration';
+import { Fields } from 'src/app/models/fields.model';
+
+import { FieldsService } from '../../services/fields.service';
 
 @Component({
   selector: 'app-fields',
@@ -7,70 +10,22 @@ import { MenuConfiguration } from 'src/app/shared/models/menu-configuration';
   styleUrls: ['./fields.component.scss'],
 })
 export class FieldsComponent implements OnInit {
-  menuSettings: Array<MenuConfiguration>;
+  fieldsSettings: Array<Fields>;
+  errorMessage: ErrorMessage;
   rippleEffectsColor: string;
 
-  constructor() { }
+  constructor(private fieldsService: FieldsService) { }
 
   ngOnInit() {
+    this.fieldsService.getAllTheFields().subscribe(
+      (fields: Array<Fields>) => {
+        this.fieldsSettings = fields;
+      },
+      (error: ErrorMessage) => {
+        this.errorMessage = error;
+        console.error();
+      }
+    );
     this.rippleEffectsColor = '#ccc';
-    this.menuSettings = [
-      {
-        name: 'Fields',
-        route: 'fields',
-        instruction:
-          'Create, update, view and delete data sets and custom forms. A data set is a collection of data elements for which data is entered.',
-        menuOptions: [
-          {
-            name: 'Fields',
-            route: 'fieldItems',
-          },
-          {
-            name: 'Fields Group',
-            route: 'fieldGroups',
-          },
-          {
-            name: 'Fields Options',
-            route: 'fieldOptions',
-          },
-          {
-            name: 'Fields Group Set',
-            route: 'fieldGroupset',
-          },
-          {
-            name: 'Fields Options Group Set',
-            route: 'fieldOptionsGroupset',
-          },
-        ],
-      },
-      {
-        name: 'Reports',
-        route: 'reports',
-        instruction:
-          'Create, update, view and delete data sets and custom forms. A data set is a collection of data elements for which data is entered.',
-        menuOptions: [],
-      },
-      {
-        name: 'Forms',
-        route: 'forms',
-        instruction:
-          'Create, update, view and delete data sets and custom forms. A data set is a collection of data elements for which data is entered.',
-        menuOptions: [],
-      },
-      {
-        name: 'Organization Unit',
-        route: 'organizationUnits',
-        instruction:
-          'Create, update, view and delete data sets and custom forms. A data set is a collection of data elements for which data is entered.',
-        menuOptions: [],
-      },
-      {
-        name: 'Others',
-        route: 'others',
-        instruction:
-          'Create, update, view and delete data sets and custom forms. A data set is a collection of data elements for which data is entered.',
-        menuOptions: [],
-      },
-    ];
   }
 }

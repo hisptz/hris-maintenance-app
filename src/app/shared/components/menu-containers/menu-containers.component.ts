@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MenuOptions, ItemList } from '../../models/menu-configuration';
+import { MenuOptions, ItemList } from '../../../models/menu-configuration';
 
 @Component({
   selector: 'app-menu-containers',

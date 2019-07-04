@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import {
   MenuConfiguration,
   MenuOptions,
-} from '../../models/menu-configuration';
+} from '../../../models/menu-configuration';
 
 @Component({
   selector: 'app-menu-aside',
