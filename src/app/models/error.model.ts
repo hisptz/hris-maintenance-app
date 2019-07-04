@@ -9,8 +9,7 @@ interface ErrorMessage {
     error: Error;
 }
 interface Headers {
-    normalizedNames: NormalizedNames;
+    normalizedNames: {};
     lazyUpdate: null;
 }
-interface NormalizedNames { }
-interface Error { }
+
