@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { MenuConfiguration } from 'src/app/models/menu-configuration';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class FieldsService {
+export class MaintenanceService {
   baseURL = 'http://localhost:3000';
   dataURL = 'services';
   constructor(private httpClient: HttpClient) {}
