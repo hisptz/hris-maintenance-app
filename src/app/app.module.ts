@@ -16,9 +16,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material';
 import { AllMaintenanceOptionsComponent } from './container/all-maintenance-options/all-maintenance-options.component';
-import { MaintenanceOrgunitsComponent } from './container/maintenance-orgunits/maintenance-orgunits.component';
 import { MaintenanceOthersComponent } from './container/maintenance-others/maintenance-others.component';
-import { OrgunitsModule } from './container/maintenance-orgunits/orgunits.module';
 import { OthersModule } from './container/maintenance-others/others.module';
 import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
@@ -30,7 +28,6 @@ import { FormsModule } from './pages/components/forms/forms.module';
   declarations: [
     AppComponent,
     AllMaintenanceOptionsComponent,
-    MaintenanceOrgunitsComponent,
     MaintenanceOthersComponent,
   ],
   imports: [
@@ -42,7 +39,6 @@ import { FormsModule } from './pages/components/forms/forms.module';
     ReportsModule,
     FormsModule,
     OthersModule,
-    OrgunitsModule,
     AppRoutingModule,
     MatToolbarModule,
     NgbPaginationModule,
@@ -54,4 +50,4 @@ import { FormsModule } from './pages/components/forms/forms.module';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

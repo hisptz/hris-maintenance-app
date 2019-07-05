@@ -89,7 +89,28 @@
             "name": "Organization Unit",
             "route": "organizationUnits",
             "instruction": "Create, update, view and delete data sets and custom forms. A data set is a collection of data elements for which data is entered.",
-            "menuOptions": []
+            "menuOptions": [
+                {
+                    "name": "Organization Units",
+                    "route": "organizationUnits"
+                },
+                {
+                    "name": "Organization Unit Groups",
+                    "route": "orgunitsGroup"
+                },
+                {
+                    "name": "Organization Unit Groupsets",
+                    "route": "orgunitsGroupset"
+                },
+                {
+                    "name": "Hierarchy Operations",
+                    "route": "hierarchyOperations"
+                },
+                {
+                    "name": "Organization Units Levels",
+                    "route": "orgunitsLevel"
+                }
+            ]
         },
         {
             "name": "Others",
