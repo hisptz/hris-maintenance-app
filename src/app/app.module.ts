@@ -16,22 +16,20 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material';
 import { AllMaintenanceOptionsComponent } from './container/all-maintenance-options/all-maintenance-options.component';
-import { MaintenanceFormsComponent } from './container/maintenance-forms/maintenance-forms.component';
 import { MaintenanceOrgunitsComponent } from './container/maintenance-orgunits/maintenance-orgunits.component';
 import { MaintenanceOthersComponent } from './container/maintenance-others/maintenance-others.component';
 import { OrgunitsModule } from './container/maintenance-orgunits/orgunits.module';
-import { FormsModule } from './container/maintenance-forms/components/forms.module';
 import { OthersModule } from './container/maintenance-others/others.module';
 import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
 import { FieldsModule } from './pages/components/fields/fields.module';
 import { ReportsModule } from './pages/components/reports/reports.module';
+import { FormsModule } from './pages/components/forms/forms.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     AllMaintenanceOptionsComponent,
-    MaintenanceFormsComponent,
     MaintenanceOrgunitsComponent,
     MaintenanceOthersComponent,
   ],
@@ -42,8 +40,8 @@ import { ReportsModule } from './pages/components/reports/reports.module';
     PagesModule,
     FieldsModule,
     ReportsModule,
-    OthersModule,
     FormsModule,
+    OthersModule,
     OrgunitsModule,
     AppRoutingModule,
     MatToolbarModule,

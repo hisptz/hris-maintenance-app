@@ -78,7 +78,12 @@
             "name": "Forms",
             "route": "forms",
             "instruction": "Create, update, view and delete data sets and custom forms. A data set is a collection of data elements for which data is entered.",
-            "menuOptions": []
+            "menuOptions": [
+                {
+                    "name": "Forms",
+                    "route": "forms"
+                }
+            ]
         },
         {
             "name": "Organization Unit",
