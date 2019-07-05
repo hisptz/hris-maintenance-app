@@ -22,10 +22,10 @@ import { MaintenanceOthersComponent } from './container/maintenance-others/maint
 import { OrgunitsModule } from './container/maintenance-orgunits/orgunits.module';
 import { FormsModule } from './container/maintenance-forms/components/forms.module';
 import { OthersModule } from './container/maintenance-others/others.module';
-import { MaintenanceReportsComponent } from './container/maintenance-reports/maintenance-reports.component';
 import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
 import { FieldsModule } from './pages/components/fields/fields.module';
+import { ReportsModule } from './pages/components/reports/reports.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,6 @@ import { FieldsModule } from './pages/components/fields/fields.module';
     MaintenanceFormsComponent,
     MaintenanceOrgunitsComponent,
     MaintenanceOthersComponent,
-    MaintenanceReportsComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +41,7 @@ import { FieldsModule } from './pages/components/fields/fields.module';
     SharedModule,
     PagesModule,
     FieldsModule,
+    ReportsModule,
     OthersModule,
     FormsModule,
     OrgunitsModule,

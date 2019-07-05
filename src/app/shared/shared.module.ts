@@ -7,7 +7,6 @@ import { MenuServicesComponent } from './components/menu-services/menu-services.
 import { MatRippleModule } from '@angular/material/core';
 import { SharedRoutingModule } from './shared-routing.module';
 import { MenuAsideComponent } from './components/menu-aside/menu-aside.component';
-import { FieldsComponent } from '../pages/components/fields/fields.component';
 import { MenuContainersComponent } from './components/menu-containers/menu-containers.component';
 import { ListViewComponent } from './components/list-view/list-view.component';
 
@@ -19,7 +18,6 @@ import { MatPaginatorModule } from '@angular/material';
     MenuHeaderComponent,
     MenuServicesComponent,
     MenuAsideComponent,
-    FieldsComponent,
     MenuContainersComponent,
     ListViewComponent,
   ],

@@ -7,7 +7,39 @@
             "menuOptions": [
                 {
                     "name": "Fields",
-                    "route": "fieldItems"
+                    "route": "fieldItems",
+                    "items": [
+                        {
+                            "position": "1",
+                            "name": "Field Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        },
+                        {
+                            "position": "2",
+                            "name": "Field Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        },
+                        {
+                            "position": "3",
+                            "name": "Field Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        },
+                        {
+                            "position": "4",
+                            "name": "Field Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        },
+                        {
+                            "position": "5",
+                            "name": "Field Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        }
+                    ]
                 },
                 {
                     "name": "Fields Group",
@@ -31,7 +63,16 @@
             "name": "Reports",
             "route": "reports",
             "instruction": "Create, update, view and delete data sets and custom forms. A data set is a collection of data elements for which data is entered.",
-            "menuOptions": []
+            "menuOptions": [
+                {
+                    "name": "Standard Reports",
+                    "route": "standard-reports"
+                },
+                {
+                    "name": "SQL View Reports",
+                    "route": "sql-view-reports"
+                }
+            ]
         },
         {
             "name": "Forms",

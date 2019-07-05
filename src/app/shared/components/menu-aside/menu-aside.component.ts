@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MenuOptions } from '../../../models/menu-configuration';
 import { Fields } from 'src/app/models/fields.model';
-import { FieldsService } from 'src/app/pages/services/fields.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import * as _ from 'lodash';
+import { MaintenanceService } from 'src/app/pages/services/maintenance.service';
 
 @Component({
   selector: 'app-menu-aside',
@@ -12,6 +12,7 @@ import * as _ from 'lodash';
   styleUrls: ['./menu-aside.component.scss'],
 })
 export class MenuAsideComponent implements OnInit {
+  @Input() routerNavigation: string;
   fieldsSettings: Array<Fields>;
   rippleEffectsColor: string;
 
@@ -21,7 +22,7 @@ export class MenuAsideComponent implements OnInit {
   isServiceOpened = false;
 
   constructor(
-    private fieldsService: FieldsService,
+    private maintenanceService: MaintenanceService,
     private router: Router
   ) { }
 
@@ -39,11 +40,11 @@ export class MenuAsideComponent implements OnInit {
   }
 
   getFields = () => {
-    const fields$ = this.fieldsService.getAllTheFields();
-    this.fieldsService.getAllTheFields().subscribe(
+    const fields$ = this.maintenanceService.getAllTheFields();
+    this.maintenanceService.getAllTheFields().subscribe(
       (fields: Array<Fields>) => {
         const fieldsData = _.filter(fields, (field: Fields) => {
-          return field.route === _.last(_.split(this.router.url, '/'));
+          return field.route === this.routerNavigation;
         });
         fieldsData ? (this.fieldsSettings = fieldsData) : [];
       },
