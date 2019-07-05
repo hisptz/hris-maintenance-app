@@ -6,10 +6,16 @@ import { SharedModule } from '../shared/shared.module';
 import { ReportsComponent } from './components/reports/reports.component';
 import { FieldsComponent } from './components/fields/fields.component';
 import { FormsComponent } from './components/forms/forms.component';
+import { OrgunitsComponent } from './components/orgunits/orgunits.component';
 
 @NgModule({
-  declarations: [ReportsComponent, FieldsComponent, FormsComponent],
+  declarations: [
+    ReportsComponent,
+    FieldsComponent,
+    FormsComponent,
+    OrgunitsComponent,
+  ],
   imports: [CommonModule, SharedModule, PagesRoutingModule, MatRippleModule],
   exports: [],
 })
-export class PagesModule {}
+export class PagesModule { }
