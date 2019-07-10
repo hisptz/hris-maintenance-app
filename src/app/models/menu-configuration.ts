@@ -8,6 +8,7 @@ export interface MenuConfiguration {
 export interface MenuOptions {
   name: string;
   route: string;
+  items: Array<ItemList>;
 }
 
 export interface ItemList {
