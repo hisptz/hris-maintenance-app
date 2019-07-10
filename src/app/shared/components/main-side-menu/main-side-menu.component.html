@@ -1,0 +1,14 @@
+<div *ngFor="let menu of fieldsSettings[0].menuOptions" (click)="openMenuItemsList(menu, fieldsSettings[0])">
+  <span tabindex="0" class="maintenance-left-menu-span">
+    <div>
+      <div class="left-menu-item" matRipple [matRippleColor]="rippleEffectsColor"
+        [routerLink]="['/' + fieldsSettings[0].route, menu.route]" routerLinkActive="active"
+        class="maintenance-left-menu-icon-text-representation">
+        <i class="material-icons maintenance-left-menu-folder-icon">
+          folder
+        </i>
+        <div>{{ menu.name }}</div>
+      </div>
+    </div>
+  </span>
+</div>
