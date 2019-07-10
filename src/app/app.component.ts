@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { MenuConfiguration } from './models/menu-configuration';
+import { MenuConfiguration, MenuOptions } from './models/menu-configuration';
+import { MaintenanceService } from './pages/services/maintenance.service';
+import { Router } from '@angular/router';
+import { Fields } from './models/fields.model';
+
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-root',
@@ -7,77 +12,38 @@ import { MenuConfiguration } from './models/menu-configuration';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'hris-maintenance-app';
+  menuSettings: Array<Fields>;
   rippleEffectsColor: string;
+  menuOptions: Array<MenuOptions>;
+  errorMessage: ErrorMessage;
+  isListOpened = false;
+  isServiceOpened = false;
+  routerNavigation: string;
 
-  menuSettings: Array<MenuConfiguration>;
+  constructor(
+    private maintenanceService: MaintenanceService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
-    this.rippleEffectsColor = '#ccc';
-    this.menuSettings = [
-      {
-        name: 'All',
-        route: 'all',
-        instruction:
-          'Create, update, view and delete data sets and custom forms. A data set is a collection of data elements for which data is entered.',
-        menuOptions: [],
+    this.routerNavigation = _.last(_.split(this.router.url, '/'));
+    this.getFields();
+  }
+
+  getFields = () => {
+    this.maintenanceService.getAllTheFields().subscribe(
+      (fields: Array<Fields>) => {
+        const fieldsData = _.filter(fields, (field: Fields) => {
+          return field;
+          // return field.route === this.routerNavigation;
+        });
+        fieldsData ? (this.menuSettings = fieldsData) : [];
+        // console.log('MenuSettings::: ' + JSON.stringify(fieldsData));
       },
-      {
-        name: 'Fields',
-        route: 'fields',
-        instruction:
-          'Create, update, view and delete data sets and custom forms. A data set is a collection of data elements for which data is entered.',
-        menuOptions: [
-          {
-            name: 'Fields',
-            route: 'fieldItems',
-          },
-          {
-            name: 'Fields Group',
-            route: 'fieldGroups',
-          },
-          {
-            name: 'Fields Options',
-            route: 'fieldOptions',
-          },
-          {
-            name: 'Fields Group Set',
-            route: 'fieldGroupset',
-          },
-          {
-            name: 'Fields Options Group Set',
-            route: 'fieldOptionsGroupset',
-          },
-        ],
-      },
-      {
-        name: 'Reports',
-        route: 'reports',
-        instruction:
-          'Create, update, view and delete data sets and custom forms. A data set is a collection of data elements for which data is entered.',
-        menuOptions: [],
-      },
-      {
-        name: 'Forms',
-        route: 'forms',
-        instruction:
-          'Create, update, view and delete data sets and custom forms. A data set is a collection of data elements for which data is entered.',
-        menuOptions: [],
-      },
-      {
-        name: 'Organization Unit',
-        route: 'organizationUnits',
-        instruction:
-          'Create, update, view and delete data sets and custom forms. A data set is a collection of data elements for which data is entered.',
-        menuOptions: [],
-      },
-      {
-        name: 'Others',
-        route: 'others',
-        instruction:
-          'Create, update, view and delete data sets and custom forms. A data set is a collection of data elements for which data is entered.',
-        menuOptions: [],
-      },
-    ];
+      (error: ErrorMessage) => {
+        this.errorMessage = error;
+        console.error();
+      }
+    );
   }
 }

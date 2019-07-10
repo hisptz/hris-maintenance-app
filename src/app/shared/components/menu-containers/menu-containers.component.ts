@@ -8,7 +8,7 @@ import { MenuOptions, ItemList } from '../../../models/menu-configuration';
 })
 export class MenuContainersComponent implements OnInit {
 
-  menuOptions: Array<MenuOptions>;
+  // menuOptions: Array<MenuOptions>;
 
   constructor() { }
 

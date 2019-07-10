@@ -18,10 +18,11 @@ import { MatTabsModule } from '@angular/material';
 import { AllMaintenanceOptionsComponent } from './container/all-maintenance-options/all-maintenance-options.component';
 import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
-import { FieldsModule } from './pages/components/fields/fields.module';
-import { ReportsModule } from './pages/components/reports/reports.module';
-import { FormsModule } from './pages/components/forms/forms.module';
-import { OthersModule } from './pages/components/others/others.module';
+import { FieldsModule } from './pages/modules/fields/fields.module';
+import { ReportsModule } from './pages/modules/reports/reports.module';
+import { FormsModule } from './pages/modules/forms/forms.module';
+import { OthersModule } from './pages/modules/others/others.module';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [AppComponent, AllMaintenanceOptionsComponent],
@@ -41,6 +42,7 @@ import { OthersModule } from './pages/components/others/others.module';
     BrowserAnimationsModule,
     MatTabsModule,
     MatRippleModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

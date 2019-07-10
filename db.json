@@ -1,41 +1,29 @@
 {
     "services": [
         {
+            "name": "All",
+            "route": "all",
+            "instruction": "Create, update, view and delete data sets and custom forms. A data set is a collection of data elements for which data is entered.",
+            "menuOptions": []
+        },
+        {
             "name": "Fields",
             "route": "fields",
             "instruction": "Create, update, view and delete data sets and custom forms. A data set is a collection of data elements for which data is entered.",
             "menuOptions": [
                 {
                     "name": "Fields",
-                    "route": "fieldItems",
+                    "route": "fieldsItems",
                     "items": [
                         {
                             "position": "1",
-                            "name": "Field Placeholder",
+                            "name": "Field Name Placeholder",
                             "access": "Public View/Edit",
                             "lastUpdated": "July 3, 2019"
                         },
                         {
                             "position": "2",
-                            "name": "Field Placeholder",
-                            "access": "Public View/Edit",
-                            "lastUpdated": "July 3, 2019"
-                        },
-                        {
-                            "position": "3",
-                            "name": "Field Placeholder",
-                            "access": "Public View/Edit",
-                            "lastUpdated": "July 3, 2019"
-                        },
-                        {
-                            "position": "4",
-                            "name": "Field Placeholder",
-                            "access": "Public View/Edit",
-                            "lastUpdated": "July 3, 2019"
-                        },
-                        {
-                            "position": "5",
-                            "name": "Field Placeholder",
+                            "name": "Field Name Placeholder",
                             "access": "Public View/Edit",
                             "lastUpdated": "July 3, 2019"
                         }
@@ -43,19 +31,75 @@
                 },
                 {
                     "name": "Fields Group",
-                    "route": "fieldGroups"
+                    "route": "fieldsGroups",
+                    "items": [
+                        {
+                            "position": "1",
+                            "name": "Field Group Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        },
+                        {
+                            "position": "2",
+                            "name": "Field Group Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        }
+                    ]
                 },
                 {
                     "name": "Fields Options",
-                    "route": "fieldOptions"
+                    "route": "fieldsOptions",
+                    "items": [
+                        {
+                            "position": "1",
+                            "name": "Field Group Option Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        },
+                        {
+                            "position": "2",
+                            "name": "Field Group Option Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        }
+                    ]
                 },
                 {
                     "name": "Fields Group Set",
-                    "route": "fieldGroupset"
+                    "route": "fieldsGroupset",
+                    "items": [
+                        {
+                            "position": "1",
+                            "name": "Field Group Set Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        },
+                        {
+                            "position": "2",
+                            "name": "Field Group Set Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        }
+                    ]
                 },
                 {
                     "name": "Fields Options Group Set",
-                    "route": "fieldOptionsGroupset"
+                    "route": "fieldsOptionsGroupset",
+                    "items": [
+                        {
+                            "position": "1",
+                            "name": "Fields Options Group Set Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        },
+                        {
+                            "position": "2",
+                            "name": "Fields Options Group Set Name Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        }
+                    ]
                 }
             ]
         },
