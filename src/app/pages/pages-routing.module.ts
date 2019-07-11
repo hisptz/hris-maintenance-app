@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FieldsModule } from './modules/fields/fields.module';
 import { RouterModule, Routes } from '@angular/router';
-import { AllMaintenanceOptionsComponent } from '../container/all-maintenance-options/all-maintenance-options.component';
 import { FieldsComponent } from './modules/fields/fields.component';
 import { ReportsComponent } from './modules/reports/reports.component';
 import { FormsComponent } from './modules/forms/forms.component';
@@ -11,10 +10,12 @@ import { OthersModule } from './modules/others/others.module';
 import { ReportsModule } from './modules/reports/reports.module';
 import { OrgunitsModule } from './modules/orgunits/orgunits.module';
 import { FormsModule } from './modules/forms/forms.module';
+import { HomeModule } from './modules/home/home.module';
+import { HomeComponent } from './modules/home/home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'all', pathMatch: 'full' },
-  { path: 'all', component: AllMaintenanceOptionsComponent },
+  { path: 'all', component: HomeComponent },
   { path: 'fields', component: FieldsComponent },
   { path: 'reports', component: ReportsComponent },
   { path: 'forms', component: FormsComponent },
@@ -31,6 +32,7 @@ const routes: Routes = [
     ReportsModule,
     OrgunitsModule,
     FormsModule,
+    HomeModule
   ],
 })
 export class PagesRoutingModule {}
