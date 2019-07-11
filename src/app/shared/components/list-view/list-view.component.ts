@@ -4,7 +4,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MenuOptions, ItemList } from '../../../models/menu-configuration';
 import { MaintenanceService } from 'src/app/pages/services/maintenance.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Fields } from 'src/app/models/fields.model';
 
 import * as _ from 'lodash';
 import { MainContentAreaComponent } from '../main-content-area/main-content-area.component';
@@ -41,9 +40,6 @@ export class ListViewComponent implements OnInit {
     this.rippleColor = '#eee';
     this.isLoaded = false;
     this.isLoading = true;
-    const queryParams = this.activatedRoute.snapshot.queryParams;
-    const routeParams = this.activatedRoute.snapshot.params;
-
     this.activatedRoute.params.subscribe(params => {
       this.isLoaded = false;
       this.isLoading = true;

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Fields } from 'src/app/models/fields.model';
 import * as _ from 'lodash';
+import { MenuSetting } from 'src/app/models/menu-setting.model';
+
+
 
 @Component({
   selector: 'app-fields',
@@ -10,7 +12,7 @@ import * as _ from 'lodash';
   styleUrls: ['./fields.component.scss'],
 })
 export class FieldsComponent implements OnInit {
-  fieldsSettings: Array<Fields>;
+  serviceSettings: Array<MenuSetting>;
   errorMessage: ErrorMessage;
   rippleEffectsColor: string;
   routerNavigation: string;
@@ -20,8 +22,5 @@ export class FieldsComponent implements OnInit {
   ngOnInit() {
     this.rippleEffectsColor = '#ccc';
     this.routerNavigation = _.last(_.split(this.router.url, '/'));
-
-    const queryParams = this.activatedRoute.snapshot.queryParams;
-    const routeParams = this.activatedRoute.snapshot.params;
   }
 }

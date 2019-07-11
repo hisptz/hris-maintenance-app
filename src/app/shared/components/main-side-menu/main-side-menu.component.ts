@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Fields } from 'src/app/models/fields.model';
 import { MenuOptions } from 'src/app/models/menu-configuration';
+import { MenuSetting } from 'src/app/models/menu-setting.model';
 
 @Component({
   selector: 'app-main-side-menu',
@@ -9,7 +9,7 @@ import { MenuOptions } from 'src/app/models/menu-configuration';
 })
 export class MainSideMenuComponent implements OnInit {
 
-  @Input() fieldsSettings: Array<Fields>;
+  @Input() serviceSettings: Array<MenuSetting>;
   @Input() menuOptions: Array<MenuOptions>;
 
   rippleEffectsColor: string;

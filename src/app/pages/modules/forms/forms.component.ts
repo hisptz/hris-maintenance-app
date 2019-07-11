@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Fields } from 'src/app/models/fields.model';
 import { Router } from '@angular/router';
 
 import * as _ from 'lodash';
+import { MenuSetting } from 'src/app/models/menu-setting.model';
 
 @Component({
   selector: 'app-forms',
@@ -12,7 +12,7 @@ import * as _ from 'lodash';
 })
 export class FormsComponent implements OnInit {
   formsSettings$: Observable<{}>;
-  formsSettings: Array<Fields>;
+  formsSettings: Array<MenuSetting>;
   errorMessage: ErrorMessage;
   rippleEffectsColor: string;
   routerNavigation: string;

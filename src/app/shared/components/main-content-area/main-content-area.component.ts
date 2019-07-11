@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuOptions, ItemList } from 'src/app/models/menu-configuration';
-import { Fields } from 'src/app/models/fields.model';
 import { MaintenanceService } from 'src/app/pages/services/maintenance.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import * as _ from 'lodash';
-import { URLParams } from 'src/app/models/url-params.model';
+import { MenuSetting } from 'src/app/models/menu-setting.model';
 
 @Component({
   selector: 'app-main-content-area',
@@ -16,7 +15,7 @@ export class MainContentAreaComponent implements OnInit {
   menuOptionsData: Array<MenuOptions>;
   errorMessage: ErrorMessage;
   routerNavigation: string;
-  fieldsSettings: Array<Fields>;
+  serviceSettings: Array<MenuSetting>;
   constructor(
     private maintenanceService: MaintenanceService,
     private router: Router,
@@ -32,9 +31,9 @@ export class MainContentAreaComponent implements OnInit {
 
   getFieldsItemList = (routerNav: Params) => {
     this.maintenanceService.getAllTheFields().subscribe(
-      (fields: Array<Fields>) => {
+      (fields: Array<MenuSetting>) => {
         if (fields) {
-          _.forEach(fields, (field: Fields) => {
+          _.forEach(fields, (field: MenuSetting) => {
             if (field) {
               const menuOption: Array<MenuOptions> = _.filter(
                 field.menuOptions,
