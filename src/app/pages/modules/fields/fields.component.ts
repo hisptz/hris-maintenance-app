@@ -10,13 +10,12 @@ import * as _ from 'lodash';
   styleUrls: ['./fields.component.scss'],
 })
 export class FieldsComponent implements OnInit {
-  fieldsSettings$: Observable<{}>;
   fieldsSettings: Array<Fields>;
   errorMessage: ErrorMessage;
   rippleEffectsColor: string;
   routerNavigation: string;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.rippleEffectsColor = '#ccc';
@@ -24,6 +23,5 @@ export class FieldsComponent implements OnInit {
 
     const queryParams = this.activatedRoute.snapshot.queryParams;
     const routeParams = this.activatedRoute.snapshot.params;
-
   }
 }
