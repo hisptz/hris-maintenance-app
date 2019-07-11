@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Fields } from 'src/app/models/fields.model';
 import { MenuOptions } from 'src/app/models/menu-configuration';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { MaintenanceService } from 'src/app/pages/services/maintenance.service';
@@ -7,6 +6,7 @@ import { MaintenanceService } from 'src/app/pages/services/maintenance.service';
 import * as _ from 'lodash';
 import { URLParams } from 'src/app/models/url-params.model';
 import { QueryParams } from 'src/app/models/query-params.model';
+import { MenuSetting } from 'src/app/models/menu-setting.model';
 
 @Component({
   selector: 'app-main-content-container',
@@ -15,7 +15,7 @@ import { QueryParams } from 'src/app/models/query-params.model';
 })
 export class MainContentContainerComponent implements OnInit {
   @Input() routerNavigation: string;
-  fieldsSettings: Array<Fields>;
+  serviceSettings: Array<MenuSetting>;
   rippleEffectsColor: string;
 
   menuOptions: Array<MenuOptions>;
@@ -53,13 +53,13 @@ export class MainContentContainerComponent implements OnInit {
 
   getFields = (urlParams: Array<URLParams>) => {
     this.maintenanceService.getAllTheFields().subscribe(
-      (fields: Array<Fields>) => {
-        const fieldsData = _.filter(fields, (field: Fields) => {
+      (fields: Array<MenuSetting>) => {
+        const fieldsData = _.filter(fields, (field: MenuSetting) => {
           if (field.route) {
             return field.route === urlParams[0].path;
           }
         });
-        fieldsData ? (this.fieldsSettings = fieldsData) : [];
+        fieldsData ? (this.serviceSettings = fieldsData) : this.serviceSettings = [];
       },
       (error: ErrorMessage) => {
         this.errorMessage = error;

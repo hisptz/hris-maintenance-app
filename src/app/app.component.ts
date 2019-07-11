@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { MenuConfiguration, MenuOptions } from './models/menu-configuration';
 import { MaintenanceService } from './pages/services/maintenance.service';
 import { Router } from '@angular/router';
-import { Fields } from './models/fields.model';
 
 import * as _ from 'lodash';
+import { MenuSetting } from './models/menu-setting.model';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,7 @@ import * as _ from 'lodash';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  menuSettings: Array<Fields>;
+  menuSettings: Array<MenuSetting>;
   rippleEffectsColor: string;
   menuOptions: Array<MenuOptions>;
   errorMessage: ErrorMessage;
@@ -32,7 +32,7 @@ export class AppComponent {
 
   getFields = () => {
     this.maintenanceService.getAllTheFields().subscribe(
-      (fields: Array<Fields>) => {
+      (fields: Array<MenuSetting>) => {
         this.menuSettings = fields;
       },
       (error: ErrorMessage) => {

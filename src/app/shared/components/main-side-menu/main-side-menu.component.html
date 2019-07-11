@@ -1,5 +1,5 @@
 <div
-  *ngFor="let menu of fieldsSettings[0].menuOptions"
+  *ngFor="let menu of serviceSettings[0].menuOptions"
   (click)="openMenuItemsList(menu)"
 >
   <span tabindex="0" class="maintenance-left-menu-span">
@@ -8,7 +8,7 @@
         class="left-menu-item"
         matRipple
         [matRippleColor]="rippleEffectsColor"
-        [routerLink]="['/' + fieldsSettings[0].route, menu.route]"
+        [routerLink]="['/' + serviceSettings[0].route, menu.route]"
         routerLinkActive="active"
         class="maintenance-left-menu-icon-text-representation"
       >
