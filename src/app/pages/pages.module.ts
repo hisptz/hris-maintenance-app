@@ -8,7 +8,7 @@ import { FieldsComponent } from './modules/fields/fields.component';
 import { FormsComponent } from './modules/forms/forms.component';
 import { OrgunitsComponent } from './modules/orgunits/orgunits.component';
 import { OthersComponent } from './modules/others/others.component';
-// import { MenuContainerComponent } from '../shared/components/menu-container/menu-container.component';
+import { HomeComponent } from './modules/home/home.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +17,7 @@ import { OthersComponent } from './modules/others/others.component';
     FormsComponent,
     OrgunitsComponent,
     OthersComponent,
+    HomeComponent
     // MenuContainerComponent,
   ],
   imports: [CommonModule, SharedModule, PagesRoutingModule, MatRippleModule],

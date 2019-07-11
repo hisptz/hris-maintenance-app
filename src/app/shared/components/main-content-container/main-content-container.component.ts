@@ -16,6 +16,8 @@ import { MenuSetting } from 'src/app/models/menu-setting.model';
 export class MainContentContainerComponent implements OnInit {
   @Input() routerNavigation: string;
   serviceSettings: Array<MenuSetting>;
+  homeSettings: Array<MenuSetting>;
+
   rippleEffectsColor: string;
 
   menuOptions: Array<MenuOptions>;
@@ -49,17 +51,20 @@ export class MainContentContainerComponent implements OnInit {
     this.menuOptions = options;
     this.isListOpened = true;
     this.isServiceOpened = false;
+    console.log('MENU ITEM::: ' + JSON.stringify(options));
   }
 
   getFields = (urlParams: Array<URLParams>) => {
     this.maintenanceService.getAllTheFields().subscribe(
       (fields: Array<MenuSetting>) => {
-        const fieldsData = _.filter(fields, (field: MenuSetting) => {
-          if (field.route) {
+        if (urlParams[0].path === 'all') {
+          fields ? (this.homeSettings = fields) : this.homeSettings = [];
+        } else {
+          const fieldsData = _.filter(fields, (field: MenuSetting) => {
             return field.route === urlParams[0].path;
-          }
-        });
-        fieldsData ? (this.serviceSettings = fieldsData) : this.serviceSettings = [];
+          });
+          fieldsData ? (this.serviceSettings = fieldsData) : this.serviceSettings = [];
+        }
       },
       (error: ErrorMessage) => {
         this.errorMessage = error;
