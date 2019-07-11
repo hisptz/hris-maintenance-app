@@ -11,6 +11,7 @@
         matRipple
         [matRippleColor]="rippleEffectsColor"
         routerLink="/{{ menuConfiguration.route }}"
+        [queryParams]="{ open: true }"
         [ngClass]="{ active: menuConfiguration === menuConfig }"
         routerLinkActive="active"
         class="tab-menu-item"
