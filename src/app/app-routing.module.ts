@@ -7,6 +7,7 @@ const routes: Routes = [];
     RouterModule.forRoot(routes, {
       useHash: true,
       preloadingStrategy: PreloadAllModules,
+      enableTracing: false
     }),
   ],
   exports: [RouterModule],
