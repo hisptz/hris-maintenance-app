@@ -3,6 +3,8 @@
 [![Build Status](https://travis-ci.org/hisptz/hris-maintenance-app.svg?branch=master)](https://travis-ci.org/hisptz/hris-maintenance-app)
 <a href="https://codeclimate.com/github/hisptz/hris-maintenance-app/maintainability"><img src="https://api.codeclimate.com/v1/badges/cd6284eddaceed43922f/maintainability" /></a>
 <a href="https://codeclimate.com/github/hisptz/hris-maintenance-app/test_coverage"><img src="https://api.codeclimate.com/v1/badges/cd6284eddaceed43922f/test_coverage" /></a>
+[![Known Vulnerabilities](https://snyk.io/test/github/hisptz/hris-maintenance-app/badge.svg)](https://snyk.io/test/github/hisptz/hris-maintenance-app)
+
 
 ## Introduction
 
