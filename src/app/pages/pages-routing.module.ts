@@ -13,6 +13,7 @@ import { OrgunitsModule } from './modules/orgunits/orgunits.module';
 import { FormsModule } from './modules/forms/forms.module';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'all', pathMatch: 'full' },
   { path: 'all', component: AllMaintenanceOptionsComponent },
   { path: 'fields', component: FieldsComponent },
   { path: 'reports', component: ReportsComponent },
