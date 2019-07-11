@@ -5,6 +5,7 @@ import { MaintenanceService } from 'src/app/pages/services/maintenance.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import * as _ from 'lodash';
+import { URLParams } from 'src/app/models/url-params.model';
 
 @Component({
   selector: 'app-main-content-area',

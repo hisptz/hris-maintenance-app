@@ -5,6 +5,8 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { MaintenanceService } from 'src/app/pages/services/maintenance.service';
 
 import * as _ from 'lodash';
+import { URLParams } from 'src/app/models/url-params.model';
+import { QueryParams } from 'src/app/models/query-params.model';
 
 @Component({
   selector: 'app-main-content-container',
@@ -18,8 +20,8 @@ export class MainContentContainerComponent implements OnInit {
 
   menuOptions: Array<MenuOptions>;
   errorMessage: ErrorMessage;
-  isListOpened = false;
-  isServiceOpened = false;
+  isListOpened: boolean;
+  isServiceOpened: boolean;
   rippleColor: string;
 
   constructor(
@@ -34,7 +36,13 @@ export class MainContentContainerComponent implements OnInit {
     this.isServiceOpened = true;
     this.rippleColor = '#eee';
     this.routerNavigation = _.last(_.split(this.router.url, '/'));
-    this.getFields();
+    this.activatedRoute.url.subscribe((url: Array<URLParams>) => {
+      this.getFields(url);
+    });
+
+    this.activatedRoute.queryParams.subscribe((queryParams: QueryParams) => {
+      this.isServiceOpened = queryParams.open;
+    });
   }
 
   openMenuItemsList = (options: Array<MenuOptions>, another) => {
@@ -43,12 +51,12 @@ export class MainContentContainerComponent implements OnInit {
     this.isServiceOpened = false;
   }
 
-  getFields = () => {
+  getFields = (urlParams: Array<URLParams>) => {
     this.maintenanceService.getAllTheFields().subscribe(
       (fields: Array<Fields>) => {
         const fieldsData = _.filter(fields, (field: Fields) => {
           if (field.route) {
-            return field.route === this.routerNavigation;
+            return field.route === urlParams[0].path;
           }
         });
         fieldsData ? (this.fieldsSettings = fieldsData) : [];
