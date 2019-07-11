@@ -14,17 +14,13 @@ export class MainSideMenuComponent implements OnInit {
 
   rippleEffectsColor: string;
 
-
   constructor() { }
 
   ngOnInit() {
     this.rippleEffectsColor = '#ccc';
-    console.log('CAINAM OPTIONS ONINIT::: ' + JSON.stringify(this.menuOptions))
   }
 
-  openMenuItemsList = (options: Array<MenuOptions>, another) => {
+  openMenuItemsList = (options: Array<MenuOptions>) => {
     this.menuOptions = options;
-    console.log('CAINAM OPTIONS::: ' + JSON.stringify(options))
   }
-
 }

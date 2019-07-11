@@ -29,6 +29,7 @@ export class ListViewComponent implements OnInit {
     'name',
     'access',
     'lastUpdated',
+    'menu'
   ];
 
   menuItemList: Array<ItemList>;

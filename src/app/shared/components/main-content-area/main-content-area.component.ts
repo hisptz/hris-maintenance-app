@@ -26,23 +26,7 @@ export class MainContentAreaComponent implements OnInit {
     this.routerNavigation = _.last(_.split(this.router.url, '/'));
     this.activatedRoute.params.subscribe((routeParam: Params) => {
       this.getFieldsItemList(routeParam);
-      this.getFields(routeParam);
     });
-  }
-
-  getFields = (param: Params) => {
-    this.maintenanceService.getAllTheFields().subscribe(
-      (fields: Array<Fields>) => {
-        const fieldsData = _.filter(fields, (field: Fields) => {
-          return field.route === param.name;
-        });
-        fieldsData ? (this.fieldsSettings = fieldsData) : [];
-      },
-      (error: ErrorMessage) => {
-        this.errorMessage = error;
-        console.error();
-      }
-    );
   }
 
   getFieldsItemList = (routerNav: Params) => {
@@ -56,8 +40,6 @@ export class MainContentAreaComponent implements OnInit {
                 (option: MenuOptions) => {
                   return (
                     _.has(option, 'items') && option.route === routerNav.name
-                    // _.has(option, 'items') &&
-                    // option.route === this.routerNavigation
                   );
                 }
               );

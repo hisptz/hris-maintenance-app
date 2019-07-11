@@ -33,12 +33,7 @@ export class AppComponent {
   getFields = () => {
     this.maintenanceService.getAllTheFields().subscribe(
       (fields: Array<Fields>) => {
-        const fieldsData = _.filter(fields, (field: Fields) => {
-          return field;
-          // return field.route === this.routerNavigation;
-        });
-        fieldsData ? (this.menuSettings = fieldsData) : [];
-        // console.log('MenuSettings::: ' + JSON.stringify(fieldsData));
+        this.menuSettings = fields;
       },
       (error: ErrorMessage) => {
         this.errorMessage = error;
