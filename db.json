@@ -26,6 +26,66 @@
                             "name": "Field Name Placeholder",
                             "access": "Public View/Edit",
                             "lastUpdated": "July 3, 2019"
+                        },
+                        {
+                            "position": "1",
+                            "name": "Field Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        },
+                        {
+                            "position": "2",
+                            "name": "Field Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        },
+                        {
+                            "position": "1",
+                            "name": "Field Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        },
+                        {
+                            "position": "2",
+                            "name": "Field Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        },
+                        {
+                            "position": "1",
+                            "name": "Field Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        },
+                        {
+                            "position": "2",
+                            "name": "Field Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        },
+                        {
+                            "position": "1",
+                            "name": "Field Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        },
+                        {
+                            "position": "2",
+                            "name": "Field Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        },
+                        {
+                            "position": "1",
+                            "name": "Field Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        },
+                        {
+                            "position": "2",
+                            "name": "Field Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
                         }
                     ]
                 },
@@ -110,11 +170,39 @@
             "menuOptions": [
                 {
                     "name": "Standard Reports",
-                    "route": "standard-reports"
+                    "route": "standardReports",
+                    "items": [
+                        {
+                            "position": "1",
+                            "name": "Standard Report Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        },
+                        {
+                            "position": "2",
+                            "name": "Standard Report Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        }
+                    ]
                 },
                 {
                     "name": "SQL View Reports",
-                    "route": "sql-view-reports"
+                    "route": "sqlViewReports",
+                    "items": [
+                        {
+                            "position": "1",
+                            "name": "SQL View Report Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        },
+                        {
+                            "position": "2",
+                            "name": "SQL View Report Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        }
+                    ]
                 }
             ]
         },
@@ -125,7 +213,21 @@
             "menuOptions": [
                 {
                     "name": "Forms",
-                    "route": "forms"
+                    "route": "formsMenu",
+                    "items": [
+                        {
+                            "position": "1",
+                            "name": "Forms Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        },
+                        {
+                            "position": "2",
+                            "name": "Forms Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        }
+                    ]
                 }
             ]
         },
@@ -136,23 +238,93 @@
             "menuOptions": [
                 {
                     "name": "Organization Units",
-                    "route": "organizationUnits"
+                    "route": "orgunits",
+                    "items": [
+                        {
+                            "position": "1",
+                            "name": "Organization Units Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        },
+                        {
+                            "position": "2",
+                            "name": "Organization Units Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        }
+                    ]
                 },
                 {
                     "name": "Organization Unit Groups",
-                    "route": "orgunitsGroup"
+                    "route": "orgunitsGroup",
+                    "items": [
+                        {
+                            "position": "1",
+                            "name": "Organization Unit Groups Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        },
+                        {
+                            "position": "2",
+                            "name": "Organization Unit Groups Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        }
+                    ]
                 },
                 {
                     "name": "Organization Unit Groupsets",
-                    "route": "orgunitsGroupset"
+                    "route": "orgunitsGroupset",
+                    "items": [
+                        {
+                            "position": "1",
+                            "name": "Organization Unit Groupsets Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        },
+                        {
+                            "position": "2",
+                            "name": "Organization Unit Groupsets Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        }
+                    ]
                 },
                 {
                     "name": "Hierarchy Operations",
-                    "route": "hierarchyOperations"
+                    "route": "hierarchyOperations",
+                    "items": [
+                        {
+                            "position": "1",
+                            "name": "Hierarchy Operations Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        },
+                        {
+                            "position": "2",
+                            "name": "Hierarchy Operations Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        }
+                    ]
                 },
                 {
                     "name": "Organization Units Levels",
-                    "route": "orgunitsLevel"
+                    "route": "orgunitsLevel",
+                    "items": [
+                        {
+                            "position": "1",
+                            "name": "Organization Units Levels Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        },
+                        {
+                            "position": "2",
+                            "name": "Organization Units Levels Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        }
+                    ]
                 }
             ]
         },
@@ -163,7 +335,21 @@
             "menuOptions": [
                 {
                     "name": "Others",
-                    "route": "others"
+                    "route": "othersMenu",
+                    "items": [
+                        {
+                            "position": "1",
+                            "name": "Others Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        },
+                        {
+                            "position": "2",
+                            "name": "Others Name Placeholder",
+                            "access": "Public View/Edit",
+                            "lastUpdated": "July 3, 2019"
+                        }
+                    ]
                 }
             ]
         }

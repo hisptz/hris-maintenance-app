@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { FieldsModule } from './modules/fields/fields.module';
 import { RouterModule, Routes } from '@angular/router';
-// import { MenuContainerComponent } from '../shared/components/menu-container/menu-container.component';
 import { AllMaintenanceOptionsComponent } from '../container/all-maintenance-options/all-maintenance-options.component';
 import { FieldsComponent } from './modules/fields/fields.component';
 import { ReportsComponent } from './modules/reports/reports.component';
 import { FormsComponent } from './modules/forms/forms.component';
 import { OrgunitsComponent } from './modules/orgunits/orgunits.component';
 import { OthersComponent } from './modules/others/others.component';
+import { OthersModule } from './modules/others/others.module';
+import { ReportsModule } from './modules/reports/reports.module';
+import { OrgunitsModule } from './modules/orgunits/orgunits.module';
+import { FormsModule } from './modules/forms/forms.module';
 
 const routes: Routes = [
   { path: 'all', component: AllMaintenanceOptionsComponent },
@@ -20,6 +23,13 @@ const routes: Routes = [
 
 @NgModule({
   imports: [FieldsModule, RouterModule.forChild(routes)],
-  exports: [RouterModule, FieldsModule],
+  exports: [
+    RouterModule,
+    FieldsModule,
+    OthersModule,
+    ReportsModule,
+    OrgunitsModule,
+    FormsModule,
+  ],
 })
 export class PagesRoutingModule {}

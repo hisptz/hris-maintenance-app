@@ -54,12 +54,12 @@
               <button tabindex="0" type="button" class="operations-button">
                 <div>
                   <div class="operations-container">
-                    <span class="add-button">Add</span>
+                    <span matRipple class="add-button">Add</span>
                   </div>
                   <span class="material-icons plus-button"></span>
                 </div>
               </button>
-              <button tabindex="0" type="button" class="list-button">
+              <button [routerLink]="['/' + fieldsSettings[0].route, menuItem.route]" (click)="openMenuItemsList(menuItem, fieldsSettings[0])" tabindex="0" type="button" class="list-button">
                 <div>
                   <div class="list-div">
                     <span class="list-item">List</span>
