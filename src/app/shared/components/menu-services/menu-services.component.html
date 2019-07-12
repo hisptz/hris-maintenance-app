@@ -3,7 +3,7 @@
     tabindex="0"
     type="button"
     class="tab-menu-button"
-    *ngFor="let menuConfiguration of menuConfigurations; let i = index"
+    *ngFor="let menuConfiguration of menuConfigurations"
     (click)="openMenuOptions(menuConfiguration)"
   >
     <div>
@@ -11,9 +11,9 @@
         matRipple
         [matRippleColor]="rippleEffectsColor"
         routerLink="/{{ menuConfiguration.route }}"
-        [queryParams]="{ open: true }"
         [ngClass]="{ active: menuConfiguration === menuConfig }"
         routerLinkActive="active"
+        [queryParams]="{ open: true }"
         class="tab-menu-item"
       >
         {{ menuConfiguration.name }}
