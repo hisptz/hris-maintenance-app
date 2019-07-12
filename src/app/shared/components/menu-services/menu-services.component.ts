@@ -9,6 +9,7 @@ import { MenuConfiguration } from '../../../models/menu-configuration';
 export class MenuServicesComponent implements OnInit {
   @Input() menuConfigurations: Array<MenuConfiguration>;
   menuConfig: MenuConfiguration;
+  isActive: boolean;
   rippleEffectsColor: string;
 
   constructor() {}
@@ -19,5 +20,6 @@ export class MenuServicesComponent implements OnInit {
 
   openMenuOptions = (menuConfiguration: MenuConfiguration) => {
     this.menuConfig = menuConfiguration;
+    this.isActive = true;
   }
 }

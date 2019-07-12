@@ -40,6 +40,7 @@ export class MainContentContainerComponent implements OnInit {
     this.routerNavigation = _.last(_.split(this.router.url, '/'));
     this.activatedRoute.url.subscribe((url: Array<URLParams>) => {
       this.getFields(url);
+      this.isListOpened = true;
     });
 
     this.activatedRoute.queryParams.subscribe((queryParams: QueryParams) => {
@@ -51,7 +52,6 @@ export class MainContentContainerComponent implements OnInit {
     this.menuOptions = options;
     this.isListOpened = true;
     this.isServiceOpened = false;
-    console.log('MENU ITEM::: ' + JSON.stringify(options));
   }
 
   getFields = (urlParams: Array<URLParams>) => {
