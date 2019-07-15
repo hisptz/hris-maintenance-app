@@ -10,6 +10,11 @@
 
 [HRIS4](http://hrhis.moh.go.tz) Maintenance APP is the Micro-service for the gigantic [HRIS4](http://hrhis.moh.go.tz) system that will manage metadata for other services as well as all forms of reports i.e Standard Report and SQL View Report. Development Team from [UDSM](http://www.udsm.ac.tz) develop and maintain the micro-services that constitute the HRIS4 to ensure visual and usability consistency of the HRIS4 system.
 
+## Installation
+In order to run successfully HRIS Maintenance app: Install the following dependency(s) [Concurrently](https://www.npmjs.com/package/concurrently)
+> npm i concurrently 
+
+
 ## Features
 - Management of all the HRIS Fields.
 - Management of the HRIS Forms.
