@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## HRIS Maintenance APP
 [![CircleCI](https://circleci.com/gh/hisptz/hris-maintenance-app.svg?style=svg)](https://circleci.com/gh/hisptz/hris-maintenance-app)
 [![Build Status](https://travis-ci.org/hisptz/hris-maintenance-app.svg?branch=master)](https://travis-ci.org/hisptz/hris-maintenance-app)
 <a href="https://codeclimate.com/github/hisptz/hris-maintenance-app/maintainability"><img src="https://api.codeclimate.com/v1/badges/cd6284eddaceed43922f/maintainability" /></a>
