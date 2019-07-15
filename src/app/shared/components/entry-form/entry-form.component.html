@@ -1,0 +1,61 @@
+<div style="margin-bottom: 4rem; width: 100%;">
+  <div>
+    <div style="display: flex; flex-direction: row; margin-bottom: 1rem;">
+      <h2 style="font-size: 24px; font-weight: 300; color: rgba(0, 0, 0, 0.87); padding: 16px 0px 5px; margin: 0px;">
+        <button tabindex="0" type="button"
+          style="border: 10px; box-sizing: border-box; display: inline-block; font-family: Roboto, sans-serif; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); cursor: pointer; text-decoration: none; margin: 0px; padding: 12px; outline: none; font-size: 0px; font-weight: inherit; position: relative; z-index: 1; overflow: visible; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; width: 48px; height: 48px; background: none;">
+          <div>
+            <div
+              style="position: absolute; font-family: Roboto, sans-serif; font-size: 10px; line-height: 22px; padding: 0px 8px; z-index: 3000; color: rgb(255, 255, 255); overflow: hidden; top: -10000px; border-radius: 2px; user-select: none; opacity: 0; left: 12px; transition: top 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, transform 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms, opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; box-sizing: border-box;">
+              <div
+                style="position: absolute; left: 0%; top: 0px; transform: translate(-50%, -50%); border-radius: 50%; background-color: transparent; transition: width 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, height 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, backgroundColor 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; width: 0px; height: 0px;">
+              </div>
+              <span style="position: relative; white-space: nowrap;">Back</span>
+            </div>
+            <span class="material-icons" color="rgba(0, 0, 0, 0.87)"
+              style="color: rgba(0, 0, 0, 0.87); position: relative; font-size: 24px; display: inline-block; user-select: none; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; top: 3px;"></span>
+          </div>
+        </button>{{ formOptions.name }}
+        <!-- <a target="_blank" rel="noopener noreferrer"
+          href="https://ci.dhis2.org/docs/2.30/en/user/html/manage_data_element.html#create_data_element" tabindex="0"
+          style="border: 10px; box-sizing: border-box; display: inline-block; font-family: Roboto, sans-serif; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); cursor: pointer; text-decoration: none; margin: 0px; padding: 12px; outline: none; font-size: 0px; font-weight: inherit; position: relative; vertical-align: middle; z-index: 1; overflow: visible; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; width: 48px; height: 48px; background: none;">
+          <div>
+            <div
+              style="position: absolute; font-family: Roboto, sans-serif; font-size: 10px; line-height: 22px; padding: 0px 8px; z-index: 3000; color: rgb(255, 255, 255); overflow: hidden; top: -10000px; border-radius: 2px; user-select: none; opacity: 0; left: -19.5px; transition: top 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, transform 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms, opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; box-sizing: border-box;">
+              <div
+                style="position: absolute; left: 50%; top: 0px; transform: translate(-50%, -50%); border-radius: 50%; background-color: transparent; transition: width 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, height 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, backgroundColor 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; width: 0px; height: 0px;">
+              </div>
+              <span style="position: relative; white-space: nowrap;">Open user guide</span>
+            </div>
+            <span class="material-icons" color="rgba(0, 0, 0, 0.87)"
+              style="color: rgba(0, 0, 0, 0.87); position: relative; font-size: 24px; display: inline-block; user-select: none; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; top: -2px;">help_outline</span>
+          </div>
+        </a> -->
+      </h2>
+    </div>
+    <div
+      style="color: rgba(0, 0, 0, 0.87); background-color: rgb(255, 255, 255); transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; box-sizing: border-box; font-family: Roboto, sans-serif; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px; border-radius: 2px;">
+      <div class="data-entry-form">
+        <mat-form-field>
+          <input matInput placeholder="Name*" />
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Short Name*" />
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Form Name*" />
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Code*" />
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Description*" />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="example-button-row">
+      <button mat-raised-button color="primary">Save</button>
+      <button mat-raised-button>Cancel</button>
+    </div>
+  </div>
+</div>
