@@ -12,6 +12,7 @@ import { OrgunitsModule } from './modules/orgunits/orgunits.module';
 import { FormsModule } from './modules/forms/forms.module';
 import { HomeModule } from './modules/home/home.module';
 import { HomeComponent } from './modules/home/home.component';
+import { EntryFormComponent } from '../shared/components/entry-form/entry-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'all', pathMatch: 'full' },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'forms', component: FormsComponent },
   { path: 'organizationUnits', component: OrgunitsComponent },
   { path: 'others', component: OthersComponent },
+  { path: 'dataEntry', component: EntryFormComponent },
 ];
 
 @NgModule({
@@ -32,7 +34,7 @@ const routes: Routes = [
     ReportsModule,
     OrgunitsModule,
     FormsModule,
-    HomeModule
+    HomeModule,
   ],
 })
 export class PagesRoutingModule {}

@@ -24,6 +24,7 @@ export class MainContentContainerComponent implements OnInit {
   errorMessage: ErrorMessage;
   isListOpened: boolean;
   isServiceOpened: boolean;
+  isEntryform: boolean;
   rippleColor: string;
 
   constructor(
@@ -36,11 +37,22 @@ export class MainContentContainerComponent implements OnInit {
     this.rippleEffectsColor = '#ccc';
     this.isListOpened = false;
     this.isServiceOpened = true;
+    this.isEntryform = false;
     this.rippleColor = '#eee';
     this.routerNavigation = _.last(_.split(this.router.url, '/'));
     this.activatedRoute.url.subscribe((url: Array<URLParams>) => {
       this.getFields(url);
       this.isListOpened = true;
+    });
+
+    this.activatedRoute.queryParams.subscribe((params: QueryParams) => {
+      if (params.entryform) {
+        this.isEntryform = true;
+        this.isListOpened = false;
+      } else {
+        this.isEntryform = false;
+        // this.isServiceOpened = false;
+      }
     });
 
     this.activatedRoute.queryParams.subscribe((queryParams: QueryParams) => {
