@@ -5,7 +5,7 @@ import { MainContentAreaComponent } from 'src/app/shared/components/main-content
 
 const routes: Routes = [
   {
-    path: 'forms',
+    path: 'hris-web-forms',
     component: FormsComponent,
     children: [
       {

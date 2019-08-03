@@ -15,14 +15,14 @@ import { HomeComponent } from './modules/home/home.component';
 import { EntryFormComponent } from '../shared/components/entry-form/entry-form.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'all', pathMatch: 'full' },
-  { path: 'all', component: HomeComponent },
-  { path: 'fields', component: FieldsComponent },
-  { path: 'reports', component: ReportsComponent },
-  { path: 'forms', component: FormsComponent },
-  { path: 'organizationUnits', component: OrgunitsComponent },
-  { path: 'others', component: OthersComponent },
-  { path: 'dataEntry', component: EntryFormComponent },
+  { path: '', redirectTo: 'hris-web-all', pathMatch: 'full' },
+  { path: 'hris-web-all', component: HomeComponent },
+  { path: 'hris-web-fields', component: FieldsComponent },
+  { path: 'hris-web-reports', component: ReportsComponent },
+  { path: 'hris-web-forms', component: FormsComponent },
+  { path: 'hris-web-organizationUnits', component: OrgunitsComponent },
+  { path: 'hris-web-others', component: OthersComponent },
+  { path: 'hris-web-dataEntry', component: EntryFormComponent },
 ];
 
 @NgModule({
