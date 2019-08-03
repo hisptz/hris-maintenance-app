@@ -1,0 +1,21 @@
+{
+    "version": "1.0.0-alpha.1",
+    "name": "hris-web-maintenance",
+    "description": "HRIS Maintenance App",
+    "launch_path": "index.html",
+    "icons": {
+        "16": "",
+        "48": "",
+        "128": ""
+    },
+    "developer": {
+        "name": "HISPTZ",
+        "url": ""
+    },
+    "default_locale": "en",
+    "activities": {
+        "hris": {
+            "href": "/hris"
+        }
+    }
+}
