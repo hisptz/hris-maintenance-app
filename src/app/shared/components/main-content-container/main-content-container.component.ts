@@ -69,7 +69,7 @@ export class MainContentContainerComponent implements OnInit {
   getFields = (urlParams: Array<URLParams>) => {
     this.maintenanceService.getAllTheFields().subscribe(
       (fields: Array<MenuSetting>) => {
-        if (urlParams[0].path === 'all') {
+        if (urlParams[0].path === 'hris-web-all') {
           fields ? (this.homeSettings = fields) : this.homeSettings = [];
         } else {
           const fieldsData = _.filter(fields, (field: MenuSetting) => {

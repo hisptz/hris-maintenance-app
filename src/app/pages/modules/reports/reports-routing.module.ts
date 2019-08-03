@@ -6,7 +6,7 @@ import { MainContentAreaComponent } from 'src/app/shared/components/main-content
 
 const routes: Routes = [
   {
-    path: 'reports',
+    path: 'hris-web-reports',
     component: ReportsComponent,
     children: [
       {
