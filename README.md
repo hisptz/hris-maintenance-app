@@ -21,6 +21,8 @@ In order to run successfully HRIS Maintenance app: Install the following depende
 - Management of the whole list of organization hierarchy.
 - Management of the HRIS Reports
 
+## Contributors
+[![](https://sourcerer.io/fame/waltervfaustine/hisptz/hris-maintenance-app/images/0)](https://sourcerer.io/fame/waltervfaustine/hisptz/hris-maintenance-app/links/0)[![](https://sourcerer.io/fame/waltervfaustine/hisptz/hris-maintenance-app/images/1)](https://sourcerer.io/fame/waltervfaustine/hisptz/hris-maintenance-app/links/1)[![](https://sourcerer.io/fame/waltervfaustine/hisptz/hris-maintenance-app/images/2)](https://sourcerer.io/fame/waltervfaustine/hisptz/hris-maintenance-app/links/2)[![](https://sourcerer.io/fame/waltervfaustine/hisptz/hris-maintenance-app/images/3)](https://sourcerer.io/fame/waltervfaustine/hisptz/hris-maintenance-app/links/3)[![](https://sourcerer.io/fame/waltervfaustine/hisptz/hris-maintenance-app/images/4)](https://sourcerer.io/fame/waltervfaustine/hisptz/hris-maintenance-app/links/4)[![](https://sourcerer.io/fame/waltervfaustine/hisptz/hris-maintenance-app/images/5)](https://sourcerer.io/fame/waltervfaustine/hisptz/hris-maintenance-app/links/5)[![](https://sourcerer.io/fame/waltervfaustine/hisptz/hris-maintenance-app/images/6)](https://sourcerer.io/fame/waltervfaustine/hisptz/hris-maintenance-app/links/6)[![](https://sourcerer.io/fame/waltervfaustine/hisptz/hris-maintenance-app/images/7)](https://sourcerer.io/fame/waltervfaustine/hisptz/hris-maintenance-app/links/7)
 
 ## Licence
 ![GitHub](https://img.shields.io/github/license/hisptz/hris-maintenance-app.svg?style=for-the-badge)
