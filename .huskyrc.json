@@ -1,6 +1,6 @@
 {
   "hooks": {
-    "pre-commit": "npm run build",
+    "pre-commit": "npm run start:travis && npm run build",
     "prepare-commit-msg": "exec < /dev/tty && git cz --hook"
   }
 }
