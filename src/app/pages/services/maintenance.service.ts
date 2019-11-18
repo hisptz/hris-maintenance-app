@@ -374,6 +374,10 @@ export class MaintenanceService {
   constructor(private httpClient: HttpClient) {}
 
   getAllTheFields(): Observable<{}> {
+    // this.httpClient.get(this.baseURL + '/' + this.dataURL, { observe: 'response'}).subscribe((response) => {
+    //   console.log('DATA::: ' + JSON.stringify(response));
+    // });
+
     // return this.httpClient.get(this.baseURL + '/' + this.dataURL);
     // tslint:disable-next-line: no-string-literal
     return of(this.dbschema['services']);
