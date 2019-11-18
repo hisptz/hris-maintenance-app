@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { OthersRoutingModule } from './others-routing.module';
+import { FieldsRoutingModule } from './fields-routing.module';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    OthersRoutingModule
+    FieldsRoutingModule
   ]
 })
-export class OthersModule { }
+export class FieldsModule { }
