@@ -19,10 +19,11 @@ import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HrisMenuModule } from '@iapps/hris-menu';
+import { SharedComponents } from './shared/components';
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ...SharedComponents],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -42,4 +43,4 @@ import { HrisMenuModule } from '@iapps/hris-menu';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
