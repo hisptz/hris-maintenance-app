@@ -18,6 +18,8 @@ import { MatTabsModule } from '@angular/material';
 import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { HrisMenuModule } from '@iapps/hris-menu';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -34,6 +36,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatTabsModule,
     MatRippleModule,
     MatProgressSpinnerModule,
+    HrisMenuModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
