@@ -19,11 +19,11 @@ import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HrisMenuModule } from '@iapps/hris-menu';
-import { SharedComponents } from './shared/components';
+import { SharedContainers } from './shared/containers';
 
 
 @NgModule({
-  declarations: [AppComponent, ...SharedComponents],
+  declarations: [AppComponent, ...SharedContainers],
   imports: [
     BrowserModule,
     HttpClientModule,
