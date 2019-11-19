@@ -1,3 +1,17 @@
 .maintenance-app {
-    background-color: #F3F2F3;
+  background-color: #f3f2f3;
+}
+
+.main-menu {
+  box-sizing: border-box;
+  background: rgb(9, 97, 28);
+  display: flex;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  min-height: 48px;
+  justify-content: center;
+  align-items: center;
+  z-index: 1400;
 }
