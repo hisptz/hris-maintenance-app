@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { HrisMenuModule } from '@iapps/hris-menu';
 import { HttpClientModule } from '@angular/common/http';
-import { MenuServicesComponent } from './shared/components/menu-services/menu-services.component';
+import { MenuNavigationBarComponent } from './shared/containers/menu-navigation-bar/menu-navigation-bar.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -15,7 +15,7 @@ describe('AppComponent', () => {
       ],
       declarations: [
         AppComponent,
-        MenuServicesComponent
+        MenuNavigationBarComponent
       ],
     }).compileComponents();
   }));
