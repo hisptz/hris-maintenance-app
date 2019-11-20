@@ -20,6 +20,7 @@ import { PagesModule } from './pages/pages.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HrisMenuModule } from '@iapps/hris-menu';
 import { SharedContainers } from './shared/containers';
+import { FieldsModule } from './pages/fields/fields.module';
 
 
 @NgModule({
@@ -38,7 +39,10 @@ import { SharedContainers } from './shared/containers';
     MatRippleModule,
     MatProgressSpinnerModule,
     HrisMenuModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+
+    // Custom Modules
+    FieldsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
