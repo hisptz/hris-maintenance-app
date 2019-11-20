@@ -17,5 +17,5 @@ export class MenuNavigationBarComponent implements OnInit {
 
   onMenuOpen = (menuConfig: Menu) => {
     this.menuConfiguration = menuConfig;
-  };
+  }
 }

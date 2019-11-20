@@ -20,20 +20,12 @@ export class MainContentComponent implements OnInit {
   routerNavigation: string;
   menuConfigItems: Array<Menu>;
 
-  /**
-   *
-   * @param activatedRoute
-   */
   constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.getActivatedRouteInfo();
   }
 
-  /**
-   *
-   * @param urlParams
-   */
   getMenuConfiguration(urlParams: Array<URLParams>): void {
     const menuConfigs: Array<Menu> = MenuConfig;
     if (_.head(urlParams).path === 'hris-web-all') {
