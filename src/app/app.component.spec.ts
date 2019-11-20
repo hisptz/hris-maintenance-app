@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { HrisMenuModule } from '@iapps/hris-menu';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuNavigationBarComponent } from './shared/containers/menu-navigation-bar/menu-navigation-bar.component';
+import { FieldsModule } from './pages/fields/fields.module';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -11,7 +12,8 @@ describe('AppComponent', () => {
       imports: [
         RouterTestingModule,
         HrisMenuModule,
-        HttpClientModule
+        HttpClientModule,
+        FieldsModule
       ],
       declarations: [
         AppComponent,

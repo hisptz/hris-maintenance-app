@@ -1,7 +1,9 @@
 <div class="maintenance-menu-container">
-    <button tabindex="0" type="button" class="tab-menu-button" *ngFor="let menu of menuItems">
-        <div>
-            <div matRipple [ngClass]="{ active: menu === menuConfig }" routerLinkActive="active" class="tab-menu-item">
+    <button tabindex="0" type="button" class="tab-menu-button" *ngFor="let menu of menuItems"
+        (click)="onMenuOpen(menu)">
+        <div matRipple>
+            <div matRipple routerLink="/{{ menu.route }}" [ngClass]="{ active: menu === menuConfig }"
+                routerLinkActive="active" [queryParams]="{ open: true }" class="tab-menu-item">
                 {{ menu.name }}
             </div>
         </div>
