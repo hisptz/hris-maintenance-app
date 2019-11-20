@@ -26,7 +26,7 @@
     </div>
     <div class="maintenance-right-menu-container">
         <div class="maintenance-left-menu-container-div">
-            <!-- <div *ngIf="isServiceOpened" class="row ml-1 mt-2">
+            <div *ngIf="isModuleServicesOpened" class="row ml-1 mt-2">
                 <div *ngFor="let menuItem of menuConfigItems[0].menuOptions"
                     class="maintenance-left-menu-list-container">
                     <div>
@@ -42,7 +42,7 @@
                         <div class="operation-div">
                             <button tabindex="0" type="button" class="operations-button"
                                 [routerLink]="['/' + menuConfigItems[0].route, menuItem.route]"
-                                (click)="openMenuItemsList(menuItem, menuConfigItems[0])"
+                                (click)="openServiceContentList(menuItem, menuConfigItems[0])"
                                 [queryParams]="{ entryform: true }">
                                 <div>
                                     <div class="operations-container">
@@ -52,7 +52,7 @@
                                 </div>
                             </button>
                             <button [routerLink]="['/' + menuConfigItems[0].route, menuItem.route]"
-                                (click)="openMenuItemsList(menuItem, menuConfigItems[0])" tabindex="0" type="button"
+                                (click)="openServiceContentList(menuItem, menuConfigItems[0])" tabindex="0" type="button"
                                 class="list-button">
                                 <div>
                                     <div class="list-div">
@@ -64,7 +64,7 @@
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
             <!-- <div *ngIf="isListOpened" class="row ml-3">
                 <div class="maintenance-left-menu-container-list">
                     <router-outlet></router-outlet>

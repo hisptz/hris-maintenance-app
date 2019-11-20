@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Menu } from '../../models/menu.models';
 import { MenuConfig } from '../../config/menu.config';
 import { URLParams } from 'src/app/core/models/url-params.model';
+import { QueryParams } from 'src/app/core/models/query-params.model';
 
 /**
  *
@@ -19,11 +20,17 @@ import { URLParams } from 'src/app/core/models/url-params.model';
 export class MainContentComponent implements OnInit {
   routerNavigation: string;
   menuConfigItems: Array<Menu>;
+  isModuleServicesOpened: boolean;
 
   constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.getActivatedRouteInfo();
+    this.isModuleServicesOpened = true;
+    const queryParams: QueryParams = this.getQueryParams();
+    this.isModuleServicesOpened = _.has(queryParams, 'open')
+      ? queryParams.open
+      : false;
   }
 
   getMenuConfiguration(urlParams: Array<URLParams>): void {
@@ -44,5 +51,17 @@ export class MainContentComponent implements OnInit {
     this.activatedRoute.url.subscribe((activatedRoute: Array<URLParams>) => {
       this.getMenuConfiguration(activatedRoute);
     });
+  }
+
+  getQueryParams(): QueryParams | any {
+    let qParams: QueryParams;
+    this.activatedRoute.queryParams.subscribe((queryParams: QueryParams) => {
+      qParams = queryParams;
+    });
+    return qParams ? qParams : {};
+  }
+
+  openServiceContentList() {
+    console.log('Menu Opened');
   }
 }
