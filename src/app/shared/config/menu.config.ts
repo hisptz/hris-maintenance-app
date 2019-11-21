@@ -16,23 +16,23 @@ export const MenuConfig: Array<Menu> = [
         menuOptions: [
             {
                 name: 'Fields',
-                route: 'fieldsItems',
+                route: 'fields',
             },
             {
                 name: 'Fields Group',
-                route: 'fieldsGroups',
+                route: 'fieldGroups',
             },
             {
                 name: 'Fields Options',
-                route: 'fieldsOptions',
+                route: 'fieldOptions',
             },
             {
                 name: 'Fields Group Set',
-                route: 'fieldsGroupset',
+                route: 'fieldGroupsets',
             },
             {
                 name: 'Fields Options Group Set',
-                route: 'fieldsOptionsGroupset',
+                route: 'fieldOptionGroupsets',
             },
         ],
     },
