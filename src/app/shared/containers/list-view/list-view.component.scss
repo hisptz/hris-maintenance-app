@@ -1,0 +1,32 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+// td,
+// th {
+//   width: 30%;
+// }
+
+// .mat-column-description {
+//     flex: 0 0 100px;
+//   }
+
+// .mat-column-description {
+//   max-width: 20%;
+// }
+
+.mat-column-created,
+.mat-column-lastUpdated {
+  max-width: 150px;
+}
+
+.mat-column-description {
+  max-width: 600px;
+  padding-right: 10px;
+  padding-left: 10px;
+}

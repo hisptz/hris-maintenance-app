@@ -46,3 +46,7 @@ testem.log
 Thumbs.db
 src/assets/template.html
 .vscode
+
+proxy-config.json
+proxy-config-live.json
+proxy-config-local.json
