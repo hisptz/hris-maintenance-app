@@ -4,7 +4,8 @@
             <div>
                 <div class="left-bar" class="maintenance-left-menu-container-item">
                     <div class="maintenance-left-menu-container-holder">
-                        <div *ngFor="let menu of menuConfigItems[0]?.menuOptions">
+                        <div *ngFor="let menu of menuConfigItems[0]?.menuOptions"
+                            (click)="onClickLeftMenuList(menu, menuConfigItems)">
                             <span tabindex="0" class="maintenance-left-menu-span">
                                 <div>
                                     <div class="left-menu-item" matRipple
@@ -24,62 +25,10 @@
             </div>
         </div>
     </div>
-    <div class="maintenance-right-menu-container">
-        <div class="maintenance-left-menu-container-div">
-            <div *ngIf="isModuleServicesOpened" class="row ml-1 mt-2">
-                <div *ngFor="let menuItem of menuConfigItems[0].menuOptions"
-                    class="maintenance-left-menu-list-container">
-                    <div>
-                        <div class="maintenance-left-menu-list-item">
-                            <div class="title-div">
-                                <span class="title">{{ menuItem.name }}</span>
-                                <span style="color: rgba(0, 0, 0, 0.54); display: block; font-size: 14px;"></span>
-                            </div>
-                        </div>
-                        <div class="description">
-                            {{ menuConfigItems[0].instruction }}
-                        </div>
-                        <div class="operation-div">
-                            <button tabindex="0" type="button" class="operations-button"
-                                [routerLink]="['/' + menuConfigItems[0].route, menuItem.route]"
-                                (click)="openServiceContentList(menuItem, menuConfigItems[0])"
-                                [queryParams]="{ entryform: true }">
-                                <div>
-                                    <div class="operations-container">
-                                        <span matRipple class="add-button">Add</span>
-                                    </div>
-                                    <span class="material-icons plus-button"></span>
-                                </div>
-                            </button>
-                            <button [routerLink]="['/' + menuConfigItems[0].route, menuItem.route]"
-                                (click)="openServiceContentList(menuItem, menuConfigItems[0])" tabindex="0" type="button"
-                                class="list-button">
-                                <div>
-                                    <div class="list-div">
-                                        <span class="list-item">List</span>
-                                    </div>
-                                    <span class="material-icons list-icon"></span>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- <div *ngIf="isListOpened" class="row ml-3">
-                <div class="maintenance-left-menu-container-list">
-                    <router-outlet></router-outlet>
-                </div>
-            </div> -->
-        </div>
-        <!-- <div class="maintenance-left-menu-container-div">
-            <div *ngIf="isEntryform" class="row ml-1 mt-2">
-                <div class="maintenance-left-menu-list-container" style="width: 100% !important">
-                    <p>Entry Form Is Going To Be Rendered Here</p>
-                    <app-entry-form [formSetting]="menuConfigItems" [formOptions]="menuOptions"
-                        style="width: 100% !important">
-                    </app-entry-form>
-                </div>
-            </div>
-        </div> -->
+    <div *ngIf="menuConfigItems" class="maintenance-right-menu-container">
+        <app-content-area [APIParams]="APIParams" [apiDataResult]="apiDataResult" [menuConfigItems]="menuConfigItems"
+            [isTableListOpened]="isTableListOpened" [isModuleServicesOpened]="isModuleServicesOpened"
+            class="content-area">
+        </app-content-area>
     </div>
 </main>
