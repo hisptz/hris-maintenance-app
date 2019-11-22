@@ -28,7 +28,8 @@
     <div *ngIf="menuConfigItems" class="maintenance-right-menu-container">
         <app-content-area [APIParams]="APIParams" [APIDataResult]="APIDataResult" [menuConfigItems]="menuConfigItems"
             [isTableListOpened]="isTableListOpened" [isModuleServicesOpened]="isModuleServicesOpened"
-            class="content-area" (deleteEventEmitter)="onDeletion($event)">
+            class="content-area" (deleteEventEmitter)="onDeletion($event)"
+            (viewMoreDetailsEventEmitter)="onViewMoreDetails($event)">
         </app-content-area>
 
         <!-- ToDo:Reviw this implementation and improve it -->
@@ -38,5 +39,27 @@
             </button>
         </div> -->
         <!-- ToDo:Reviw this implementation and improve it -->
+    </div>
+    <div *ngIf="entityDetails?.status" class="content-detail">
+        <mat-card class="example-card">
+            <mat-card-header class="icon-right">
+                <i matRipple class="material-icons" (click)="onClose()">
+                    cancel
+                </i></mat-card-header>
+            <mat-card-content>
+                <p style="font-weight: bold;">Name</p>
+                <p>{{ entityDetails?.data?.name }}</p>
+                <p style="font-weight: bold;">Description</p>
+                <p>{{ entityDetails?.data?.description }}</p>
+                <p style="font-weight: bold;">Created</p>
+                <p>{{ entityDetails?.data?.created | date }}</p>
+                <p style="font-weight: bold;">Last Updated</p>
+                <p>{{ entityDetails?.data?.lastUpdated | date }}</p>
+                <p style="font-weight: bold;">ID</p>
+                <p>{{ entityDetails?.data?.uid }}</p>
+                <p style="font-weight: bold;">link</p>
+                <a href="{{ entityDetails?.siteURL }}">{{ entityDetails?.siteURL }}</a>
+            </mat-card-content>
+        </mat-card>
     </div>
 </main>

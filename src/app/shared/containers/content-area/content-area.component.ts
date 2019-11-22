@@ -5,7 +5,7 @@ import { APIResult } from 'src/app/core/models/api-result.model';
 @Component({
   selector: 'app-content-area',
   templateUrl: './content-area.component.html',
-  styleUrls: ['./content-area.component.scss'],
+  styleUrls: ['./content-area.component.scss']
 })
 export class ContentAreaComponent implements OnInit {
   @Input() isModuleServicesOpened: boolean;
@@ -14,6 +14,7 @@ export class ContentAreaComponent implements OnInit {
   @Input() APIDataResult: APIResult;
   @Input() APIParams: string;
   @Output() deleteEventEmitter = new EventEmitter();
+  @Output() viewMoreDetailsEventEmitter = new EventEmitter();
 
   isTableListOpenedCA: boolean;
   isModuleServicesOpenedCA: boolean;
@@ -35,5 +36,11 @@ export class ContentAreaComponent implements OnInit {
     if (item) {
       this.deleteEventEmitter.emit(item);
     }
+  }
+
+  onViewMoreDetails(state: any) {
+    state
+      ? this.viewMoreDetailsEventEmitter.emit(state)
+      : this.viewMoreDetailsEventEmitter.emit({ ...state, status: false });
   }
 }

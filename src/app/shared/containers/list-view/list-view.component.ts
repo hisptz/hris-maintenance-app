@@ -1,7 +1,13 @@
-import { Component, OnInit, ViewChild, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  Input,
+  Output,
+  EventEmitter
+} from '@angular/core';
 import { APIResult } from 'src/app/core/models/api-result.model';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
-
 
 @Component({
   selector: 'app-list-view',
@@ -12,6 +18,7 @@ export class ListViewComponent implements OnInit {
   @Input() APIDataResult?: APIResult;
   @Input() APIParams?: string;
   @Output() deleteEventEmitter = new EventEmitter();
+  @Output() viewMoreDetailsEventEmitter = new EventEmitter();
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   dataSource: MatTableDataSource<any>;
   displayedColumns: string[] = [
@@ -51,8 +58,12 @@ export class ListViewComponent implements OnInit {
 
   // ToDo: Make Sure You Implement On Delete
   onDelete(item: any, apiParams: string) {
-    this.deleteEventEmitter.emit({...item, apiEndpoint: apiParams});
+    this.deleteEventEmitter.emit({ ...item, apiEndpoint: apiParams });
     this.dataSource.data.splice(item, 1);
     this.dataSource.paginator = this.paginator;
+  }
+
+  onViewMoreDetails(item: any) {
+    this.viewMoreDetailsEventEmitter.emit({ data: item, status: true });
   }
 }

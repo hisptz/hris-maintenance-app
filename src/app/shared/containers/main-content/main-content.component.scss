@@ -4,6 +4,23 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.icon-right {
+  float: right;
+}
+
+.content-detail {
+  margin-top: 73px;
+  margin-right: 10px;
+}
+
+.mat-card {
+  width: 300px;
+}
+
+.example-card {
+  max-width: 600px;
+}
+
 .maintenance-left-menu-container {
   flex: 1 1 0%;
   display: flex;
