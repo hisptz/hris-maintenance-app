@@ -15,7 +15,8 @@ import {
   MatProgressBarModule,
   MatFormFieldModule,
   MatInputModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatSnackBarModule
 } from '@angular/material';
 import { ProgressBarComponent } from 'src/app/shared/components/progress-bar/progress-bar.component';
 import { ProgressSpinnerComponent } from 'src/app/shared/components/progress-spinner/progress-spinner.component';
@@ -27,7 +28,7 @@ import { ProgressSpinnerComponent } from 'src/app/shared/components/progress-spi
     ContentAreaComponent,
     ListViewComponent,
     ProgressBarComponent,
-    ProgressSpinnerComponent
+    ProgressSpinnerComponent,
   ],
   imports: [
     CommonModule,
@@ -42,7 +43,8 @@ import { ProgressSpinnerComponent } from 'src/app/shared/components/progress-spi
     MatInputModule,
     MatProgressSpinnerModule,
     MatMenuModule,
-    MatTableModule
+    MatTableModule,
+    MatSnackBarModule,
   ]
 })
 export class FieldsModule {}

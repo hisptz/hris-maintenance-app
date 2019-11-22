@@ -14,13 +14,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatRippleModule } from '@angular/material/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatTabsModule, MatMenuModule } from '@angular/material';
+import { MatTabsModule, MatMenuModule, MatSnackBarModule } from '@angular/material';
 import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HrisMenuModule } from '@iapps/hris-menu';
 import { SharedContainers } from './shared/containers';
 import { FieldsModule } from './pages/fields/fields.module';
+import { SharedComponents } from './shared/components';
 
 @NgModule({
   declarations: [AppComponent, ...SharedContainers],
@@ -36,6 +37,7 @@ import { FieldsModule } from './pages/fields/fields.module';
     MatTabsModule,
     MatRippleModule,
     MatProgressSpinnerModule,
+    MatSnackBarModule,
     HrisMenuModule,
     BrowserAnimationsModule,
 

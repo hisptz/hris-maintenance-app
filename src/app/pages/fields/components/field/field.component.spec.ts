@@ -16,7 +16,8 @@ import {
   MatPaginatorModule,
   MatTableModule,
   MatProgressSpinnerModule,
-  MatProgressBarModule
+  MatProgressBarModule,
+  MatSnackBarModule
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -44,7 +45,8 @@ describe('FieldComponent', () => {
         MatTableModule,
         MatPaginatorModule,
         MatProgressSpinnerModule,
-        MatProgressBarModule
+        MatProgressBarModule,
+        MatSnackBarModule
       ],
       providers: [MaintenanceService]
     }).compileComponents();
