@@ -15,7 +15,8 @@ import {
   MatProgressSpinnerModule,
   MatProgressBarModule,
   MatFormFieldModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatCardModule
 } from '@angular/material';
 import { ObserversModule } from '@angular/cdk/observers';
 import { HttpClientModule } from '@angular/common/http';
@@ -45,7 +46,8 @@ describe('MainContentComponent', () => {
         MatProgressSpinnerModule,
         MatProgressBarModule,
         MatPaginatorModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatCardModule
       ],
       providers: []
     }).compileComponents();

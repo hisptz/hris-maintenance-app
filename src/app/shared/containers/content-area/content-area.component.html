@@ -44,7 +44,7 @@
                 <!-- <app-progress-spinner ></app-progress-spinner> -->
             </div>
             <app-list-view *ngIf="APIDataResult" [APIDataResult]="APIDataResult" [APIParams]="APIParams"
-                (deleteEventEmitter)="onDelete($event)">
+                (deleteEventEmitter)="onDelete($event)" (viewMoreDetailsEventEmitter)="onViewMoreDetails($event)">
             </app-list-view>
         </div>
     </div>

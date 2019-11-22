@@ -26,6 +26,7 @@ export class MainContentComponent implements OnInit, OnChanges {
   routerNavigation: string;
   menuConfigItems: Array<Menu>;
   isModuleServicesOpened: boolean;
+  entityDetails: any;
   isTableListOpened: boolean;
   APIDataResult: APIResult;
   APIResponse: any;
@@ -114,6 +115,18 @@ export class MainContentComponent implements OnInit, OnChanges {
         }
       });
     }
+  }
+
+  onViewMoreDetails(state: any) {
+    if (state) {
+      const siteURL = `${window.location.origin}/api/${this.APIParams}/${state.data.uid}`;
+      this.entityDetails = {...state, siteURL };
+    }
+  }
+
+  onClose() {
+    this.entityDetails = { ...this.entityDetails, status: false };
+    console.log('ORIGIN::: ' + JSON.stringify(window.location.origin));
   }
 
   openSnackBar(response: any) {

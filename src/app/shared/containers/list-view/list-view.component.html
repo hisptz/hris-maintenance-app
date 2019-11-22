@@ -1,108 +1,109 @@
 <div>
-    <div class="table-box-shodow">
-      <mat-form-field>
-        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search by name" />
-      </mat-form-field>
-      <div *ngIf="APIDataResult"
-        style=" box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;" class="">
-        <table mat-table [dataSource]="dataSource">
-          <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef><b>Name</b></th>
-            <td mat-cell *matCellDef="let element">{{ element.name }}</td>
-          </ng-container>
-          <ng-container matColumnDef="caption">
-            <th mat-header-cell *matHeaderCellDef><b>Caption</b></th>
-            <td mat-cell *matCellDef="let element">{{ element.caption }}</td>
-          </ng-container>
-          <ng-container matColumnDef="description">
-            <th mat-header-cell *matHeaderCellDef><b>Description</b></th>
-            <td mat-cell *matCellDef="let element">{{ element.description }}</td>
-          </ng-container>
-          <ng-container matColumnDef="created">
-            <th mat-header-cell *matHeaderCellDef><b>Created</b></th>
-            <td mat-cell  *matCellDef="let element">
-              {{ element.created | date }}
-            </td>
-          </ng-container>
-  
-          <ng-container matColumnDef="lastUpdated">
-            <th mat-header-cell *matHeaderCellDef><b>Last Updated</b></th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.lastUpdated | date }}
-            </td>
-          </ng-container>
-  
-          <ng-container matColumnDef="menu">
-            <th mat-header-cell *matHeaderCellDef><i class="material-icons">
-                settings_applications
-              </i></th>
-            <td mat-cell *matCellDef="let element">
-              <i class="material-icons rounded" matRipple [matRippleColor]="rippleColor" [matMenuTriggerFor]="appMenu">
-                more_vert
-              </i>
-              <!-- </button> -->
-              <mat-menu #appMenu="matMenu">
-                <div class="data-table__context-menu" role="menu"
-                  style="padding: 16px 0px; display: table-cell; user-select: none; width: 256px;">
-                  <div>
-                    <span matRipple role="menuitem" tabindex="0"
-                      style="border: 10px; box-sizing: border-box; display: block; font-family: Roboto, sans-serif; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); cursor: pointer; text-decoration: none; margin: 0px; padding: 0px; outline: none; font-size: 15px; font-weight: inherit; position: relative; z-index: 1; color: rgba(0, 0, 0, 0.87); line-height: 32px; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; min-height: 32px; white-space: nowrap; background: none;">
-                      <div>
-                        <div style="margin-left: 0px; padding: 0px 24px 0px 64px; position: relative;">
-                          <span class="material-icons" color="#757575"
-                            style="color: rgb(117, 117, 117); position: absolute; font-size: 24px; display: block; user-select: none; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; height: 24px; width: 24px; top: 4px; margin: 0px; left: 24px;">edit</span>
-                          <div>Edit</div>
-                        </div>
+  <div class="table-box-shodow">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search by name" />
+    </mat-form-field>
+    <div *ngIf="APIDataResult" style=" box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;"
+      class="">
+      <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef><b>Name</b></th>
+          <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+        </ng-container>
+        <ng-container matColumnDef="caption">
+          <th mat-header-cell *matHeaderCellDef><b>Caption</b></th>
+          <td mat-cell *matCellDef="let element">{{ element.caption }}</td>
+        </ng-container>
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef><b>Description</b></th>
+          <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+        </ng-container>
+        <ng-container matColumnDef="created">
+          <th mat-header-cell *matHeaderCellDef><b>Created</b></th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.created | date }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="lastUpdated">
+          <th mat-header-cell *matHeaderCellDef><b>Last Updated</b></th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.lastUpdated | date }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="menu">
+          <th mat-header-cell *matHeaderCellDef>
+            <i class="material-icons">
+              settings_applications
+            </i>
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <i class="material-icons rounded" matRipple [matRippleColor]="rippleColor" [matMenuTriggerFor]="appMenu">
+              more_vert
+            </i>
+            <!-- </button> -->
+            <mat-menu #appMenu="matMenu">
+              <div class="data-table__context-menu" role="menu"
+                style="padding: 16px 0px; display: table-cell; user-select: none; width: 256px;">
+                <div>
+                  <span matRipple role="menuitem" tabindex="0"
+                    style="border: 10px; box-sizing: border-box; display: block; font-family: Roboto, sans-serif; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); cursor: pointer; text-decoration: none; margin: 0px; padding: 0px; outline: none; font-size: 15px; font-weight: inherit; position: relative; z-index: 1; color: rgba(0, 0, 0, 0.87); line-height: 32px; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; min-height: 32px; white-space: nowrap; background: none;">
+                    <div>
+                      <div style="margin-left: 0px; padding: 0px 24px 0px 64px; position: relative;">
+                        <span class="material-icons" color="#757575"
+                          style="color: rgb(117, 117, 117); position: absolute; font-size: 24px; display: block; user-select: none; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; height: 24px; width: 24px; top: 4px; margin: 0px; left: 24px;">edit</span>
+                        <div>Edit</div>
                       </div>
-                    </span>
-                  </div>
-                  <div (click)="onDelete(element, APIParams)">
-                    <span matRipple role="menuitem" routerLinkActive="router-link-active"  tabindex="0"
-                      style="border: 10px; box-sizing: border-box; display: block; font-family: Roboto, sans-serif; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); cursor: pointer; text-decoration: none; margin: 0px; padding: 0px; outline: none; font-size: 15px; font-weight: inherit; position: relative; z-index: 1; color: rgba(0, 0, 0, 0.87); line-height: 32px; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; min-height: 32px; white-space: nowrap; background: none;">
-                      <div>
-                        <div style="margin-left: 0px; padding: 0px 24px 0px 64px; position: relative;">
-                          <span class="material-icons"
-                            style="color: rgb(117, 117, 117); position: absolute; font-size: 24px; display: block; user-select: none; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; height: 24px; width: 24px; top: 4px; margin: 0px; left: 24px;">delete</span>
-                          <div>Delete</div>
-                        </div>
-                      </div>
-                    </span>
-                  </div>
-                  <div>
-                    <span matRipple role="menuitem" tabindex="0"
-                      style="border: 10px; box-sizing: border-box; display: block; font-family: Roboto, sans-serif; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); cursor: pointer; text-decoration: none; margin: 0px; padding: 0px; outline: none; font-size: 15px; font-weight: inherit; position: relative; z-index: 1; color: rgba(0, 0, 0, 0.87); line-height: 32px; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; min-height: 32px; white-space: nowrap; background: none;">
-                      <div>
-                        <div style="margin-left: 0px; padding: 0px 24px 0px 64px; position: relative;">
-                          <span class="material-icons" color="#757575"
-                            style="color: rgb(117, 117, 117); position: absolute; font-size: 24px; display: block; user-select: none; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; height: 24px; width: 24px; top: 4px; margin: 0px; left: 24px;">details</span>
-                          <div>Show details</div>
-                        </div>
-                      </div>
-                    </span>
-                  </div>
-                  <div>
-                    <span matRipple role="menuitem" tabindex="0"
-                      style="border: 10px; box-sizing: border-box; display: block; font-family: Roboto, sans-serif; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); cursor: pointer; text-decoration: none; margin: 0px; padding: 0px; outline: none; font-size: 15px; font-weight: inherit; position: relative; z-index: 1; color: rgba(0, 0, 0, 0.87); line-height: 32px; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; min-height: 32px; white-space: nowrap; background: none;">
-                      <div>
-                        <div style="margin-left: 0px; padding: 0px 24px 0px 64px; position: relative;">
-                          <span class="material-icons" color="#757575"
-                            style="color: rgb(117, 117, 117); position: absolute; font-size: 24px; display: block; user-select: none; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; height: 24px; width: 24px; top: 4px; margin: 0px; left: 24px;">translate</span>
-                          <div>Translate</div>
-                        </div>
-                      </div>
-                    </span>
-                  </div>
+                    </div>
+                  </span>
                 </div>
-              </mat-menu>
-            </td>
-          </ng-container>
-  
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-        </table>
-  
-        <mat-paginator [pageSizeOptions]="[5, 10, 20, 50, 100]" showFirstLastButtons></mat-paginator>
-      </div>
+                <div (click)="onDelete(element, APIParams)">
+                  <span matRipple role="menuitem" routerLinkActive="router-link-active" tabindex="0"
+                    style="border: 10px; box-sizing: border-box; display: block; font-family: Roboto, sans-serif; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); cursor: pointer; text-decoration: none; margin: 0px; padding: 0px; outline: none; font-size: 15px; font-weight: inherit; position: relative; z-index: 1; color: rgba(0, 0, 0, 0.87); line-height: 32px; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; min-height: 32px; white-space: nowrap; background: none;">
+                    <div>
+                      <div style="margin-left: 0px; padding: 0px 24px 0px 64px; position: relative;">
+                        <span class="material-icons"
+                          style="color: rgb(117, 117, 117); position: absolute; font-size: 24px; display: block; user-select: none; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; height: 24px; width: 24px; top: 4px; margin: 0px; left: 24px;">delete</span>
+                        <div>Delete</div>
+                      </div>
+                    </div>
+                  </span>
+                </div>
+                <div (click)="onViewMoreDetails(element)">
+                  <span matRipple role="menuitem" tabindex="0"
+                    style="border: 10px; box-sizing: border-box; display: block; font-family: Roboto, sans-serif; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); cursor: pointer; text-decoration: none; margin: 0px; padding: 0px; outline: none; font-size: 15px; font-weight: inherit; position: relative; z-index: 1; color: rgba(0, 0, 0, 0.87); line-height: 32px; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; min-height: 32px; white-space: nowrap; background: none;">
+                    <div>
+                      <div style="margin-left: 0px; padding: 0px 24px 0px 64px; position: relative;">
+                        <span class="material-icons" color="#757575"
+                          style="color: rgb(117, 117, 117); position: absolute; font-size: 24px; display: block; user-select: none; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; height: 24px; width: 24px; top: 4px; margin: 0px; left: 24px;">details</span>
+                        <div>Show details</div>
+                      </div>
+                    </div>
+                  </span>
+                </div>
+                <div>
+                  <span matRipple role="menuitem" tabindex="0"
+                    style="border: 10px; box-sizing: border-box; display: block; font-family: Roboto, sans-serif; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); cursor: pointer; text-decoration: none; margin: 0px; padding: 0px; outline: none; font-size: 15px; font-weight: inherit; position: relative; z-index: 1; color: rgba(0, 0, 0, 0.87); line-height: 32px; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; min-height: 32px; white-space: nowrap; background: none;">
+                    <div>
+                      <div style="margin-left: 0px; padding: 0px 24px 0px 64px; position: relative;">
+                        <span class="material-icons" color="#757575"
+                          style="color: rgb(117, 117, 117); position: absolute; font-size: 24px; display: block; user-select: none; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; height: 24px; width: 24px; top: 4px; margin: 0px; left: 24px;">translate</span>
+                        <div>Translate</div>
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </mat-menu>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 20, 50, 100]" showFirstLastButtons></mat-paginator>
     </div>
   </div>
-  
+</div>
