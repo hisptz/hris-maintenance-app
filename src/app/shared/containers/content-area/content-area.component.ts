@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Menu, MenuOption } from '../../models/menu.models';
 import { APIResult } from 'src/app/core/models/api-result.model';
 
@@ -11,8 +11,9 @@ export class ContentAreaComponent implements OnInit {
   @Input() isModuleServicesOpened: boolean;
   @Input() menuConfigItems: Array<Menu>;
   @Input() isTableListOpened: boolean;
-  @Input() apiDataResult: APIResult;
+  @Input() APIDataResult: APIResult;
   @Input() APIParams: string;
+  @Output() deleteEventEmitter = new EventEmitter();
 
   isTableListOpenedCA: boolean;
   isModuleServicesOpenedCA: boolean;
@@ -28,5 +29,11 @@ export class ContentAreaComponent implements OnInit {
   openServiceContentList(menuOption: MenuOption, menuConfigItem: Array<Menu>) {
     this.isTableListOpenedCA = true;
     this.isModuleServicesOpenedCA = false;
+  }
+
+  onDelete(item: any) {
+    if (item) {
+      this.deleteEventEmitter.emit(item);
+    }
   }
 }

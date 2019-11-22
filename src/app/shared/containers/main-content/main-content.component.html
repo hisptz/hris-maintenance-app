@@ -26,9 +26,17 @@
         </div>
     </div>
     <div *ngIf="menuConfigItems" class="maintenance-right-menu-container">
-        <app-content-area [APIParams]="APIParams" [apiDataResult]="apiDataResult" [menuConfigItems]="menuConfigItems"
+        <app-content-area [APIParams]="APIParams" [APIDataResult]="APIDataResult" [menuConfigItems]="menuConfigItems"
             [isTableListOpened]="isTableListOpened" [isModuleServicesOpened]="isModuleServicesOpened"
-            class="content-area">
+            class="content-area" (deleteEventEmitter)="onDeletion($event)">
         </app-content-area>
+
+        <!-- ToDo:Reviw this implementation and improve it -->
+        <!-- <div *ngIf="APIResponse">
+            <button mat-button (click)="openSnackBar()" aria-label="Show an example snack-bar">
+                {{ APIResponse.message }} Message
+            </button>
+        </div> -->
+        <!-- ToDo:Reviw this implementation and improve it -->
     </div>
 </main>

@@ -38,12 +38,13 @@
     </div>
     <div *ngIf="isTableListOpenedCA" class="row ml-3">
         <div class="maintenance-left-menu-container-list">
-            <div *ngIf="!apiDataResult">
+            <div *ngIf="!APIDataResult">
                 <app-progress-bar class="progress-bar"></app-progress-bar>
                 <p>Loading...</p>
                 <!-- <app-progress-spinner ></app-progress-spinner> -->
             </div>
-            <app-list-view *ngIf="apiDataResult" [apiDataResult]="apiDataResult" [APIParams]="APIParams">
+            <app-list-view *ngIf="APIDataResult" [APIDataResult]="APIDataResult" [APIParams]="APIParams"
+                (deleteEventEmitter)="onDelete($event)">
             </app-list-view>
         </div>
     </div>

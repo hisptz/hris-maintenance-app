@@ -6,10 +6,10 @@ import { MenuConfig } from '../../config/menu.config';
 import { URLParams } from 'src/app/core/models/url-params.model';
 import { QueryParams } from 'src/app/core/models/query-params.model';
 import { MaintenanceService } from 'src/app/core/services/maintenance.service';
-import { Route } from '@angular/compiler/src/core';
 import { RouterNavigationEndState } from 'src/app/core/models/router-navigation-end.model';
 import { APIEndpoints } from '../../lookups/api-endpoint.lookup';
 import { APIResult } from 'src/app/core/models/api-result.model';
+import { MatSnackBar } from '@angular/material';
 
 /**
  *
@@ -27,12 +27,15 @@ export class MainContentComponent implements OnInit, OnChanges {
   menuConfigItems: Array<Menu>;
   isModuleServicesOpened: boolean;
   isTableListOpened: boolean;
-  apiDataResult: APIResult;
+  APIDataResult: APIResult;
+  APIResponse: any;
   APIParams: string;
+  durationInSeconds = 5;
 
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
+    private snackBar: MatSnackBar,
     private maintenanceService: MaintenanceService
   ) {}
 
@@ -44,7 +47,6 @@ export class MainContentComponent implements OnInit, OnChanges {
     this.isModuleServicesOpened = _.has(queryParams, 'open')
       ? queryParams.open
       : false;
-
     this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationEnd) {
         const routerNavigationState: RouterNavigationEndState = event;
@@ -52,7 +54,7 @@ export class MainContentComponent implements OnInit, OnChanges {
         this.maintenanceService
           .getAll(this.APIParams)
           .subscribe((apiResult: APIResult) => {
-            this.apiDataResult = apiResult;
+            this.APIDataResult = apiResult;
           });
       }
     });
@@ -101,5 +103,27 @@ export class MainContentComponent implements OnInit, OnChanges {
 
   onClickLeftMenuList(menu: MenuOption, menuConfigItems: Array<Menu>): void {
     console.log('Item From Left MENU clicked');
+  }
+
+  onDeletion(item: any): any {
+    if (item) {
+      this.maintenanceService.deleteOne(item).subscribe((response: any) => {
+        if (response) {
+          this.APIResponse = response;
+          this.openSnackBar(response);
+        }
+      });
+    }
+  }
+
+  openSnackBar(response: any) {
+    // ToDo:Reviw this implementation and improve it
+    // this.snackBar.openFromComponent(MainContentComponent, {
+    //   duration: this.durationInSeconds * 1000,
+    // });
+    this.snackBar.open(response.message);
+    setTimeout(() => {
+      this.snackBar.dismiss();
+    }, 3000);
   }
 }

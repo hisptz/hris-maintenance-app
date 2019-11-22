@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, Input, Output, EventEmitter } from '@angular/core';
 import { APIResult } from 'src/app/core/models/api-result.model';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
+
 
 @Component({
   selector: 'app-list-view',
@@ -8,8 +9,9 @@ import { MatTableDataSource, MatPaginator } from '@angular/material';
   styleUrls: ['./list-view.component.scss']
 })
 export class ListViewComponent implements OnInit {
-  @Input() apiDataResult?: APIResult;
+  @Input() APIDataResult?: APIResult;
   @Input() APIParams?: string;
+  @Output() deleteEventEmitter = new EventEmitter();
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   dataSource: MatTableDataSource<any>;
   displayedColumns: string[] = [
@@ -27,23 +29,30 @@ export class ListViewComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    if (this.apiDataResult) {
+    if (this.APIDataResult) {
       this.dataSource = new MatTableDataSource<any>(
-        this.apiDataResult[this.APIParams]
+        this.APIDataResult[this.APIParams]
       );
-      this.dataSize = this.apiDataResult[this.APIParams].length;
+      this.dataSize = this.APIDataResult[this.APIParams].length;
       this.dataSource.paginator = this.paginator;
       this.pageSize = 10;
     }
   }
 
   applyFilter(filterValue: string) {
-    if (this.apiDataResult) {
+    if (this.APIDataResult) {
       this.dataSource.filter = filterValue.trim().toLowerCase();
 
       if (this.dataSource.paginator) {
         this.dataSource.paginator.firstPage();
       }
     }
+  }
+
+  // ToDo: Make Sure You Implement On Delete
+  onDelete(item: any, apiParams: string) {
+    this.deleteEventEmitter.emit({...item, apiEndpoint: apiParams});
+    this.dataSource.data.splice(item, 1);
+    this.dataSource.paginator = this.paginator;
   }
 }
