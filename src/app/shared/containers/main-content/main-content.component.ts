@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, Output } from '@angular/core';
 import * as _ from 'lodash';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { Menu, MenuOption } from '../../models/menu.models';
@@ -10,6 +10,7 @@ import { RouterNavigationEndState } from 'src/app/core/models/router-navigation-
 import { APIEndpoints } from '../../lookups/api-endpoint.lookup';
 import { APIResult } from 'src/app/core/models/api-result.model';
 import { MatSnackBar } from '@angular/material';
+import { EventEmitter } from 'events';
 
 /**
  *
@@ -103,7 +104,8 @@ export class MainContentComponent implements OnInit, OnChanges {
   }
 
   onClickLeftMenuList(menu: MenuOption, menuConfigItems: Array<Menu>): void {
-    console.log('Item From Left MENU clicked');
+    this.isTableListOpened = true;
+    this.isModuleServicesOpened = false;
   }
 
   onDeletion(item: any): any {
@@ -126,7 +128,6 @@ export class MainContentComponent implements OnInit, OnChanges {
 
   onClose() {
     this.entityDetails = { ...this.entityDetails, status: false };
-    console.log('ORIGIN::: ' + JSON.stringify(window.location.origin));
   }
 
   openSnackBar(response: any) {
