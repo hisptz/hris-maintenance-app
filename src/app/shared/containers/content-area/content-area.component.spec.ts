@@ -1,7 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContentAreaComponent } from './content-area.component';
-import { MatMenuModule, MatPaginatorModule, MatProgressSpinnerModule, MatFormFieldModule, MatRippleModule, MatProgressBarModule, MatTableModule } from '@angular/material';
+import {
+  MatMenuModule,
+  MatPaginatorModule,
+  MatProgressSpinnerModule,
+  MatFormFieldModule,
+  MatRippleModule,
+  MatProgressBarModule,
+  MatTableModule
+} from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ProgressBarComponent } from '../../components/progress-bar/progress-bar.component';
@@ -15,7 +23,12 @@ describe('ContentAreaComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContentAreaComponent, ListViewComponent, ProgressBarComponent, FieldDataEntryComponent ],
+      declarations: [
+        ContentAreaComponent,
+        ListViewComponent,
+        ProgressBarComponent,
+        FieldDataEntryComponent
+      ],
       imports: [
         RouterModule,
         MatFormFieldModule,
@@ -30,9 +43,9 @@ describe('ContentAreaComponent', () => {
         MatTableModule,
         MatMenuModule,
         MatPaginatorModule,
-        SharedModule]
-    })
-    .compileComponents();
+        SharedModule
+      ]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
