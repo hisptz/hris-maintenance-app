@@ -8,6 +8,22 @@ body {
   float: right;
 }
 
+// FAB Button 
+.example-button-row button,
+.example-button-row a {
+  right: 40px;
+  bottom: 40px;
+  height: 60px;
+  width: 60px;
+  position: fixed !important;
+  background-color: rgb(110, 104, 104) !important;
+}
+
+.fab:focus, .fab.focus {
+  outline: 0;
+  box-shadow: none !important;
+}
+
 .content-detail {
   margin-top: 73px;
   margin-right: 10px;
@@ -307,8 +323,10 @@ body {
   //   border-bottom: 3px solid orange;
 }
 
-.left-menu-item:focus {
+.maintenance-left-menu-icon-text-representation:focus, .maintenance-left-menu-icon-text-representation.focus {
   outline: none;
+  outline: 0;
+  box-shadow: none !important;
 }
 
 // New CSS Style For All Services
