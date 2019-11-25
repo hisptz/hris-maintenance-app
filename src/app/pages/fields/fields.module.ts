@@ -22,6 +22,7 @@ import {
 } from '@angular/material';
 import { ProgressBarComponent } from 'src/app/shared/components/progress-bar/progress-bar.component';
 import { ProgressSpinnerComponent } from 'src/app/shared/components/progress-spinner/progress-spinner.component';
+import { FieldDataEntryComponent } from './components/field-data-entry/field-data-entry.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ProgressSpinnerComponent } from 'src/app/shared/components/progress-spi
     ListViewComponent,
     ProgressBarComponent,
     ProgressSpinnerComponent,
+    FieldDataEntryComponent,
   ],
   imports: [
     CommonModule,

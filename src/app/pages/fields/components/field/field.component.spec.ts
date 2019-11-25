@@ -21,6 +21,7 @@ import {
   MatCardModule
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
+import { FieldDataEntryComponent } from '../field-data-entry/field-data-entry.component';
 
 describe('FieldComponent', () => {
   let component: FieldComponent;
@@ -34,7 +35,8 @@ describe('FieldComponent', () => {
         ContentAreaComponent,
         ProgressSpinnerComponent,
         ListViewComponent,
-        ProgressBarComponent
+        ProgressBarComponent,
+        FieldDataEntryComponent
       ],
       imports: [
         HttpClientModule,

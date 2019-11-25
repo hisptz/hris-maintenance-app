@@ -10,7 +10,6 @@ import { RouterNavigationEndState } from 'src/app/core/models/router-navigation-
 import { APIEndpoints } from '../../lookups/api-endpoint.lookup';
 import { APIResult } from 'src/app/core/models/api-result.model';
 import { MatSnackBar } from '@angular/material';
-import { EventEmitter } from 'events';
 
 /**
  *
@@ -27,8 +26,9 @@ export class MainContentComponent implements OnInit, OnChanges {
   routerNavigation: string;
   menuConfigItems: Array<Menu>;
   isModuleServicesOpened: boolean;
-  entityDetails: any;
   isTableListOpened: boolean;
+  isEntryformOpened: boolean;
+  entityDetails: any;
   APIDataResult: APIResult;
   APIResponse: any;
   APIParams: string;
@@ -45,6 +45,7 @@ export class MainContentComponent implements OnInit, OnChanges {
     this.getActivatedRouteInfo();
     this.isModuleServicesOpened = true;
     this.isTableListOpened = false;
+    this.isEntryformOpened = false;
     const queryParams: QueryParams = this.getQueryParams();
     this.isModuleServicesOpened = _.has(queryParams, 'open')
       ? queryParams.open
@@ -101,11 +102,15 @@ export class MainContentComponent implements OnInit, OnChanges {
   openServiceContentList(menuOption: MenuOption, menuConfigItem: Array<Menu>) {
     this.isTableListOpened = true;
     this.isModuleServicesOpened = false;
+    this.isEntryformOpened = false;
   }
 
   onClickLeftMenuList(menu: MenuOption, menuConfigItems: Array<Menu>): void {
-    this.isTableListOpened = true;
-    this.isModuleServicesOpened = false;
+    if (menu) {
+      this.isTableListOpened = true;
+      this.isModuleServicesOpened = false;
+      this.isEntryformOpened = false;
+    }
   }
 
   onDeletion(item: any): any {

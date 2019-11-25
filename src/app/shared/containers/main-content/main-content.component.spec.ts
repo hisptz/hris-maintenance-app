@@ -21,6 +21,7 @@ import {
 import { ObserversModule } from '@angular/cdk/observers';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from '../../shared.module';
+import { FieldDataEntryComponent } from 'src/app/pages/fields/components/field-data-entry/field-data-entry.component';
 
 describe('MainContentComponent', () => {
   let component: MainContentComponent;
@@ -32,7 +33,8 @@ describe('MainContentComponent', () => {
         MainContentComponent,
         ContentAreaComponent,
         ProgressBarComponent,
-        ListViewComponent
+        ListViewComponent,
+        FieldDataEntryComponent
       ],
       imports: [
         HttpClientModule,

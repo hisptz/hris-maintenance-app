@@ -13,26 +13,35 @@ export class ContentAreaComponent implements OnInit {
   @Input() menuConfigItems: Array<Menu>;
   @Input() isTableListOpened: boolean;
   @Input() isModuleServicesOpened: boolean;
+  @Input() isEntryformOpened: boolean;
   @Input() APIDataResult: APIResult;
+  @Input() serviceMenuOption: MenuOption;
   @Input() APIParams: string;
   @Output() deleteEventEmitter = new EventEmitter();
   @Output() viewMoreDetailsEventEmitter = new EventEmitter();
 
   isTableListOpenedCA: boolean;
   isModuleServicesOpenedCA: boolean;
+  isEntryformOpenedCA: boolean;
+  menuOption: MenuOption;
   pageSize: number;
   constructor(private router: Router) {}
 
   ngOnInit() {
-    this.isTableListOpenedCA = this.isTableListOpened;
-    this.isModuleServicesOpenedCA = this.isModuleServicesOpened;
-    this.pageSize = 10;
-    this.onOpenMenuItemContent();
+      this.isTableListOpenedCA = this.isTableListOpened;
+      this.isModuleServicesOpenedCA = this.isModuleServicesOpened;
+      this.isEntryformOpenedCA = this.isEntryformOpened;
+      this.onOpenMenuItemContent();
+      this.pageSize = 10;
   }
 
   openServiceContentList(menuOption: MenuOption, menuConfigItem: Array<Menu>) {
-    this.isTableListOpenedCA = true;
-    this.isModuleServicesOpenedCA = false;
+    if (menuOption) {
+      this.menuOption = menuOption;
+      this.isTableListOpenedCA = true;
+      this.isModuleServicesOpenedCA = false;
+      this.isEntryformOpenedCA = false;
+    }
   }
 
   onOpenMenuItemContent() {
@@ -40,8 +49,17 @@ export class ContentAreaComponent implements OnInit {
       if (event instanceof NavigationEnd) {
         this.isTableListOpenedCA = true;
         this.isModuleServicesOpenedCA = false;
+        this.isEntryformOpenedCA = false;
       }
     });
+  }
+
+  openDataEntryForm() {
+    if (this.APIParams) {
+      this.isEntryformOpenedCA = true;
+      this.isModuleServicesOpenedCA = false;
+      this.isTableListOpenedCA = false;
+    }
   }
 
   onDelete(item: any) {
