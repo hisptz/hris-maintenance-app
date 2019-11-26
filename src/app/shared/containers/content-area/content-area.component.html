@@ -53,7 +53,8 @@
         <div *ngIf="isEntryformOpenedCA" class="row ml-1 mt-2">
             <div class="maintenance-left-menu-list-container" style="width: 100% !important">
                 <div *ngIf="APIParams === 'fields'">
-                    <app-field-data-entry></app-field-data-entry>
+                    <!-- <app-field-data-entry></app-field-data-entry> -->
+                    <app-field-form></app-field-form>
                 </div>
                 <div *ngIf="APIParams !== 'fields'">
                     <p>This is any entry form</p>

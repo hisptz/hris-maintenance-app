@@ -22,7 +22,7 @@ import {
 } from '@angular/material';
 import { ProgressBarComponent } from 'src/app/shared/components/progress-bar/progress-bar.component';
 import { ProgressSpinnerComponent } from 'src/app/shared/components/progress-spinner/progress-spinner.component';
-import { FieldDataEntryComponent } from './components/field-data-entry/field-data-entry.component';
+import { FieldFormComponent } from './components/field-form/field-form.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,7 @@ import { FieldDataEntryComponent } from './components/field-data-entry/field-dat
     ListViewComponent,
     ProgressBarComponent,
     ProgressSpinnerComponent,
-    FieldDataEntryComponent,
+    FieldFormComponent,
   ],
   imports: [
     CommonModule,

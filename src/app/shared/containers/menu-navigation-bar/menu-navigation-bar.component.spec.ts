@@ -3,7 +3,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MenuNavigationBarComponent } from './menu-navigation-bar.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { RouterModule } from '@angular/router';
-import { FieldDataEntryComponent } from 'src/app/pages/fields/components/field-data-entry/field-data-entry.component';
 import { MatFormFieldModule } from '@angular/material';
 
 describe('MenuNavigationBarComponent', () => {

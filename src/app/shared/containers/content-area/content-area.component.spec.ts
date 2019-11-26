@@ -15,7 +15,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { ProgressBarComponent } from '../../components/progress-bar/progress-bar.component';
 import { ListViewComponent } from '../list-view/list-view.component';
 import { SharedModule } from '../../shared.module';
-import { FieldDataEntryComponent } from 'src/app/pages/fields/components/field-data-entry/field-data-entry.component';
+import { FieldFormComponent } from 'src/app/pages/fields/components/field-form/field-form.component';
 
 describe('ContentAreaComponent', () => {
   let component: ContentAreaComponent;
@@ -27,7 +27,7 @@ describe('ContentAreaComponent', () => {
         ContentAreaComponent,
         ListViewComponent,
         ProgressBarComponent,
-        FieldDataEntryComponent
+        FieldFormComponent
       ],
       imports: [
         RouterModule,

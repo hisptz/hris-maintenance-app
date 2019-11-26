@@ -20,8 +20,7 @@ import {
 } from '@angular/material';
 import { ObserversModule } from '@angular/cdk/observers';
 import { HttpClientModule } from '@angular/common/http';
-import { SharedModule } from '../../shared.module';
-import { FieldDataEntryComponent } from 'src/app/pages/fields/components/field-data-entry/field-data-entry.component';
+import { FieldFormComponent } from 'src/app/pages/fields/components/field-form/field-form.component';
 
 describe('MainContentComponent', () => {
   let component: MainContentComponent;
@@ -34,7 +33,7 @@ describe('MainContentComponent', () => {
         ContentAreaComponent,
         ProgressBarComponent,
         ListViewComponent,
-        FieldDataEntryComponent
+        FieldFormComponent
       ],
       imports: [
         HttpClientModule,
