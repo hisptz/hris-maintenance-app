@@ -25,7 +25,7 @@
     "@angular/router": "~8.2.14",
     "@iapps/hris-menu": "^1.0.0-alpha.3",
     "@ng-bootstrap/ng-bootstrap": "^5.1.4",
-    "bootstrap": "^4.3.1",
+    "bootstrap": "^4.4.0",
     "caniuse-lite": "^1.0.30001012",
     "chrome-headless": "^0.1.5",
     "concurrently": "^5.0.0",
