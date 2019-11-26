@@ -4,6 +4,17 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+// FAB Button 
+.example-button-row button,
+.example-button-row a {
+  right: 40px;
+  bottom: 40px;
+  height: 60px;
+  width: 60px;
+  position: fixed !important;
+  background-color: rgb(110, 104, 104) !important;
+}
+
 .progress-spinner {
   margin: auto;
   text-align: center;

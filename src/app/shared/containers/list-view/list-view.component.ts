@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { APIResult } from 'src/app/core/models/api-result.model';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
+import { MenuOption } from '../../models/menu.models';
 
 @Component({
   selector: 'app-list-view',
@@ -17,10 +18,12 @@ import { MatTableDataSource, MatPaginator } from '@angular/material';
 export class ListViewComponent implements OnInit {
   @Input() APIDataResult?: APIResult;
   @Input() APIParams?: string;
+  @Input() menuOption: MenuOption;
   @Output() deleteEventEmitter = new EventEmitter();
   @Output() viewMoreDetailsEventEmitter = new EventEmitter();
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   dataSource: MatTableDataSource<any>;
+  serviceMenuOption: MenuOption;
   displayedColumns: string[] = [
     'name',
     'caption',
@@ -44,6 +47,7 @@ export class ListViewComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
       this.pageSize = 10;
     }
+    this.serviceMenuOption = this.menuOption;
   }
 
   applyFilter(filterValue: string) {

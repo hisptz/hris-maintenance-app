@@ -26,7 +26,7 @@
         </div>
     </div>
     <div *ngIf="menuConfigItems" class="maintenance-right-menu-container">
-        <app-content-area [APIParams]="APIParams" [APIDataResult]="APIDataResult" [menuConfigItems]="menuConfigItems"
+        <app-content-area [isEntryformOpened]="isEntryformOpened" [APIParams]="APIParams" [APIDataResult]="APIDataResult" [menuConfigItems]="menuConfigItems"
             [isTableListOpened]="isTableListOpened" [isModuleServicesOpened]="isModuleServicesOpened"
             class="content-area" (deleteEventEmitter)="onDeletion($event)"
             (viewMoreDetailsEventEmitter)="onViewMoreDetails($event)">

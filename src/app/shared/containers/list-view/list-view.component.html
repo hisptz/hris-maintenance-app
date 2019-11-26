@@ -1,5 +1,16 @@
 <div>
   <div class="table-box-shodow">
+    <div>
+      <h4 *ngIf="menuOption" class="menu-option-info">
+        {{ serviceMenuOption.name }} management
+        <a target="_blank" rel="noopener noreferrer" href="" tabindex="0"
+          class="link">
+          <div>
+            <span class="material-icons icon">help_outline</span>
+          </div>
+        </a>
+      </h4>
+    </div>
     <mat-form-field>
       <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search by name" />
     </mat-form-field>

@@ -21,6 +21,8 @@ import {
   MatCardModule
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
+import { FieldFormComponent } from '../field-form/field-form.component';
+
 
 describe('FieldComponent', () => {
   let component: FieldComponent;
@@ -34,7 +36,8 @@ describe('FieldComponent', () => {
         ContentAreaComponent,
         ProgressSpinnerComponent,
         ListViewComponent,
-        ProgressBarComponent
+        ProgressBarComponent,
+        FieldFormComponent
       ],
       imports: [
         HttpClientModule,

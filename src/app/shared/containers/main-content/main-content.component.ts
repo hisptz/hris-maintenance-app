@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, Output } from '@angular/core';
 import * as _ from 'lodash';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { Menu, MenuOption } from '../../models/menu.models';
@@ -26,8 +26,9 @@ export class MainContentComponent implements OnInit, OnChanges {
   routerNavigation: string;
   menuConfigItems: Array<Menu>;
   isModuleServicesOpened: boolean;
-  entityDetails: any;
   isTableListOpened: boolean;
+  isEntryformOpened: boolean;
+  entityDetails: any;
   APIDataResult: APIResult;
   APIResponse: any;
   APIParams: string;
@@ -44,6 +45,7 @@ export class MainContentComponent implements OnInit, OnChanges {
     this.getActivatedRouteInfo();
     this.isModuleServicesOpened = true;
     this.isTableListOpened = false;
+    this.isEntryformOpened = false;
     const queryParams: QueryParams = this.getQueryParams();
     this.isModuleServicesOpened = _.has(queryParams, 'open')
       ? queryParams.open
@@ -100,10 +102,15 @@ export class MainContentComponent implements OnInit, OnChanges {
   openServiceContentList(menuOption: MenuOption, menuConfigItem: Array<Menu>) {
     this.isTableListOpened = true;
     this.isModuleServicesOpened = false;
+    this.isEntryformOpened = false;
   }
 
   onClickLeftMenuList(menu: MenuOption, menuConfigItems: Array<Menu>): void {
-    console.log('Item From Left MENU clicked');
+    if (menu) {
+      this.isTableListOpened = true;
+      this.isModuleServicesOpened = false;
+      this.isEntryformOpened = false;
+    }
   }
 
   onDeletion(item: any): any {
@@ -126,7 +133,6 @@ export class MainContentComponent implements OnInit, OnChanges {
 
   onClose() {
     this.entityDetails = { ...this.entityDetails, status: false };
-    console.log('ORIGIN::: ' + JSON.stringify(window.location.origin));
   }
 
   openSnackBar(response: any) {

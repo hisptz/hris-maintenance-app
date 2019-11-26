@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MenuNavigationBarComponent } from './menu-navigation-bar.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { RouterModule } from '@angular/router';
+import { MatFormFieldModule } from '@angular/material';
 
 describe('MenuNavigationBarComponent', () => {
   let component: MenuNavigationBarComponent;
@@ -11,7 +12,7 @@ describe('MenuNavigationBarComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ MenuNavigationBarComponent ],
-      imports: [RouterModule, RouterTestingModule]
+      imports: [RouterModule, RouterTestingModule, MatFormFieldModule]
     })
     .compileComponents();
   }));

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start:dev": "concurrently 'ng serve' 'json-server --watch db.json'",
+    "start:json-server": "concurrently 'ng serve' 'json-server --watch db.json'",
+    "start:dev": "ng serve",
     "start:travis": "ng test -- --no-watch --no-progress --code-coverage --browsers=ChromeHeadlessCI",
     "build": "ng build",
     "test": "ng test",
