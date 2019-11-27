@@ -41,38 +41,16 @@
                     <div class="sel-container">
                         <div class="sel-flex">
                             <div class="sel-sub-container">
-                                <select multiple="" class="sel-option">
-                                    <option value="3" style="padding: 0.25rem 0.5rem;">Districts</option>
-                                    <option value="4" style="padding: 0.25rem 0.5rem;">Facilities</option>
-                                    <option value="1" style="padding: 0.25rem 0.5rem;">MoH Tanzania</option>
-                                    <option value="2" style="padding: 0.25rem 0.5rem;">Regions</option>
-                                    <option value="3" style="padding: 0.25rem 0.5rem;">Districts</option>
-                                    <option value="4" style="padding: 0.25rem 0.5rem;">Facilities</option>
-                                    <option value="1" style="padding: 0.25rem 0.5rem;">MoH Tanzania</option>
-                                    <option value="2" style="padding: 0.25rem 0.5rem;">Regions</option>
-                                    <option value="3" style="padding: 0.25rem 0.5rem;">Districts</option>
-                                    <option value="4" style="padding: 0.25rem 0.5rem;">Facilities</option>
-                                    <option value="1" style="padding: 0.25rem 0.5rem;">MoH Tanzania</option>
-                                    <option value="2" style="padding: 0.25rem 0.5rem;">Regions</option>
-                                    <option value="3" style="padding: 0.25rem 0.5rem;">Districts</option>
-                                    <option value="4" style="padding: 0.25rem 0.5rem;">Facilities</option>
-                                    <option value="1" style="padding: 0.25rem 0.5rem;">MoH Tanzania</option>
-                                    <option value="2" style="padding: 0.25rem 0.5rem;">Regions</option>
-                                    <option value="3" style="padding: 0.25rem 0.5rem;">Districts</option>
-                                    <option value="4" style="padding: 0.25rem 0.5rem;">Facilities</option>
-                                    <option value="1" style="padding: 0.25rem 0.5rem;">MoH Tanzania</option>
-                                    <option value="2" style="padding: 0.25rem 0.5rem;">Regions</option>
-                                    <option value="3" style="padding: 0.25rem 0.5rem;">Districts</option>
-                                    <option value="4" style="padding: 0.25rem 0.5rem;">Facilities</option>
-                                    <option value="1" style="padding: 0.25rem 0.5rem;">MoH Tanzania</option>
-                                    <option value="2" style="padding: 0.25rem 0.5rem;">Regions</option>
+                                <select *ngIf="fieldGroups?.length > 0" multiple="" class="sel-option">
+                                    <option *ngFor="let fieldGroup of fieldGroups" value="fieldGroup.uid"
+                                        style="padding: 0.25rem 0.5rem;">{{ fieldGroup?.name }}</option>
                                 </select>
                             </div>
                             <div class="assign-all">
-                                <button tabindex="0" type="button" class="assign-all-button">
+                                <button tabindex="0" type="button" class="sel-enabled">
                                     <div>
                                         <div class="assign-all-div">
-                                            <span class="assign-all-span">Assign all 4 →</span>
+                                            <span class="assign-all-span">Assign all {{ fieldGroups?.length }} →</span>
                                         </div>
                                     </div>
                                 </button>
@@ -80,7 +58,8 @@
                         </div>
                         <div class="assign-unassign">
                             <div class="assign-one">
-                                <button disabled="" tabindex="-1" type="button" class="assign-one-btn">
+                                <button [ngClass]="setClasses()" disabled="" tabindex="-1" type="button"
+                                    class="assign-one-btn">
                                     <div class="assign-one-div">
                                         <span class="assign-one-span">→</span>
                                     </div>
@@ -111,6 +90,7 @@
                 </div>
             </div>
             <br />
+            <!-- Field Options -->
             <div class="rel-position">
                 <div class="rel-position">
                     <div>
@@ -121,67 +101,85 @@
                     <div class="sel-container">
                         <div class="sel-flex">
                             <div class="sel-sub-container">
-                                <select multiple="" class="sel-option">
-                                    <option value="3" style="padding: 0.25rem 0.5rem;">Districts</option>
-                                    <option value="4" style="padding: 0.25rem 0.5rem;">Facilities</option>
-                                    <option value="1" style="padding: 0.25rem 0.5rem;">MoH Tanzania</option>
-                                    <option value="2" style="padding: 0.25rem 0.5rem;">Regions</option>
-                                    <option value="3" style="padding: 0.25rem 0.5rem;">Districts</option>
-                                    <option value="4" style="padding: 0.25rem 0.5rem;">Facilities</option>
-                                    <option value="1" style="padding: 0.25rem 0.5rem;">MoH Tanzania</option>
-                                    <option value="2" style="padding: 0.25rem 0.5rem;">Regions</option>
-                                    <option value="3" style="padding: 0.25rem 0.5rem;">Districts</option>
-                                    <option value="4" style="padding: 0.25rem 0.5rem;">Facilities</option>
-                                    <option value="1" style="padding: 0.25rem 0.5rem;">MoH Tanzania</option>
-                                    <option value="2" style="padding: 0.25rem 0.5rem;">Regions</option>
-                                    <option value="3" style="padding: 0.25rem 0.5rem;">Districts</option>
-                                    <option value="4" style="padding: 0.25rem 0.5rem;">Facilities</option>
-                                    <option value="1" style="padding: 0.25rem 0.5rem;">MoH Tanzania</option>
-                                    <option value="2" style="padding: 0.25rem 0.5rem;">Regions</option>
-                                    <option value="3" style="padding: 0.25rem 0.5rem;">Districts</option>
-                                    <option value="4" style="padding: 0.25rem 0.5rem;">Facilities</option>
-                                    <option value="1" style="padding: 0.25rem 0.5rem;">MoH Tanzania</option>
-                                    <option value="2" style="padding: 0.25rem 0.5rem;">Regions</option>
-                                    <option value="3" style="padding: 0.25rem 0.5rem;">Districts</option>
-                                    <option value="4" style="padding: 0.25rem 0.5rem;">Facilities</option>
-                                    <option value="1" style="padding: 0.25rem 0.5rem;">MoH Tanzania</option>
-                                    <option value="2" style="padding: 0.25rem 0.5rem;">Regions</option>
+                                <select *ngIf="fieldOptions?.length > 0" multiple="" class="sel-option">
+                                    <option *ngFor="let fieldOption of fieldOptions"
+                                        (click)="onSelect(fieldOption, $event, 'select')" value="fieldOption.uid"
+                                        style="padding: 0.25rem 0.5rem;">
+                                        {{ fieldOption?.name }}
+                                    </option>
                                 </select>
+                                <div *ngIf="fieldOptions?.length === 0" class="error">
+                                    <i class="error-icon material-icons">warning</i>&nbsp; No
+                                    field option
+                                </div>
                             </div>
-                            <div class="assign-all">
-                                <button tabindex="0" type="button" class="assign-all-button">
+                            <div matRipple class="assign-all">
+                                <button [attr.class]="
+                    fieldOptions?.length > 0 ? 'sel-enabled' : 'sel-disabled'
+                  " [attr.disabled]="
+                    fieldOptions?.length === 0 ? 'disabled' : null
+                  " tabindex="0" type="button">
                                     <div>
                                         <div class="assign-all-div">
-                                            <span class="assign-all-span">Assign all 4 →</span>
+                                            <span class="assign-all-span">Assign all {{ fieldOptions?.length }} →</span>
                                         </div>
                                     </div>
                                 </button>
                             </div>
                         </div>
                         <div class="assign-unassign">
+                            <div *ngIf="tempFieldOption?.length > 0"
+                                style="font-size: 13px; min-height: 15px; padding: 0px 8px;">
+                                {{ tempFieldOption?.length }} selected
+                            </div>
+                            <!-- ToDO: Select and Deselect Arrows -->
                             <div class="assign-one">
-                                <button disabled="" tabindex="-1" type="button" class="assign-one-btn">
-                                    <div class="assign-one-div">
+                                <button [attr.class]="
+                    tempFieldOption.length > 0 && action === 'select'
+                      ? 'is-enabled'
+                      : 'is-disabled'
+                  " tabindex="-1" type="button" class="assign-one-btn">
+                                    <div (click)="getSelectedFieldOption()" class="assign-one-div">
                                         <span class="assign-one-span">→</span>
                                     </div>
                                 </button>
                             </div>
                             <div class="unassign-one">
-                                <button disabled="" tabindex="-1" type="button" class="unassign-one-btn">
-                                    <div class="unassign-one-div">
+                                <button [attr.class]="
+                    tempFieldOption.length > 0 && action === 'deselect'
+                      ? 'is-enabled'
+                      : 'is-disabled'
+                  " tabindex="-1" type="button" class="unassign-one-btn">
+                                    <div (click)="getDeSelectedFieldOption()" class="unassign-one-div">
                                         <span class="unassign-one-span">←</span>
                                     </div>
                                 </button>
                             </div>
+                            <!-- ToDO: Select and Deselect Arrows -->
                         </div>
+
+                        <!-- Field Option Remove All -->
                         <div class="sel-flex">
                             <div class="sel-sub-container">
-                                <select multiple="" class="sel-option"> </select>
+                                <select multiple="" *ngIf="selectedFieldOptions?.length > 0" class="sel-option">
+                                    <option *ngFor="let selectedFieldOption of selectedFieldOptions" (click)="
+                      onDeselect(selectedFieldOption, $event, 'deselect')
+                    " value="fieldOption.uid" style="padding: 0.25rem 0.5rem;">
+                                        {{ selectedFieldOption?.name }}
+                                    </option>
+                                </select>
                             </div>
                             <div class="remove-all">
-                                <button disabled="" tabindex="-1" type="button" class="remove-all-btn">
+                                <button [attr.class]="
+                    selectedFieldOptions?.length > 0
+                      ? 'sel-enabled'
+                      : 'sel-disabled'
+                  " disabled="selectedFieldOption?.length === 0" tabindex="-1" type="button">
                                     <div class="remove-all-div">
-                                        <span class="remove-all-span">← Remove all </span>
+                                        <span
+                                            style="position: relative; opacity: 1; font-size: 14px; letter-spacing: 0px; text-transform: uppercase; font-weight: 500; margin: 0px; user-select: none; padding-left: 16px; padding-right: 16px; color: rgb(255, 255, 255);">←
+                                            Remove all {{ selectedFieldOptions?.length }}
+                                        </span>
                                     </div>
                                 </button>
                             </div>
