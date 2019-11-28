@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MaintenanceService } from 'src/app/core/services/maintenance.service';
-import { APIResult } from 'src/app/core/models/api-result.model';
 import { Observable } from 'rxjs';
 import * as _ from 'lodash';
+import { Menu, MenuOption } from 'src/app/shared/models/menu.models';
 
 @Component({
   selector: 'app-field-form',
@@ -10,6 +10,7 @@ import * as _ from 'lodash';
   styleUrls: ['./field-form.component.scss']
 })
 export class FieldFormComponent implements OnInit {
+  @Input() menuOption: MenuOption;
   fieldGroups: any;
   fieldOptions: any;
   action: string;
@@ -19,7 +20,7 @@ export class FieldFormComponent implements OnInit {
   tempFieldOption: any[] = [];
   tempFieldGroup: any[] = [];
 
-  constructor(private maintenanceService: MaintenanceService) {}
+  constructor(private maintenanceService: MaintenanceService) { }
 
   ngOnInit() {
     // Loading Field Groups
@@ -43,69 +44,9 @@ export class FieldFormComponent implements OnInit {
     });
   }
 
-  onSelect(selection: any, e, action: any) {
-    this.action = action;
-    this.tempFieldOption.push(selection);
-    if (selection && this.tempFieldOption.length === 0) {
-      if (!_.includes(this.tempFieldOption, selection)) {
-        this.tempFieldOption.push(selection);
-      }
-    } else {
-      this.tempFieldOption = [];
-      this.tempFieldOption.push(selection);
+  onSelectItemList(result: any) {
+    if (result) {
+      console.log('RESULT::: ' + JSON.stringify(result));
     }
-  }
-
-  onDeselect(selection: any, e, action: any) {
-    this.action = action;
-    this.tempFieldOption.push(selection);
-    if (selection && this.tempFieldOption.length === 0) {
-      if (!_.includes(this.tempFieldOption, selection)) {
-        this.tempFieldOption.push(selection);
-      }
-    } else {
-      this.tempFieldOption = [];
-      this.tempFieldOption.push(selection);
-    }
-  }
-
-  getSelectedFieldOption() {
-    this.selectedFieldOptions = _.sortBy(
-      _.uniqBy([...this.selectedFieldOptions, ...this.tempFieldOption], 'uid'),
-      (option: any) => {
-        return option.name;
-      }
-    );
-    this.fieldOptions = _.sortBy(
-      [
-        ..._.filter(this.fieldOptions, (option: any) => {
-          return !_.includes(this.selectedFieldOptions, option);
-        })
-      ],
-      (option: any) => {
-        return option.name;
-      }
-    );
-    this.tempFieldOption = [];
-  }
-
-  getDeSelectedFieldOption() {
-    this.fieldOptions = _.sortBy(
-      _.uniqBy([...this.fieldOptions, ...this.tempFieldOption], 'uid'),
-      (option: any) => {
-        return option.name;
-      }
-    );
-    this.selectedFieldOptions = _.sortBy(
-      [
-        ..._.filter(this.selectedFieldOptions, (option: any) => {
-          return !_.includes(this.fieldOptions, option);
-        })
-      ],
-      (option: any) => {
-        return option.name;
-      }
-    );
-    this.tempFieldOption = [];
   }
 }
