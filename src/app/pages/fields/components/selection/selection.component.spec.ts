@@ -1,12 +1,12 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SelectionComponent } from "./selection.component";
-import { MatFormFieldModule, MatInputModule } from "@angular/material";
-import { FormsModule } from "@angular/forms";
-import { SearchByNamePipe } from "../../pipes/search-by-name/search-by-name.pipe";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { SelectionComponent } from './selection.component';
+import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import { FormsModule } from '@angular/forms';
+import { SearchByNamePipe } from '../../pipes/search-by-name/search-by-name.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-describe("SelectionComponent", () => {
+describe('SelectionComponent', () => {
   let component: SelectionComponent;
   let fixture: ComponentFixture<SelectionComponent>;
 
@@ -28,7 +28,7 @@ describe("SelectionComponent", () => {
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });
