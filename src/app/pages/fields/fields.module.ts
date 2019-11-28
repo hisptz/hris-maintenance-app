@@ -25,6 +25,8 @@ import { ProgressSpinnerComponent } from 'src/app/shared/components/progress-spi
 import { FieldFormComponent } from './components/field-form/field-form.component';
 import { SearchByNamePipe } from './pipes/search-by-name/search-by-name.pipe';
 import { FormsModule } from '@angular/forms';
+import { SelectionComponent } from './components/selection/selection.component';
+import { FormHeaderComponent } from 'src/app/shared/components/form-header/form-header.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { FormsModule } from '@angular/forms';
     ProgressSpinnerComponent,
     FieldFormComponent,
     SearchByNamePipe,
+    SelectionComponent,
+    FormHeaderComponent
   ],
   imports: [
     CommonModule,

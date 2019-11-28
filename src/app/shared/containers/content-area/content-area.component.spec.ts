@@ -19,6 +19,8 @@ import { SharedModule } from '../../shared.module';
 import { FieldFormComponent } from 'src/app/pages/fields/components/field-form/field-form.component';
 import { SearchByNamePipe } from 'src/app/pages/fields/pipes/search-by-name/search-by-name.pipe';
 import { FormsModule } from '@angular/forms';
+import { FormHeaderComponent } from '../../components/form-header/form-header.component';
+import { SelectionComponent } from 'src/app/pages/fields/components/selection/selection.component';
 
 describe('ContentAreaComponent', () => {
   let component: ContentAreaComponent;
@@ -31,7 +33,9 @@ describe('ContentAreaComponent', () => {
         ListViewComponent,
         ProgressBarComponent,
         FieldFormComponent,
-        SearchByNamePipe
+        SearchByNamePipe,
+        FormHeaderComponent,
+        SelectionComponent
       ],
       imports: [
         RouterModule,
