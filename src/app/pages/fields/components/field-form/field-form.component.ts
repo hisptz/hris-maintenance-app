@@ -13,6 +13,7 @@ export class FieldFormComponent implements OnInit {
   fieldGroups: any;
   fieldOptions: any;
   action: string;
+  searchString: string;
   selectedFieldOptions: any[] = [];
   selectedFieldGroups: any[] = [];
   tempFieldOption: any[] = [];
@@ -22,42 +23,24 @@ export class FieldFormComponent implements OnInit {
 
   ngOnInit() {
     // Loading Field Groups
-    const fieldGroups = 'fieldGroups';
     const $fieldGroups: Observable<any> = this.maintenanceService.getAll(
-      fieldGroups
+      'fieldGroups'
     );
     $fieldGroups.subscribe((result: any) => {
-      this.fieldGroups = result.fieldGroups;
+      this.fieldGroups = _.sortBy(result.fieldGroups, (option: any) => {
+        return option.name;
+      });
     });
 
     // Loading Field Options
-    const fieldOptions = 'fieldOptions';
     const $fieldOptions: Observable<any> = this.maintenanceService.getAll(
-      fieldOptions
+      'fieldOptions'
     );
     $fieldOptions.subscribe((result: any) => {
-      this.fieldOptions = result.fieldOptions;
+      this.fieldOptions = _.sortBy(result.fieldOptions, (option: any) => {
+        return option.name;
+      });
     });
-  }
-
-  setClasses() {
-    if (this.tempFieldOption) {
-      const classes = {
-        'is-enabled': this.tempFieldOption.length > 0,
-        'is-disabled': this.tempFieldOption.length === 0
-      };
-      return classes ? classes : classes;
-    }
-  }
-
-  setRemoveAllClasses() {
-    if (this.selectedFieldOptions) {
-      const classes = {
-        'remove-all-btn': this.selectedFieldOptions.length === 0,
-        'is-disable': this.selectedFieldOptions.length > 0
-      };
-      return classes ? classes : classes;
-    }
   }
 
   onSelect(selection: any, e, action: any) {
@@ -87,28 +70,42 @@ export class FieldFormComponent implements OnInit {
   }
 
   getSelectedFieldOption() {
-    this.selectedFieldOptions = _.uniqBy(
-      [...this.selectedFieldOptions, ...this.tempFieldOption],
-      'uid'
+    this.selectedFieldOptions = _.sortBy(
+      _.uniqBy([...this.selectedFieldOptions, ...this.tempFieldOption], 'uid'),
+      (option: any) => {
+        return option.name;
+      }
     );
-    this.fieldOptions = [
-      ..._.filter(this.fieldOptions, (option: any) => {
-        return !_.includes(this.selectedFieldOptions, option);
-      })
-    ];
+    this.fieldOptions = _.sortBy(
+      [
+        ..._.filter(this.fieldOptions, (option: any) => {
+          return !_.includes(this.selectedFieldOptions, option);
+        })
+      ],
+      (option: any) => {
+        return option.name;
+      }
+    );
     this.tempFieldOption = [];
   }
 
   getDeSelectedFieldOption() {
-    this.fieldOptions = _.uniqBy(
-      [...this.fieldOptions, ...this.tempFieldOption],
-      'uid'
+    this.fieldOptions = _.sortBy(
+      _.uniqBy([...this.fieldOptions, ...this.tempFieldOption], 'uid'),
+      (option: any) => {
+        return option.name;
+      }
     );
-    this.selectedFieldOptions = [
-      ..._.filter(this.selectedFieldOptions, (option: any) => {
-        return !_.includes(this.fieldOptions, option);
-      })
-    ];
+    this.selectedFieldOptions = _.sortBy(
+      [
+        ..._.filter(this.selectedFieldOptions, (option: any) => {
+          return !_.includes(this.fieldOptions, option);
+        })
+      ],
+      (option: any) => {
+        return option.name;
+      }
+    );
     this.tempFieldOption = [];
   }
 }

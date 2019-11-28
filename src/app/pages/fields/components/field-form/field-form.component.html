@@ -50,7 +50,11 @@
                                 <button tabindex="0" type="button" class="sel-enabled">
                                     <div>
                                         <div class="assign-all-div">
-                                            <span class="assign-all-span">Assign all {{ fieldGroups?.length }} →</span>
+                                            <span class="assign-all-span">Assign all
+                                                {{
+                          (fieldGroups | searchByName: searchString)?.length
+                        }}
+                                                →</span>
                                         </div>
                                     </div>
                                 </button>
@@ -58,8 +62,7 @@
                         </div>
                         <div class="assign-unassign">
                             <div class="assign-one">
-                                <button [ngClass]="setClasses()" disabled="" tabindex="-1" type="button"
-                                    class="assign-one-btn">
+                                <button disabled="" tabindex="-1" type="button" class="assign-one-btn">
                                     <div class="assign-one-div">
                                         <span class="assign-one-span">→</span>
                                     </div>
@@ -95,20 +98,25 @@
                 <div class="rel-position">
                     <div>
                         <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Search for Field options..." />
+                            <input matInput name="search" type="search" placeholder="Search for Field options..."
+                                [(ngModel)]="searchString" />
                         </mat-form-field>
                     </div>
                     <div class="sel-container">
                         <div class="sel-flex">
                             <div class="sel-sub-container">
                                 <select *ngIf="fieldOptions?.length > 0" multiple="" class="sel-option">
-                                    <option *ngFor="let fieldOption of fieldOptions"
-                                        (click)="onSelect(fieldOption, $event, 'select')" value="fieldOption.uid"
+                                    <option *ngFor="
+                      let fieldOption of fieldOptions
+                        | searchByName: searchString
+                    " (click)="onSelect(fieldOption, $event, 'select')" value="fieldOption.uid"
                                         style="padding: 0.25rem 0.5rem;">
                                         {{ fieldOption?.name }}
                                     </option>
                                 </select>
-                                <div *ngIf="fieldOptions?.length === 0" class="error">
+                                <div *ngIf="
+                    (fieldOptions | searchByName: searchString)?.length === 0
+                  " class="error">
                                     <i class="error-icon material-icons">warning</i>&nbsp; No
                                     field option
                                 </div>
@@ -121,7 +129,11 @@
                   " tabindex="0" type="button">
                                     <div>
                                         <div class="assign-all-div">
-                                            <span class="assign-all-span">Assign all {{ fieldOptions?.length }} →</span>
+                                            <span class="assign-all-span">Assign all
+                                                {{
+                          (fieldOptions | searchByName: searchString)?.length
+                        }}
+                                                →</span>
                                         </div>
                                     </div>
                                 </button>
@@ -162,7 +174,10 @@
                         <div class="sel-flex">
                             <div class="sel-sub-container">
                                 <select multiple="" *ngIf="selectedFieldOptions?.length > 0" class="sel-option">
-                                    <option *ngFor="let selectedFieldOption of selectedFieldOptions" (click)="
+                                    <option *ngFor="
+                      let selectedFieldOption of selectedFieldOptions
+                        | searchByName: searchString
+                    " (click)="
                       onDeselect(selectedFieldOption, $event, 'deselect')
                     " value="fieldOption.uid" style="padding: 0.25rem 0.5rem;">
                                         {{ selectedFieldOption?.name }}
@@ -178,7 +193,11 @@
                                     <div class="remove-all-div">
                                         <span
                                             style="position: relative; opacity: 1; font-size: 14px; letter-spacing: 0px; text-transform: uppercase; font-weight: 500; margin: 0px; user-select: none; padding-left: 16px; padding-right: 16px; color: rgb(255, 255, 255);">←
-                                            Remove all {{ selectedFieldOptions?.length }}
+                                            Remove all
+                                            {{
+                        (selectedFieldOptions | searchByName: searchString)
+                          ?.length
+                      }}
                                         </span>
                                     </div>
                                 </button>

@@ -5,6 +5,8 @@ import { MatFormFieldModule, MatInputModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { MaintenanceService } from 'src/app/core/services/maintenance.service';
+import { FormsModule } from '@angular/forms';
+import { SearchByNamePipe } from '../../pipes/search-by-name/search-by-name.pipe';
 
 describe('FieldFormComponent', () => {
   let component: FieldFormComponent;
@@ -12,12 +14,15 @@ describe('FieldFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [FieldFormComponent],
+      declarations: [FieldFormComponent, SearchByNamePipe],
       imports: [
         MatFormFieldModule,
         HttpClientTestingModule,
         MatInputModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        FormsModule,
+        MatFormFieldModule,
+        MatInputModule
       ],
       providers: [MaintenanceService]
     }).compileComponents();

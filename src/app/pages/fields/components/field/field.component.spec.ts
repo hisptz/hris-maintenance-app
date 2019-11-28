@@ -22,6 +22,8 @@ import {
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { FieldFormComponent } from '../field-form/field-form.component';
+import { SearchByNamePipe } from '../../pipes/search-by-name/search-by-name.pipe';
+import { FormsModule } from '@angular/forms';
 
 
 describe('FieldComponent', () => {
@@ -37,7 +39,8 @@ describe('FieldComponent', () => {
         ProgressSpinnerComponent,
         ListViewComponent,
         ProgressBarComponent,
-        FieldFormComponent
+        FieldFormComponent,
+        SearchByNamePipe
       ],
       imports: [
         HttpClientModule,
@@ -51,7 +54,8 @@ describe('FieldComponent', () => {
         MatProgressSpinnerModule,
         MatProgressBarModule,
         MatSnackBarModule,
-        MatCardModule
+        MatCardModule,
+        FormsModule
       ],
       providers: [MaintenanceService]
     }).compileComponents();

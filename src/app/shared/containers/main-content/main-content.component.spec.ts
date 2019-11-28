@@ -21,6 +21,8 @@ import {
 import { ObserversModule } from '@angular/cdk/observers';
 import { HttpClientModule } from '@angular/common/http';
 import { FieldFormComponent } from 'src/app/pages/fields/components/field-form/field-form.component';
+import { SearchByNamePipe } from 'src/app/pages/fields/pipes/search-by-name/search-by-name.pipe';
+import { FormsModule } from '@angular/forms';
 
 describe('MainContentComponent', () => {
   let component: MainContentComponent;
@@ -33,7 +35,8 @@ describe('MainContentComponent', () => {
         ContentAreaComponent,
         ProgressBarComponent,
         ListViewComponent,
-        FieldFormComponent
+        FieldFormComponent,
+        SearchByNamePipe
       ],
       imports: [
         HttpClientModule,
@@ -48,7 +51,8 @@ describe('MainContentComponent', () => {
         MatProgressBarModule,
         MatPaginatorModule,
         MatSnackBarModule,
-        MatCardModule
+        MatCardModule,
+        FormsModule
       ],
       providers: []
     }).compileComponents();
