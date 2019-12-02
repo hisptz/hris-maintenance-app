@@ -26,7 +26,7 @@
     "@iapps/hris-menu": "^1.0.0-alpha.3",
     "@ng-bootstrap/ng-bootstrap": "^5.1.4",
     "bootstrap": "^4.4.1",
-    "caniuse-lite": "^1.0.30001012",
+    "caniuse-lite": "^1.0.30001013",
     "chrome-headless": "^0.1.5",
     "concurrently": "^5.0.0",
     "core-js": "^3.4.5",
