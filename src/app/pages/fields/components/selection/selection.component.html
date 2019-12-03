@@ -1,0 +1,99 @@
+<div class="rel-position">
+    <div class="rel-position">
+        <div class="selection-search">
+            <mat-form-field class="example-full-width">
+                <input matInput name="search" type="search" placeholder="Search for Field options..."
+                    [(ngModel)]="searchString" />
+            </mat-form-field>
+        </div>
+        <div class="sel-container">
+            <div class="sel-flex">
+                <div class="sel-sub-container">
+                    <select *ngIf="entityList?.length > 0" multiple="" class="sel-option">
+                        <option *ngFor="
+                let fieldOption of entityList | searchByName: searchString
+              " (click)="onSelect(fieldOption, $event, 'select')" value="fieldOption.uid"
+                            style="padding: 0.25rem 0.5rem;">
+                            {{ fieldOption?.name }}
+                        </option>
+                    </select>
+                    <div *ngIf="(entityList | searchByName: searchString)?.length === 0" class="error">
+                        <i class="error-icon material-icons">warning</i>&nbsp; No field
+                        option
+                    </div>
+                </div>
+                <div matRipple class="assign-all">
+                    <button matRipple [attr.class]="
+              entityList?.length > 0 ? 'sel-enabled' : 'sel-disabled'
+            " disabled="entityList?.length === 0" tabindex="0" type="button">
+                        <div>
+                            <div class="assign-all-div" matRipple>
+                                <span class="assign-all-span" (click)="selectAll('selectAll')">Assign all
+                                    {{ (entityList | searchByName: searchString)?.length }}
+                                    →</span>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div class="assign-unassign">
+                <div *ngIf="tempEntityList?.length > 0" style="font-size: 13px; min-height: 15px; padding: 0px 8px;">
+                    {{ tempEntityList?.length }} selected
+                </div>
+                <!-- ToDO: Select and Deselect Arrows -->
+                <div class="assign-one">
+                    <button mat-stroked-button [attr.class]="
+              tempEntityList.length > 0 && action === 'select'
+                ? 'is-enabled'
+                : 'is-disabled'
+            " disabled="tempEntityList?.length === 0" tabindex="-1" type="button" class="assign-one-btn">
+                        <div (click)="getSelectedFieldOption()" class="assign-one-div">
+                            <span class="assign-one-span">→</span>
+                        </div>
+                    </button>
+                </div>
+                <div class="unassign-one">
+                    <button mat-stroked-button [attr.class]="
+              tempEntityList.length > 0 && action === 'deselect'
+                ? 'is-enabled'
+                : 'is-disabled'
+            " disabled="tempEntityList?.length === 0" tabindex="-1" type="button" class="unassign-one-btn">
+                        <div (click)="getDeSelectedFieldOption()" class="unassign-one-div">
+                            <span class="unassign-one-span">←</span>
+                        </div>
+                    </button>
+                </div>
+                <!-- ToDO: Select and Deselect Arrows -->
+            </div>
+
+            <!-- Field Option Remove All -->
+            <div class="sel-flex">
+                <div class="sel-sub-container">
+                    <select multiple="" *ngIf="selectedEntityList?.length > 0" class="sel-option">
+                        <option *ngFor="
+                let selectedFieldOption of selectedEntityList
+                  | searchByName: searchString
+              " (click)="onDeselect(selectedFieldOption, $event, 'deselect')" value="fieldOption.uid"
+                            style="padding: 0.25rem 0.5rem;">
+                            {{ selectedFieldOption?.name }}
+                        </option>
+                    </select>
+                </div>
+                <div class="remove-all">
+                    <button matRipple [attr.class]="
+              selectedEntityList?.length > 0 ? 'sel-enabled' : 'sel-disabled'
+            " disabled="selectedFieldOption?.length === 0" tabindex="-1" type="button">
+                        <div class="remove-all-div">
+                            <span (click)="selectAll('deselectAll')"
+                                style="position: relative; opacity: 1; font-size: 14px; letter-spacing: 0px; text-transform: uppercase; font-weight: 500; margin: 0px; user-select: none; padding-left: 16px; padding-right: 16px; color: rgb(255, 255, 255);">←
+                                Remove all
+                                {{ (selectedEntityList | searchByName: searchString)?.length }}
+                            </span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div style="clear: both; height: 2rem; width: 100%;"></div>
+    </div>
+</div>

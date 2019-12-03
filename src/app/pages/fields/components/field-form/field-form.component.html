@@ -1,12 +1,12 @@
 <div style="width: 100%; margin: 0px auto 2rem; padding: 2rem 5rem 4rem; position: relative;">
-    <form class="example-form">
+    <form [formGroup]="fieldRegistrationForm" class="example-form">
         <div>
             <div style="position: relative;">
                 <div style="position: relative;">
                     <div
                         style="font-size: 16px; line-height: 24px; width: 100%; height: 72px; display: inline-block; position: relative; background-color: transparent; font-family: Roboto, sans-serif; transition: height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; cursor: auto;">
                         <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Name" />
+                            <input formControlName="name" matInput placeholder="Name" />
                         </mat-form-field>
                     </div>
                 </div>
@@ -16,7 +16,7 @@
                     <div
                         style="font-size: 16px; line-height: 24px; width: 100%; height: 72px; display: inline-block; position: relative; background-color: transparent; font-family: Roboto, sans-serif; transition: height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; cursor: auto;">
                         <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Caption" />
+                            <input formControlName="shortName" matInput placeholder="Shortname" />
                         </mat-form-field>
                     </div>
                 </div>
@@ -26,169 +26,38 @@
                     <div
                         style="font-size: 16px; line-height: 24px; width: 100%; height: 72px; display: inline-block; position: relative; background-color: transparent; font-family: Roboto, sans-serif; transition: height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; cursor: auto;">
                         <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Description" />
+                            <input formControlName="caption" matInput placeholder="Caption" />
                         </mat-form-field>
                     </div>
                 </div>
             </div>
-            <div class="rel-position">
-                <div class="rel-position">
-                    <div>
+            <div style="position: relative;">
+                <div style="position: relative;">
+                    <div
+                        style="font-size: 16px; line-height: 24px; width: 100%; height: 72px; display: inline-block; position: relative; background-color: transparent; font-family: Roboto, sans-serif; transition: height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; cursor: auto;">
                         <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Search for Field options..." />
+                            <input formControlName="description" matInput placeholder="Description" />
                         </mat-form-field>
                     </div>
-                    <div class="sel-container">
-                        <div class="sel-flex">
-                            <div class="sel-sub-container">
-                                <select multiple="" class="sel-option">
-                                    <option value="3" style="padding: 0.25rem 0.5rem;">Districts</option>
-                                    <option value="4" style="padding: 0.25rem 0.5rem;">Facilities</option>
-                                    <option value="1" style="padding: 0.25rem 0.5rem;">MoH Tanzania</option>
-                                    <option value="2" style="padding: 0.25rem 0.5rem;">Regions</option>
-                                    <option value="3" style="padding: 0.25rem 0.5rem;">Districts</option>
-                                    <option value="4" style="padding: 0.25rem 0.5rem;">Facilities</option>
-                                    <option value="1" style="padding: 0.25rem 0.5rem;">MoH Tanzania</option>
-                                    <option value="2" style="padding: 0.25rem 0.5rem;">Regions</option>
-                                    <option value="3" style="padding: 0.25rem 0.5rem;">Districts</option>
-                                    <option value="4" style="padding: 0.25rem 0.5rem;">Facilities</option>
-                                    <option value="1" style="padding: 0.25rem 0.5rem;">MoH Tanzania</option>
-                                    <option value="2" style="padding: 0.25rem 0.5rem;">Regions</option>
-                                    <option value="3" style="padding: 0.25rem 0.5rem;">Districts</option>
-                                    <option value="4" style="padding: 0.25rem 0.5rem;">Facilities</option>
-                                    <option value="1" style="padding: 0.25rem 0.5rem;">MoH Tanzania</option>
-                                    <option value="2" style="padding: 0.25rem 0.5rem;">Regions</option>
-                                    <option value="3" style="padding: 0.25rem 0.5rem;">Districts</option>
-                                    <option value="4" style="padding: 0.25rem 0.5rem;">Facilities</option>
-                                    <option value="1" style="padding: 0.25rem 0.5rem;">MoH Tanzania</option>
-                                    <option value="2" style="padding: 0.25rem 0.5rem;">Regions</option>
-                                    <option value="3" style="padding: 0.25rem 0.5rem;">Districts</option>
-                                    <option value="4" style="padding: 0.25rem 0.5rem;">Facilities</option>
-                                    <option value="1" style="padding: 0.25rem 0.5rem;">MoH Tanzania</option>
-                                    <option value="2" style="padding: 0.25rem 0.5rem;">Regions</option>
-                                </select>
-                            </div>
-                            <div class="assign-all">
-                                <button tabindex="0" type="button" class="assign-all-button">
-                                    <div>
-                                        <div class="assign-all-div">
-                                            <span class="assign-all-span">Assign all 4 →</span>
-                                        </div>
-                                    </div>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="assign-unassign">
-                            <div class="assign-one">
-                                <button disabled="" tabindex="-1" type="button" class="assign-one-btn">
-                                    <div class="assign-one-div">
-                                        <span class="assign-one-span">→</span>
-                                    </div>
-                                </button>
-                            </div>
-                            <div class="unassign-one">
-                                <button disabled="" tabindex="-1" type="button" class="unassign-one-btn">
-                                    <div class="unassign-one-div">
-                                        <span class="unassign-one-span">←</span>
-                                    </div>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="sel-flex">
-                            <div class="sel-sub-container">
-                                <select multiple="" class="sel-option"> </select>
-                            </div>
-                            <div class="remove-all">
-                                <button disabled="" tabindex="-1" type="button" class="remove-all-btn">
-                                    <div class="remove-all-div">
-                                        <span class="remove-all-span">← Remove all </span>
-                                    </div>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="clear: both; height: 2rem; width: 100%;"></div>
                 </div>
             </div>
-            <br />
-            <div class="rel-position">
-                <div class="rel-position">
-                    <div>
-                        <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Search for Field options..." />
-                        </mat-form-field>
-                    </div>
-                    <div class="sel-container">
-                        <div class="sel-flex">
-                            <div class="sel-sub-container">
-                                <select multiple="" class="sel-option">
-                                    <option value="3" style="padding: 0.25rem 0.5rem;">Districts</option>
-                                    <option value="4" style="padding: 0.25rem 0.5rem;">Facilities</option>
-                                    <option value="1" style="padding: 0.25rem 0.5rem;">MoH Tanzania</option>
-                                    <option value="2" style="padding: 0.25rem 0.5rem;">Regions</option>
-                                    <option value="3" style="padding: 0.25rem 0.5rem;">Districts</option>
-                                    <option value="4" style="padding: 0.25rem 0.5rem;">Facilities</option>
-                                    <option value="1" style="padding: 0.25rem 0.5rem;">MoH Tanzania</option>
-                                    <option value="2" style="padding: 0.25rem 0.5rem;">Regions</option>
-                                    <option value="3" style="padding: 0.25rem 0.5rem;">Districts</option>
-                                    <option value="4" style="padding: 0.25rem 0.5rem;">Facilities</option>
-                                    <option value="1" style="padding: 0.25rem 0.5rem;">MoH Tanzania</option>
-                                    <option value="2" style="padding: 0.25rem 0.5rem;">Regions</option>
-                                    <option value="3" style="padding: 0.25rem 0.5rem;">Districts</option>
-                                    <option value="4" style="padding: 0.25rem 0.5rem;">Facilities</option>
-                                    <option value="1" style="padding: 0.25rem 0.5rem;">MoH Tanzania</option>
-                                    <option value="2" style="padding: 0.25rem 0.5rem;">Regions</option>
-                                    <option value="3" style="padding: 0.25rem 0.5rem;">Districts</option>
-                                    <option value="4" style="padding: 0.25rem 0.5rem;">Facilities</option>
-                                    <option value="1" style="padding: 0.25rem 0.5rem;">MoH Tanzania</option>
-                                    <option value="2" style="padding: 0.25rem 0.5rem;">Regions</option>
-                                    <option value="3" style="padding: 0.25rem 0.5rem;">Districts</option>
-                                    <option value="4" style="padding: 0.25rem 0.5rem;">Facilities</option>
-                                    <option value="1" style="padding: 0.25rem 0.5rem;">MoH Tanzania</option>
-                                    <option value="2" style="padding: 0.25rem 0.5rem;">Regions</option>
-                                </select>
-                            </div>
-                            <div class="assign-all">
-                                <button tabindex="0" type="button" class="assign-all-button">
-                                    <div>
-                                        <div class="assign-all-div">
-                                            <span class="assign-all-span">Assign all 4 →</span>
-                                        </div>
-                                    </div>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="assign-unassign">
-                            <div class="assign-one">
-                                <button disabled="" tabindex="-1" type="button" class="assign-one-btn">
-                                    <div class="assign-one-div">
-                                        <span class="assign-one-span">→</span>
-                                    </div>
-                                </button>
-                            </div>
-                            <div class="unassign-one">
-                                <button disabled="" tabindex="-1" type="button" class="unassign-one-btn">
-                                    <div class="unassign-one-div">
-                                        <span class="unassign-one-span">←</span>
-                                    </div>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="sel-flex">
-                            <div class="sel-sub-container">
-                                <select multiple="" class="sel-option"> </select>
-                            </div>
-                            <div class="remove-all">
-                                <button disabled="" tabindex="-1" type="button" class="remove-all-btn">
-                                    <div class="remove-all-div">
-                                        <span class="remove-all-span">← Remove all </span>
-                                    </div>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="clear: both; height: 2rem; width: 100%;"></div>
+            <div class="mt-app-select">
+                <app-selection (selectedEntityEventEmitter)="onSelectItemList($event, 'fieldGroups')" [entityList]="fieldGroups">
+                </app-selection>
+            </div>
+            <div class="mt-app-select">
+                <app-selection (selectedEntityEventEmitter)="onSelectItemList($event, 'fieldOptions')" [entityList]="fieldOptions">
+                </app-selection>
+            </div>
+            <div class="form-footer">
+                <div class="form-footer-div">
+                    <button mat-raised-button class="form-footer-save-btn" color="primary">
+                        Save
+                    </button>
                 </div>
+                <button mat-stroked-button class="form-footer-cancel-btn">
+                    Cancel
+                </button>
             </div>
         </div>
     </form>

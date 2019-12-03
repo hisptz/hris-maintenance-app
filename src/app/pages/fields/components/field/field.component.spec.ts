@@ -22,6 +22,10 @@ import {
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { FieldFormComponent } from '../field-form/field-form.component';
+import { SearchByNamePipe } from '../../pipes/search-by-name/search-by-name.pipe';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormHeaderComponent } from 'src/app/shared/components/form-header/form-header.component';
+import { SelectionComponent } from '../selection/selection.component';
 
 
 describe('FieldComponent', () => {
@@ -37,7 +41,10 @@ describe('FieldComponent', () => {
         ProgressSpinnerComponent,
         ListViewComponent,
         ProgressBarComponent,
-        FieldFormComponent
+        FieldFormComponent,
+        SearchByNamePipe,
+        FormHeaderComponent,
+        SelectionComponent
       ],
       imports: [
         HttpClientModule,
@@ -51,7 +58,9 @@ describe('FieldComponent', () => {
         MatProgressSpinnerModule,
         MatProgressBarModule,
         MatSnackBarModule,
-        MatCardModule
+        MatCardModule,
+        FormsModule,
+        ReactiveFormsModule
       ],
       providers: [MaintenanceService]
     }).compileComponents();

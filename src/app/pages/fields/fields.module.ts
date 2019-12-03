@@ -23,6 +23,10 @@ import {
 import { ProgressBarComponent } from 'src/app/shared/components/progress-bar/progress-bar.component';
 import { ProgressSpinnerComponent } from 'src/app/shared/components/progress-spinner/progress-spinner.component';
 import { FieldFormComponent } from './components/field-form/field-form.component';
+import { SearchByNamePipe } from './pipes/search-by-name/search-by-name.pipe';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SelectionComponent } from './components/selection/selection.component';
+import { FormHeaderComponent } from 'src/app/shared/components/form-header/form-header.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +37,9 @@ import { FieldFormComponent } from './components/field-form/field-form.component
     ProgressBarComponent,
     ProgressSpinnerComponent,
     FieldFormComponent,
+    SearchByNamePipe,
+    SelectionComponent,
+    FormHeaderComponent,
   ],
   imports: [
     CommonModule,
@@ -50,7 +57,9 @@ import { FieldFormComponent } from './components/field-form/field-form.component
     MatTableModule,
     MatSnackBarModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class FieldsModule {}

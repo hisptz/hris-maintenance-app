@@ -8,7 +8,8 @@ import {
   MatFormFieldModule,
   MatRippleModule,
   MatProgressBarModule,
-  MatTableModule
+  MatTableModule,
+  MatInputModule
 } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -16,6 +17,10 @@ import { ProgressBarComponent } from '../../components/progress-bar/progress-bar
 import { ListViewComponent } from '../list-view/list-view.component';
 import { SharedModule } from '../../shared.module';
 import { FieldFormComponent } from 'src/app/pages/fields/components/field-form/field-form.component';
+import { SearchByNamePipe } from 'src/app/pages/fields/pipes/search-by-name/search-by-name.pipe';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormHeaderComponent } from '../../components/form-header/form-header.component';
+import { SelectionComponent } from 'src/app/pages/fields/components/selection/selection.component';
 
 describe('ContentAreaComponent', () => {
   let component: ContentAreaComponent;
@@ -27,7 +32,10 @@ describe('ContentAreaComponent', () => {
         ContentAreaComponent,
         ListViewComponent,
         ProgressBarComponent,
-        FieldFormComponent
+        FieldFormComponent,
+        SearchByNamePipe,
+        FormHeaderComponent,
+        SelectionComponent
       ],
       imports: [
         RouterModule,
@@ -43,7 +51,11 @@ describe('ContentAreaComponent', () => {
         MatTableModule,
         MatMenuModule,
         MatPaginatorModule,
-        SharedModule
+        SharedModule,
+        FormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        ReactiveFormsModule
       ]
     }).compileComponents();
   }));
