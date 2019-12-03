@@ -22,7 +22,7 @@ import { HrisMenuModule } from '@iapps/hris-menu';
 import { SharedContainers } from './shared/containers';
 import { FieldsModule } from './pages/fields/fields.module';
 import { SharedComponents } from './shared/components';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, ...SharedContainers],
@@ -42,6 +42,7 @@ import { FormsModule } from '@angular/forms';
     HrisMenuModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
 
     // Material Modules
     MatTabsModule,

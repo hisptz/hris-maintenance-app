@@ -5,7 +5,7 @@ import { MatFormFieldModule, MatInputModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { MaintenanceService } from 'src/app/core/services/maintenance.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchByNamePipe } from '../../pipes/search-by-name/search-by-name.pipe';
 import { SelectionComponent } from '../selection/selection.component';
 
@@ -23,7 +23,9 @@ describe('FieldFormComponent', () => {
         BrowserAnimationsModule,
         FormsModule,
         MatFormFieldModule,
-        MatInputModule
+        MatInputModule,
+        ReactiveFormsModule,
+        FormsModule
       ],
       providers: [MaintenanceService]
     }).compileComponents();

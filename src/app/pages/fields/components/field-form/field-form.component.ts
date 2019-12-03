@@ -1,8 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { MaintenanceService } from 'src/app/core/services/maintenance.service';
 import { Observable } from 'rxjs';
 import * as _ from 'lodash';
-import { Menu, MenuOption } from 'src/app/shared/models/menu.models';
+import { MenuOption } from 'src/app/shared/models/menu.models';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-field-form',
@@ -19,8 +20,10 @@ export class FieldFormComponent implements OnInit {
   selectedFieldGroups: any[] = [];
   tempFieldOption: any[] = [];
   tempFieldGroup: any[] = [];
+  fieldRegistrationForm: FormGroup;
+  fieldFormData: any;
 
-  constructor(private maintenanceService: MaintenanceService) { }
+  constructor(private maintenanceService: MaintenanceService) {}
 
   ngOnInit() {
     // Loading Field Groups
@@ -42,11 +45,50 @@ export class FieldFormComponent implements OnInit {
         return option.name;
       });
     });
+
+    this.fieldRegistrationForm = new FormGroup({
+      name: new FormControl(''),
+      shortName: new FormControl(''),
+      caption: new FormControl(''),
+      description: new FormControl('')
+    });
+    this.fieldFormData = _.clone(this.fieldRegistrationForm.value);
   }
 
-  onSelectItemList(result: any) {
+  onSelectItemList(result: any, criteria: any) {
+    this.getFieldFormValues(result, criteria);
     if (result) {
-      console.log('RESULT::: ' + JSON.stringify(result));
+      if (criteria === 'fieldGroups') {
+        this.selectedFieldGroups = result;
+      } else if (criteria === 'fieldOptions') {
+        this.selectedFieldOptions = result;
+      }
     }
+  }
+
+  getFieldFormValues(result?: any, criteria?: any) {
+    if (criteria === 'fieldGroups') {
+      this.fieldFormData = {
+        ...this.fieldFormData,
+        fieldGroups: this.getIdProp(result)
+      };
+    } else if (criteria === 'fieldOptions') {
+      this.fieldFormData = {
+        ...this.fieldFormData,
+        fieldOptions: this.getIdProp(result)
+      };
+    }
+  }
+
+  getIdProp(results: any[]) {
+    return results
+      ? [
+          ..._.map(results, (result: any) => {
+            return {
+              uid: result.uid
+            };
+          })
+        ]
+      : [];
   }
 }

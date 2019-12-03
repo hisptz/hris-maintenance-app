@@ -24,7 +24,7 @@ import { ProgressBarComponent } from 'src/app/shared/components/progress-bar/pro
 import { ProgressSpinnerComponent } from 'src/app/shared/components/progress-spinner/progress-spinner.component';
 import { FieldFormComponent } from './components/field-form/field-form.component';
 import { SearchByNamePipe } from './pipes/search-by-name/search-by-name.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectionComponent } from './components/selection/selection.component';
 import { FormHeaderComponent } from 'src/app/shared/components/form-header/form-header.component';
 
@@ -39,7 +39,7 @@ import { FormHeaderComponent } from 'src/app/shared/components/form-header/form-
     FieldFormComponent,
     SearchByNamePipe,
     SelectionComponent,
-    FormHeaderComponent
+    FormHeaderComponent,
   ],
   imports: [
     CommonModule,
@@ -58,7 +58,8 @@ import { FormHeaderComponent } from 'src/app/shared/components/form-header/form-
     MatSnackBarModule,
     MatCardModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class FieldsModule {}
