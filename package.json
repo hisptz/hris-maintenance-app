@@ -28,7 +28,7 @@
     "bootstrap": "^4.4.1",
     "caniuse-lite": "^1.0.30001015",
     "chrome-headless": "^0.1.5",
-    "concurrently": "^5.0.0",
+    "concurrently": "^5.0.1",
     "core-js": "^3.5.0",
     "hammerjs": "^2.0.8",
     "jquery": "^3.4.1",
