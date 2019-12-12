@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MaintenanceService } from 'src/app/core/services/maintenance.service';
 import { Observable } from 'rxjs';
 import * as _ from 'lodash';
@@ -12,6 +12,8 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class FieldFormComponent implements OnInit {
   @Input() menuOption: MenuOption;
+  @Output() fieldFormEventEmitter = new EventEmitter();
+  @Output() saveEventEmitter = new EventEmitter();
   fieldGroups: any;
   fieldOptions: any;
   action: string;
@@ -20,7 +22,12 @@ export class FieldFormComponent implements OnInit {
   selectedFieldGroups: any[] = [];
   tempFieldOption: any[] = [];
   tempFieldGroup: any[] = [];
-  fieldRegistrationForm: FormGroup;
+  fieldRegistrationForm: FormGroup = new FormGroup({
+    name: new FormControl(''),
+    shortName: new FormControl(''),
+    caption: new FormControl(''),
+    description: new FormControl('')
+  });
   fieldFormData: any;
 
   constructor(private maintenanceService: MaintenanceService) {}
@@ -46,13 +53,24 @@ export class FieldFormComponent implements OnInit {
       });
     });
 
-    this.fieldRegistrationForm = new FormGroup({
-      name: new FormControl(''),
-      shortName: new FormControl(''),
-      caption: new FormControl(''),
-      description: new FormControl('')
+    // this.fieldRegistrationForm = new FormGroup({
+    //   name: new FormControl(''),
+    //   shortName: new FormControl(''),
+    //   caption: new FormControl(''),
+    //   description: new FormControl('')
+    // });
+    this.fieldFormData = this.fieldRegistrationForm.value;
+
+    this.onChange();
+  }
+  onChange(): void {
+    this.fieldRegistrationForm.valueChanges.subscribe(formData => {
+      this.onUpdateFormProps(this.fieldFormData, formData);
     });
-    this.fieldFormData = _.clone(this.fieldRegistrationForm.value);
+  }
+
+  onSave(): void {
+    this.saveEventEmitter.emit({ onCreate: true });
   }
 
   onSelectItemList(result: any, criteria: any) {
@@ -78,15 +96,28 @@ export class FieldFormComponent implements OnInit {
         fieldOptions: this.getIdProp(result)
       };
     }
+    this.onUpdateFormProps(
+      this.fieldFormData,
+      this.fieldRegistrationForm.value
+    );
+    this.fieldFormEventEmitter.emit(this.fieldFormData);
+  }
+
+  onUpdateFormProps(formData: any, updates: any) {
+    Object.keys(formData).map((pos: any) => {
+      if (!_.isArray(formData[pos])) {
+        formData[pos] = updates[pos];
+      }
+    });
   }
 
   getIdProp(results: any[]) {
     return results
       ? [
           ..._.map(results, (result: any) => {
-            return {
-              uid: result.uid
-            };
+            return _.mapKeys(result, (value: string, key: string) => {
+              return key;
+            });
           })
         ]
       : [];
