@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of, throwError } from 'rxjs';
 import { APIResult } from '../models/api-result.model';
+import { retry, catchError } from 'rxjs/operators';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -15,16 +16,24 @@ const httpOptions = {
 export class MaintenanceService {
   apiURL = `api/`;
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) { }
 
   getAll(apiParam: string): Observable<APIResult> {
     return this.httpClient.get<APIResult>(`${this.apiURL}${apiParam}`);
   }
 
-  deleteOne(item: any): Observable<any> {
-    const uid = item ? item.uid : '';
-    const apiEndpoints = item ? item.apiEndpoint : '';
-    const httpURL = `${this.apiURL}${apiEndpoints}/${uid}`;
-    return this.httpClient.delete<any>(httpURL, httpOptions);
+  deleteOne(payload: any): Observable<any> {
+    const id = payload ? payload.id : '';
+    const apiEndpoints = payload ? payload.apiEndpoint : '';
+    const httpURL = `${this.apiURL}${apiEndpoints}/${id}`;
+    return this.httpClient
+      .delete<any>(httpURL, httpOptions)
+      .pipe(retry(1), catchError(error => of(error)));
+  }
+
+  createOne(payload: any, apiParam: any): Observable<any> {
+    const httpURL = `${this.apiURL}${apiParam}`;
+    console.log('PAYLOAD::: ', JSON.stringify(payload));
+    return this.httpClient.post<any>(httpURL, payload, httpOptions);
   }
 }
