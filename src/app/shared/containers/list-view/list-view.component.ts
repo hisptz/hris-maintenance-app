@@ -9,6 +9,9 @@ import {
 import { APIResult } from 'src/app/core/models/api-result.model';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
 import { MenuOption } from '../../models/menu.models';
+import { MaintenanceService } from 'src/app/core/services/maintenance.service';
+import * as _ from 'lodash';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-list-view',
@@ -19,7 +22,6 @@ export class ListViewComponent implements OnInit {
   @Input() APIDataResult?: APIResult;
   @Input() APIParams?: string;
   @Input() menuOption: MenuOption;
-  @Output() deleteEventEmitter = new EventEmitter();
   @Output() viewMoreDetailsEventEmitter = new EventEmitter();
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   dataSource: MatTableDataSource<any>;
@@ -36,7 +38,10 @@ export class ListViewComponent implements OnInit {
   dataSize: number;
   rippleColor = '#cccccc';
 
-  constructor() {}
+  constructor(
+    private maintenanceService: MaintenanceService,
+    private snackBar: MatSnackBar
+  ) {}
 
   ngOnInit() {
     if (this.APIDataResult) {
@@ -62,12 +67,47 @@ export class ListViewComponent implements OnInit {
 
   // ToDo: Make Sure You Implement On Delete
   onDelete(item: any, apiParams: string) {
-    this.deleteEventEmitter.emit({ ...item, apiEndpoint: apiParams });
-    this.dataSource.data.splice(item, 1);
-    this.dataSource.paginator = this.paginator;
+    const deleteItem = { ...item, apiEndpoint: apiParams };
+    const deleteResponse$ = this.maintenanceService.deleteOne(deleteItem);
+    deleteResponse$.subscribe((response: any) => {
+      if (_.has(response, 'status') && response.status === 200) {
+        this.dataSource.data.splice(item, 1);
+        this.dataSource.paginator = this.paginator;
+      } else {
+        if (_.has(response, 'error')) {
+          if ((_.has(response.error), 'message')) {
+            this.openSnackBar(response.error);
+          }
+        } else {
+          this.openSnackBar(response);
+        }
+      }
+    });
   }
 
   onViewMoreDetails(item: any) {
     this.viewMoreDetailsEventEmitter.emit({ data: item, status: true });
+  }
+
+  onDeletion(item: any): any {
+    if (item) {
+      const deleteResponse$ = this.maintenanceService.deleteOne(item);
+      deleteResponse$.subscribe((response: any) => {
+        if (response) {
+          this.openSnackBar(response.error);
+        }
+      });
+    }
+  }
+
+  openSnackBar(response: any) {
+    // ToDo:Reviw this implementation and improve it
+    // this.snackBar.openFromComponent(MainContentComponent, {
+    //   duration: this.durationInSeconds * 1000,
+    // });
+    this.snackBar.open(response.message);
+    setTimeout(() => {
+      this.snackBar.dismiss();
+    }, 3000);
   }
 }

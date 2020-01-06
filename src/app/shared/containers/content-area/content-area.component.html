@@ -54,7 +54,9 @@
             <app-form-header [menuOption]="menuOption"></app-form-header>
             <div class="maintenance-left-menu-list-container" style="width: 100% !important">
                 <div *ngIf="APIParams === 'fields'">
-                    <app-field-form [menuOption]="menuOption"></app-field-form>
+                    <app-field-form (saveEventEmitter)="onSave($event)"
+                        (fieldFormEventEmitter)="getEntityCreatingData($event)" [menuOption]="menuOption">
+                    </app-field-form>
                 </div>
                 <div *ngIf="APIParams !== 'fields'">
                     <p>This is any entry form</p>

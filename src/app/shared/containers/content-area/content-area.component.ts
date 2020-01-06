@@ -2,7 +2,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Menu, MenuOption } from '../../models/menu.models';
 import { APIResult } from 'src/app/core/models/api-result.model';
 import { NavigationEnd, Router } from '@angular/router';
-import { RouterNavigationEndState } from 'src/app/core/models/router-navigation-end.model';
 
 @Component({
   selector: 'app-content-area',
@@ -18,7 +17,9 @@ export class ContentAreaComponent implements OnInit {
   @Input() serviceMenuOption: MenuOption;
   @Input() APIParams: string;
   @Output() deleteEventEmitter = new EventEmitter();
+  @Output() createEventEmitter = new EventEmitter();
   @Output() viewMoreDetailsEventEmitter = new EventEmitter();
+  @Output() saveEventEmitter = new EventEmitter();
 
   isTableListOpenedCA: boolean;
   isModuleServicesOpenedCA: boolean;
@@ -68,9 +69,21 @@ export class ContentAreaComponent implements OnInit {
     }
   }
 
+  onSave(action: any) {
+    if (action) {
+      this.saveEventEmitter.emit(action);
+    }
+  }
+
   onViewMoreDetails(state: any) {
     state
       ? this.viewMoreDetailsEventEmitter.emit(state)
       : this.viewMoreDetailsEventEmitter.emit({ ...state, status: false });
+  }
+
+  getEntityCreatingData(e) {
+    if (e) {
+      this.createEventEmitter.emit(e);
+    }
   }
 }

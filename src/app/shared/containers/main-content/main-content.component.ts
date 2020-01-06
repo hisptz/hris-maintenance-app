@@ -30,9 +30,9 @@ export class MainContentComponent implements OnInit, OnChanges {
   isEntryformOpened: boolean;
   entityDetails: any;
   APIDataResult: APIResult;
-  APIResponse: any;
   APIParams: string;
   durationInSeconds = 5;
+  entityData: any;
 
   constructor(
     private router: Router,
@@ -42,6 +42,7 @@ export class MainContentComponent implements OnInit, OnChanges {
   ) {}
 
   ngOnInit() {
+    this.entityData = {};
     this.getActivatedRouteInfo();
     this.isModuleServicesOpened = true;
     this.isTableListOpened = false;
@@ -113,26 +114,36 @@ export class MainContentComponent implements OnInit, OnChanges {
     }
   }
 
-  onDeletion(item: any): any {
-    if (item) {
-      this.maintenanceService.deleteOne(item).subscribe((response: any) => {
-        if (response) {
-          this.APIResponse = response;
-          this.openSnackBar(response);
-        }
-      });
+  onCreate(e) {
+    if (e) {
+      this.entityData = { ...this.entityData, ...e };
     }
   }
 
-  onViewMoreDetails(state: any) {
-    if (state) {
-      const siteURL = `${window.location.origin}/api/${this.APIParams}/${state.data.uid}`;
-      this.entityDetails = {...state, siteURL };
+  onSave(e: { onCreate: boolean }) {
+    if (e.onCreate) {
+      this.maintenanceService
+        .createOne(this.entityData, this.APIParams)
+        .subscribe((response: any) => {
+          this.isModuleServicesOpened = false;
+          this.isEntryformOpened = false;
+          this.isTableListOpened = true;
+          this.openSnackBar({
+            message: `${this.APIParams} ${response.name} has been successfully created.`
+          });
+        });
     }
   }
 
   onClose() {
     this.entityDetails = { ...this.entityDetails, status: false };
+  }
+
+  onViewMoreDetails(state: any) {
+    if (state) {
+      const siteURL = `${window.location.origin}/api/${this.APIParams}/${state.data.id}`;
+      this.entityDetails = { ...state, siteURL };
+    }
   }
 
   openSnackBar(response: any) {

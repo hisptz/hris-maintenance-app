@@ -26,10 +26,11 @@
         </div>
     </div>
     <div *ngIf="menuConfigItems" class="maintenance-right-menu-container">
-        <app-content-area [isEntryformOpened]="isEntryformOpened" [APIParams]="APIParams" [APIDataResult]="APIDataResult" [menuConfigItems]="menuConfigItems"
-            [isTableListOpened]="isTableListOpened" [isModuleServicesOpened]="isModuleServicesOpened"
-            class="content-area" (deleteEventEmitter)="onDeletion($event)"
-            (viewMoreDetailsEventEmitter)="onViewMoreDetails($event)">
+        <app-content-area [isEntryformOpened]="isEntryformOpened" [APIParams]="APIParams"
+            [APIDataResult]="APIDataResult" [menuConfigItems]="menuConfigItems" [isTableListOpened]="isTableListOpened"
+            [isModuleServicesOpened]="isModuleServicesOpened" class="content-area"
+            (createEventEmitter)="onCreate($event)" (viewMoreDetailsEventEmitter)="onViewMoreDetails($event)"
+            (saveEventEmitter)="onSave($event)">
         </app-content-area>
 
         <!-- ToDo:Reviw this implementation and improve it -->
@@ -56,7 +57,7 @@
                 <p style="font-weight: bold;">Last Updated</p>
                 <p>{{ entityDetails?.data?.lastUpdated | date }}</p>
                 <p style="font-weight: bold;">ID</p>
-                <p>{{ entityDetails?.data?.uid }}</p>
+                <p>{{ entityDetails?.data?.id }}</p>
                 <p style="font-weight: bold;">link</p>
                 <a href="{{ entityDetails?.siteURL }}">{{ entityDetails?.siteURL }}</a>
             </mat-card-content>
