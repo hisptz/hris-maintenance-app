@@ -41,7 +41,7 @@ export class ListViewComponent implements OnInit {
   constructor(
     private maintenanceService: MaintenanceService,
     private snackBar: MatSnackBar
-  ) {}
+  ) { }
 
   ngOnInit() {
     if (this.APIDataResult) {
@@ -80,6 +80,8 @@ export class ListViewComponent implements OnInit {
           }
         } else {
           this.openSnackBar(response);
+          this.dataSource.data.splice(item, 1);
+          this.dataSource.paginator = this.paginator;
         }
       }
     });
