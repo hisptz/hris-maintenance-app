@@ -1,7 +1,16 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+  ViewChild
+} from '@angular/core';
 import { Menu, MenuOption } from '../../models/menu.models';
 import { APIResult } from 'src/app/core/models/api-result.model';
 import { NavigationEnd, Router } from '@angular/router';
+import { ListViewComponent } from '../list-view/list-view.component';
+import { MaintenanceService } from 'src/app/core/services/maintenance.service';
 
 @Component({
   selector: 'app-content-area',
@@ -29,11 +38,11 @@ export class ContentAreaComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-      this.isTableListOpenedCA = this.isTableListOpened;
-      this.isModuleServicesOpenedCA = this.isModuleServicesOpened;
-      this.isEntryformOpenedCA = this.isEntryformOpened;
-      this.onOpenMenuItemContent();
-      this.pageSize = 10;
+    this.isTableListOpenedCA = this.isTableListOpened;
+    this.isModuleServicesOpenedCA = this.isModuleServicesOpened;
+    this.isEntryformOpenedCA = this.isEntryformOpened;
+    this.onOpenMenuItemContent();
+    this.pageSize = 10;
   }
 
   openServiceContentList(menuOption: MenuOption, menuConfigItem: Array<Menu>) {
@@ -71,6 +80,9 @@ export class ContentAreaComponent implements OnInit {
 
   onSave(action: any) {
     if (action) {
+      this.isTableListOpenedCA = true;
+      this.isModuleServicesOpenedCA = false;
+      this.isEntryformOpenedCA = false;
       this.saveEventEmitter.emit(action);
     }
   }

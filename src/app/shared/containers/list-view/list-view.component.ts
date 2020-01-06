@@ -1,6 +1,9 @@
 import {
   Component,
   OnInit,
+  AfterViewInit,
+  DoCheck,
+  OnChanges,
   ViewChild,
   Input,
   Output,
@@ -18,7 +21,7 @@ import { MatSnackBar } from '@angular/material';
   templateUrl: './list-view.component.html',
   styleUrls: ['./list-view.component.scss']
 })
-export class ListViewComponent implements OnInit {
+export class ListViewComponent implements OnInit, OnChanges {
   @Input() APIDataResult?: APIResult;
   @Input() APIParams?: string;
   @Input() menuOption: MenuOption;
@@ -41,7 +44,7 @@ export class ListViewComponent implements OnInit {
   constructor(
     private maintenanceService: MaintenanceService,
     private snackBar: MatSnackBar
-  ) { }
+  ) {}
 
   ngOnInit() {
     if (this.APIDataResult) {
@@ -54,6 +57,18 @@ export class ListViewComponent implements OnInit {
     }
     this.serviceMenuOption = this.menuOption;
   }
+
+  ngOnChanges(changes) {
+    this.dataSource = new MatTableDataSource<any>(
+      this.APIDataResult[this.APIParams]
+    );
+  }
+
+  // ngDoCheck() {
+  //   this.dataSource = new MatTableDataSource<any>(
+  //     this.APIDataResult[this.APIParams]
+  //   );
+  // }
 
   applyFilter(filterValue: string) {
     if (this.APIDataResult) {

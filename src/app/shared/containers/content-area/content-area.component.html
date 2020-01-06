@@ -49,8 +49,8 @@
             </app-list-view>
         </div>
     </div>
-    <div class="maintenance-left-menu-container-div">
-        <div *ngIf="isEntryformOpenedCA" class="row ml-1 mt-2">
+    <div *ngIf="isEntryformOpenedCA" class="maintenance-left-menu-container-div">
+        <div class="row ml-1 mt-2">
             <app-form-header [menuOption]="menuOption"></app-form-header>
             <div class="maintenance-left-menu-list-container" style="width: 100% !important">
                 <div *ngIf="APIParams === 'fields'">

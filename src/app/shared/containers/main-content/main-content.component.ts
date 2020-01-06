@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, Output } from '@angular/core';
+import { Component, OnInit, OnChanges, Output, ViewChild } from '@angular/core';
 import * as _ from 'lodash';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { Menu, MenuOption } from '../../models/menu.models';
@@ -10,6 +10,7 @@ import { RouterNavigationEndState } from 'src/app/core/models/router-navigation-
 import { APIEndpoints } from '../../lookups/api-endpoint.lookup';
 import { APIResult } from 'src/app/core/models/api-result.model';
 import { MatSnackBar } from '@angular/material';
+import { ListViewComponent } from '../list-view/list-view.component';
 
 /**
  *
@@ -23,6 +24,8 @@ import { MatSnackBar } from '@angular/material';
  *
  */
 export class MainContentComponent implements OnInit, OnChanges {
+  @ViewChild(ListViewComponent, { static: false })
+  listViewComponent: ListViewComponent;
   routerNavigation: string;
   menuConfigItems: Array<Menu>;
   isModuleServicesOpened: boolean;
@@ -128,6 +131,13 @@ export class MainContentComponent implements OnInit, OnChanges {
           this.isModuleServicesOpened = false;
           this.isEntryformOpened = false;
           this.isTableListOpened = true;
+
+          this.maintenanceService
+            .getAll(this.APIParams)
+            .subscribe(apiResults => {
+              this.APIDataResult = apiResults;
+            });
+
           this.openSnackBar({
             message: `${this.APIParams} ${response.name} has been successfully created.`
           });
