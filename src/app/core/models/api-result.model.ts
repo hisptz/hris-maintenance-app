@@ -14,8 +14,7 @@ export interface Pager {
 export interface Field {
     created: Date;
     lastUpdated: Date;
-    id: number;
-    uid: string;
+    id: string;
     code?: any;
     name: string;
     caption: string;
