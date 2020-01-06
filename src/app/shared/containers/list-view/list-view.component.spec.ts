@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ListViewComponent } from './list-view.component';
 import { MatFormFieldModule, MatTableModule, MatPaginatorModule, MatMenuModule, MatRippleModule, MatInputModule, MatSnackBarModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('ListViewComponent', () => {
   let component: ListViewComponent;
@@ -19,7 +20,8 @@ describe('ListViewComponent', () => {
         MatMenuModule,
         MatRippleModule,
         BrowserAnimationsModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        HttpClientModule
       ]
     })
     .compileComponents();
