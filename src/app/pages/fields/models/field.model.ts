@@ -3,7 +3,7 @@ export interface Field {
     caption: string;
     created: Date;
     lastUpdated: Date;
-    uid: string;
+    id: string;
     code?: any;
     compulsory?: any;
     isUnique?: any;
@@ -14,6 +14,5 @@ export interface Field {
     hasTarget?: any;
     fieldRelation?: any;
     skipInReport?: any;
-    id: number;
     hasOptions: boolean;
 }

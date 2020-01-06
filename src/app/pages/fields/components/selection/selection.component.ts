@@ -46,7 +46,7 @@ export class SelectionComponent implements OnInit {
 
   getSelectedFieldOption() {
     this.selectedEntityList = _.sortBy(
-      _.uniqBy([...this.selectedEntityList, ...this.tempEntityList], 'uid'),
+      _.uniqBy([...this.selectedEntityList, ...this.tempEntityList], 'id'),
       (option: any) => {
         return option.name;
       }
@@ -69,7 +69,7 @@ export class SelectionComponent implements OnInit {
 
   getDeSelectedFieldOption() {
     this.entityList = _.sortBy(
-      _.uniqBy([...this.entityList, ...this.tempEntityList], 'uid'),
+      _.uniqBy([...this.entityList, ...this.tempEntityList], 'id'),
       (option: any) => {
         return option.name;
       }
@@ -94,7 +94,7 @@ export class SelectionComponent implements OnInit {
     if (status === 'selectAll') {
       this.action = 'select';
       this.tempEntityList = _.sortBy(
-        _.uniqBy([...this.tempEntityList, ...this.entityList], 'uid'),
+        _.uniqBy([...this.tempEntityList, ...this.entityList], 'id'),
         (item: any) => {
           return item.name;
         }
@@ -102,7 +102,7 @@ export class SelectionComponent implements OnInit {
     } else if (status === 'deselectAll') {
       this.action = 'deselect';
       this.tempEntityList = _.sortBy(
-        _.uniqBy([...this.tempEntityList, ...this.selectedEntityList], 'uid'),
+        _.uniqBy([...this.tempEntityList, ...this.selectedEntityList], 'id'),
         (item: any) => {
           return item.name;
         }

@@ -52,20 +52,13 @@ export class FieldFormComponent implements OnInit {
         return option.name;
       });
     });
-
-    // this.fieldRegistrationForm = new FormGroup({
-    //   name: new FormControl(''),
-    //   shortName: new FormControl(''),
-    //   caption: new FormControl(''),
-    //   description: new FormControl('')
-    // });
     this.fieldFormData = this.fieldRegistrationForm.value;
-
     this.onChange();
   }
   onChange(): void {
     this.fieldRegistrationForm.valueChanges.subscribe(formData => {
       this.onUpdateFormProps(this.fieldFormData, formData);
+      this.fieldFormEventEmitter.emit(this.fieldFormData);
     });
   }
 
