@@ -33,7 +33,6 @@ export class MaintenanceService {
 
   createOne(payload: any, apiParam: any): Observable<any> {
     const httpURL = `${this.apiURL}${apiParam}`;
-    console.log('PAYLOAD::: ', JSON.stringify(payload));
     return this.httpClient.post<any>(httpURL, payload, httpOptions);
   }
 }

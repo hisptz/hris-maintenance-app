@@ -45,7 +45,8 @@
             </div>
             <app-list-view *ngIf="APIDataResult" [menuOption]="menuOption" [APIDataResult]="APIDataResult"
                 [APIParams]="APIParams" (deleteEventEmitter)="onDelete($event)"
-                (viewMoreDetailsEventEmitter)="onViewMoreDetails($event)">
+                (viewMoreDetailsEventEmitter)="onViewMoreDetails($event)"
+                (editFormContentEventEmitter)="editFormData($event)">
             </app-list-view>
         </div>
     </div>
@@ -54,7 +55,7 @@
             <app-form-header [menuOption]="menuOption"></app-form-header>
             <div class="maintenance-left-menu-list-container" style="width: 100% !important">
                 <div *ngIf="APIParams === 'fields'">
-                    <app-field-form (saveEventEmitter)="onSave($event)"
+                    <app-field-form (saveEventEmitter)="onSave($event)" [formEditValues]="formEditValues"
                         (fieldFormEventEmitter)="getEntityCreatingData($event)" [menuOption]="menuOption">
                     </app-field-form>
                 </div>

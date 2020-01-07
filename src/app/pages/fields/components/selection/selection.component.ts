@@ -7,11 +7,11 @@ import * as _ from 'lodash';
   styleUrls: ['./selection.component.scss']
 })
 export class SelectionComponent implements OnInit {
-  @Input() entityList: any;
+  @Input() availableEntityList: any;
+  @Input() selectedEntityList: any;
   @Output() selectedEntityEventEmitter = new EventEmitter();
   action: string;
   searchString: string;
-  selectedEntityList: any[] = [];
   tempEntityList: any[] = [];
 
   constructor() {}
@@ -51,9 +51,9 @@ export class SelectionComponent implements OnInit {
         return option.name;
       }
     );
-    this.entityList = _.sortBy(
+    this.availableEntityList = _.sortBy(
       [
-        ..._.filter(this.entityList, (option: any) => {
+        ..._.filter(this.availableEntityList, (option: any) => {
           return !_.includes(this.selectedEntityList, option);
         })
       ],
@@ -62,14 +62,14 @@ export class SelectionComponent implements OnInit {
       }
     );
     this.selectedEntityList
-        ? this.selectedEntityEventEmitter.emit(this.selectedEntityList)
-        : this.selectedEntityEventEmitter.emit(this.selectedEntityList);
+      ? this.selectedEntityEventEmitter.emit(this.selectedEntityList)
+      : this.selectedEntityEventEmitter.emit(this.selectedEntityList);
     this.tempEntityList = [];
   }
 
   getDeSelectedFieldOption() {
-    this.entityList = _.sortBy(
-      _.uniqBy([...this.entityList, ...this.tempEntityList], 'id'),
+    this.availableEntityList = _.sortBy(
+      _.uniqBy([...this.availableEntityList, ...this.tempEntityList], 'id'),
       (option: any) => {
         return option.name;
       }
@@ -77,7 +77,7 @@ export class SelectionComponent implements OnInit {
     this.selectedEntityList = _.sortBy(
       [
         ..._.filter(this.selectedEntityList, (option: any) => {
-          return !_.includes(this.entityList, option);
+          return !_.includes(this.availableEntityList, option);
         })
       ],
       (option: any) => {
@@ -85,8 +85,8 @@ export class SelectionComponent implements OnInit {
       }
     );
     this.selectedEntityList
-        ? this.selectedEntityEventEmitter.emit(this.selectedEntityList)
-        : this.selectedEntityEventEmitter.emit(this.selectedEntityList);
+      ? this.selectedEntityEventEmitter.emit(this.selectedEntityList)
+      : this.selectedEntityEventEmitter.emit(this.selectedEntityList);
     this.tempEntityList = [];
   }
 
@@ -94,7 +94,7 @@ export class SelectionComponent implements OnInit {
     if (status === 'selectAll') {
       this.action = 'select';
       this.tempEntityList = _.sortBy(
-        _.uniqBy([...this.tempEntityList, ...this.entityList], 'id'),
+        _.uniqBy([...this.tempEntityList, ...this.availableEntityList], 'id'),
         (item: any) => {
           return item.name;
         }

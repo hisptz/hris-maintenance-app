@@ -26,6 +26,7 @@ export class ListViewComponent implements OnInit, OnChanges {
   @Input() APIParams?: string;
   @Input() menuOption: MenuOption;
   @Output() viewMoreDetailsEventEmitter = new EventEmitter();
+  @Output() editFormContentEventEmitter = new EventEmitter();
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   dataSource: MatTableDataSource<any>;
   serviceMenuOption: MenuOption;
@@ -62,6 +63,12 @@ export class ListViewComponent implements OnInit, OnChanges {
     this.dataSource = new MatTableDataSource<any>(
       this.APIDataResult[this.APIParams]
     );
+  }
+
+  editForm(value) {
+    if (value) {
+      this.editFormContentEventEmitter.emit(value);
+    }
   }
 
   // ngDoCheck() {

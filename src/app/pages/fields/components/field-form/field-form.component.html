@@ -42,11 +42,14 @@
                 </div>
             </div>
             <div class="mt-app-select">
-                <app-selection (selectedEntityEventEmitter)="onSelectItemList($event, 'fieldGroups')" [entityList]="fieldGroups">
+                <app-selection (selectedEntityEventEmitter)="onSelectItemList($event, 'fieldGroups')"
+                    [availableEntityList]="fieldGroups" [selectedEntityList]="selectedFieldGroups">
                 </app-selection>
             </div>
             <div class="mt-app-select">
-                <app-selection (selectedEntityEventEmitter)="onSelectItemList($event, 'fieldOptions')" [entityList]="fieldOptions">
+                <app-selection (selectedEntityEventEmitter)="
+            onSelectItemList($event, 'fieldOptions')
+          " [availableEntityList]="fieldOptions" [selectedEntityList]="selectedFieldOptions">
                 </app-selection>
             </div>
             <div class="form-footer">

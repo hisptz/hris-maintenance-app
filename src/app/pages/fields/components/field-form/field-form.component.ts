@@ -12,14 +12,15 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class FieldFormComponent implements OnInit {
   @Input() menuOption: MenuOption;
+  @Input() formEditValues: any;
   @Output() fieldFormEventEmitter = new EventEmitter();
   @Output() saveEventEmitter = new EventEmitter();
   fieldGroups: any;
   fieldOptions: any;
+  selectedFieldGroups: any;
+  selectedFieldOptions: any;
   action: string;
   searchString: string;
-  selectedFieldOptions: any[] = [];
-  selectedFieldGroups: any[] = [];
   tempFieldOption: any[] = [];
   tempFieldGroup: any[] = [];
   fieldRegistrationForm: FormGroup = new FormGroup({
@@ -53,6 +54,11 @@ export class FieldFormComponent implements OnInit {
       });
     });
     this.fieldFormData = this.fieldRegistrationForm.value;
+    if (this.formEditValues) {
+      this.selectedFieldGroups = this.formEditValues.fieldGroups;
+      this.selectedFieldOptions = this.formEditValues.fieldOptions;
+      this.fieldRegistrationForm.patchValue(this.formEditValues);
+    }
     this.onChange();
   }
   onChange(): void {

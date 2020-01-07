@@ -29,6 +29,7 @@ export class ContentAreaComponent implements OnInit {
   @Output() createEventEmitter = new EventEmitter();
   @Output() viewMoreDetailsEventEmitter = new EventEmitter();
   @Output() saveEventEmitter = new EventEmitter();
+  formEditValues: any;
 
   isTableListOpenedCA: boolean;
   isModuleServicesOpenedCA: boolean;
@@ -96,6 +97,15 @@ export class ContentAreaComponent implements OnInit {
   getEntityCreatingData(e) {
     if (e) {
       this.createEventEmitter.emit(e);
+    }
+  }
+
+  editFormData(value) {
+    if (value) {
+      this.formEditValues = value;
+      this.isTableListOpenedCA = false;
+      this.isModuleServicesOpenedCA = false;
+      this.isEntryformOpenedCA = true;
     }
   }
 }

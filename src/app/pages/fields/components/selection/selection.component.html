@@ -9,27 +9,27 @@
         <div class="sel-container">
             <div class="sel-flex">
                 <div class="sel-sub-container">
-                    <select *ngIf="entityList?.length > 0" multiple="" class="sel-option">
+                    <select *ngIf="availableEntityList?.length > 0" multiple="" class="sel-option">
                         <option *ngFor="
-                let fieldOption of entityList | searchByName: searchString
+                let fieldOption of availableEntityList | searchByName: searchString
               " (click)="onSelect(fieldOption, $event, 'select')" value="fieldOption.uid"
                             style="padding: 0.25rem 0.5rem;">
                             {{ fieldOption?.name }}
                         </option>
                     </select>
-                    <div *ngIf="(entityList | searchByName: searchString)?.length === 0" class="error">
+                    <div *ngIf="(availableEntityList | searchByName: searchString)?.length === 0" class="error">
                         <i class="error-icon material-icons">warning</i>&nbsp; No field
                         option
                     </div>
                 </div>
                 <div matRipple class="assign-all">
                     <button matRipple [attr.class]="
-              entityList?.length > 0 ? 'sel-enabled' : 'sel-disabled'
-            " disabled="entityList?.length === 0" tabindex="0" type="button">
+              availableEntityList?.length > 0 ? 'sel-enabled' : 'sel-disabled'
+            " disabled="availableEntityList?.length === 0" tabindex="0" type="button">
                         <div>
                             <div class="assign-all-div" matRipple>
                                 <span class="assign-all-span" (click)="selectAll('selectAll')">Assign all
-                                    {{ (entityList | searchByName: searchString)?.length }}
+                                    {{ (availableEntityList | searchByName: searchString)?.length }}
                                     →</span>
                             </div>
                         </div>
