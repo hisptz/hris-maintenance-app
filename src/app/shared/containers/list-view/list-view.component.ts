@@ -97,7 +97,9 @@ export class ListViewComponent implements OnInit, OnChanges {
         this.dataSource.paginator = this.paginator;
       } else {
         if (_.has(response, 'error')) {
-          if ((_.has(response.error), 'message')) {
+          if (_.has(response.error, 'message')) {
+            this.openSnackBar(response.error);
+          } else {
             this.openSnackBar(response.error);
           }
         } else {
@@ -129,7 +131,11 @@ export class ListViewComponent implements OnInit, OnChanges {
     // this.snackBar.openFromComponent(MainContentComponent, {
     //   duration: this.durationInSeconds * 1000,
     // });
-    this.snackBar.open(response.message);
+    if (_.has(response, 'message')) {
+      this.snackBar.open(response.message);
+    } else if (_.has(response, 'error')) {
+      this.snackBar.open(response.error);
+    }
     setTimeout(() => {
       this.snackBar.dismiss();
     }, 3000);
