@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { FieldsRoutingModule } from './fields-routing.module';
 import { FieldComponent } from './components/field/field.component';
@@ -59,7 +60,8 @@ import { FormHeaderComponent } from 'src/app/shared/components/form-header/form-
     MatCardModule,
     MatButtonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxSpinnerModule
   ]
 })
 export class FieldsModule {}

@@ -1,9 +1,21 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MaintenanceService } from 'src/app/core/services/maintenance.service';
-import { Observable } from 'rxjs';
+import { Observable, of, fromEvent, Subject } from 'rxjs';
 import * as _ from 'lodash';
 import { MenuOption } from 'src/app/shared/models/menu.models';
 import { FormGroup, FormControl } from '@angular/forms';
+import {
+  debounceTime,
+  distinctUntilChanged,
+  map,
+  delay,
+  switchMap,
+  mergeMap,
+  flatMap
+} from 'rxjs/operators';
+import { FieldService } from '../../services/field.service';
+import { NgxSpinnerService } from 'ngx-spinner';
+
 
 @Component({
   selector: 'app-field-form',
@@ -13,6 +25,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class FieldFormComponent implements OnInit {
   @Input() menuOption: MenuOption;
   @Input() formEditValues: any;
+  @Input() APIParams: string;
   @Output() fieldFormEventEmitter = new EventEmitter();
   @Output() saveEventEmitter = new EventEmitter();
   fieldGroups: any;
@@ -30,10 +43,18 @@ export class FieldFormComponent implements OnInit {
     description: new FormControl('')
   });
   fieldFormData: any;
+  checkNameAlreadyExist = new Subject<KeyboardEvent>();
 
-  constructor(private maintenanceService: MaintenanceService) {}
+  constructor(
+    private maintenanceService: MaintenanceService,
+    private fieldService: FieldService,
+    // private spinner: NgxSpinnerService
+  ) {
+    this.getNameValue();
+  }
 
   ngOnInit() {
+    // this.spinner.show();
     // Loading Field Groups
     const $fieldGroups: Observable<any> = this.maintenanceService.getAll(
       'fieldGroups'
@@ -70,6 +91,32 @@ export class FieldFormComponent implements OnInit {
 
   onSave(): void {
     this.saveEventEmitter.emit({ onCreate: true });
+  }
+
+  getNameValue(): void {
+    this.checkNameAlreadyExist
+      .pipe(
+        map((event: any) => event.target.value),
+        debounceTime(500),
+        distinctUntilChanged(),
+        mergeMap(value => of(value).pipe(delay(300)))
+      )
+      .subscribe(name => {
+        name
+          ? this.fieldService
+              .getFieldNameIfExist(name)
+              .subscribe((status: any) => {
+                const nameControl = this.fieldRegistrationForm.get('name');
+                console.log('Name Length::: ', status[this.APIParams].length);
+                if (status[this.APIParams].length > 0) {
+                  nameControl.setErrors({
+                    notUnique: true
+                  });
+                  console.log('NAME EXIST::: ', nameControl);
+                }
+              })
+          : console.log(`No name to look up to database`);
+      });
   }
 
   onSelectItemList(result: any, criteria: any) {

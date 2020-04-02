@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { NgxSpinnerModule } from 'ngx-spinner';
+
 import {
   MatMenuModule,
   MatRippleModule,
@@ -33,7 +35,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatSnackBarModule,
     MatCardModule,
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxSpinnerModule
   ],
   exports: []
 })

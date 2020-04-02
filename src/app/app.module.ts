@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { AppComponent } from './app.component';
 
 import {
@@ -43,6 +43,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+
+    // Spinner Module
+    NgxSpinnerModule,
 
     // Material Modules
     MatTabsModule,
