@@ -24,7 +24,7 @@
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
     "@iapps/hris-menu": "^1.0.0-alpha.4",
-    "@ng-bootstrap/ng-bootstrap": "^5.1.5",
+    "@ng-bootstrap/ng-bootstrap": "^6.0.3",
     "bootstrap": "^4.4.1",
     "caniuse-lite": "^1.0.30001020",
     "chrome-headless": "^0.1.5",
